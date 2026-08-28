@@ -6,7 +6,6 @@
   <title>彭润泽 | 个人主页</title>
   <meta name="description" content="彭润泽 - 西安交通大学控制科学与工程硕士在读，研究方向：智能控制算法、大模型应用。" />
   <style>
-    /* ================= 莫兰迪绿主题变量 ================= */
     :root {
       --bg-green-light: #f2f7f4;
       --bg-green-mid: #e1efe6;
@@ -25,65 +24,21 @@
       --base-height: 1105px;
     }
     *{box-sizing:border-box;margin:0;padding:0}
-    html,body{
-      width:100%;height:100%;overflow:hidden;position:relative;
-      font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",system-ui,sans-serif;
-      color:var(--text-main);background-color:var(--bg-green-light);
-      touch-action:manipulation;-webkit-text-size-adjust:100%;
-    }
+    html,body{width:100%;height:100%;overflow:hidden;position:relative;font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",system-ui,sans-serif;color:var(--text-main);background-color:var(--bg-green-light);touch-action:manipulation;-webkit-text-size-adjust:100%;}
     ::selection{background:var(--accent-color);color:#fff}
     a{color:inherit;text-decoration:none}
-
-    /* 全局背景：渐变 + 网格底纹 */
-    .bg-mesh{
-      position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:-1;
-      background:
-        radial-gradient(circle at 12% 18%, rgba(200,230,210,0.85) 0%, transparent 45%),
-        radial-gradient(circle at 85% 15%, rgba(225,245,230,0.9) 0%, transparent 50%),
-        radial-gradient(circle at 50% 80%, rgba(185,220,200,0.75) 0%, transparent 55%),
-        linear-gradient(135deg,#eaf3ed 0%,#d8ebd9 50%,#cce3d5 100%);
-      filter:blur(10px);
-    }
-    .bg-pattern{
-      position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:-1;opacity:0.35;pointer-events:none;
-      background-image:
-        radial-gradient(var(--accent-color) 0.8px, transparent 0.8px),
-        linear-gradient(to right, rgba(45,90,67,0.03) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(45,90,67,0.03) 1px, transparent 1px);
-      background-size:30px 30px,50px 50px,50px 50px;
-    }
-
-    /* 视口自适应外层容器 */
-    .app-viewport{
-      position:absolute;top:50%;left:50%;width:var(--base-width);height:var(--base-height);
-      transform-origin:center center;
-    }
-
-    /* 顶部导航栏 */
-    header{
-      position:absolute;top:26px;left:50%;transform:translateX(-50%);
-      width:calc(100% - 100px);max-width:1700px;height:85px;
-      display:flex;justify-content:space-between;align-items:center;padding:0 36px;
-      background:linear-gradient(135deg, rgba(255,255,255,0.92) 0%, rgba(230,245,236,0.82) 100%);
-      backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
-      z-index:100;border:1.5px solid var(--card-border);border-radius:50px;box-shadow:var(--shadow-soft);
-    }
+    .bg-mesh{position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:-1;background:radial-gradient(circle at 12% 18%, rgba(200,230,210,0.85) 0%, transparent 45%),radial-gradient(circle at 85% 15%, rgba(225,245,230,0.9) 0%, transparent 50%),radial-gradient(circle at 50% 80%, rgba(185,220,200,0.75) 0%, transparent 55%),linear-gradient(135deg,#eaf3ed 0%,#d8ebd9 50%,#cce3d5 100%);filter:blur(10px);}
+    .bg-pattern{position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:-1;opacity:0.35;pointer-events:none;background-image:radial-gradient(var(--accent-color) 0.8px, transparent 0.8px),linear-gradient(to right, rgba(45,90,67,0.03) 1px, transparent 1px),linear-gradient(to bottom, rgba(45,90,67,0.03) 1px, transparent 1px);background-size:30px 30px,50px 50px,50px 50px;}
+    .app-viewport{position:absolute;top:50%;left:50%;width:var(--base-width);height:var(--base-height);transform-origin:center center;}
+    header{position:absolute;top:26px;left:50%;transform:translateX(-50%);width:calc(100% - 100px);max-width:1700px;height:85px;display:flex;justify-content:space-between;align-items:center;padding:0 36px;background:linear-gradient(135deg, rgba(255,255,255,0.92) 0%, rgba(230,245,236,0.82) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);z-index:100;border:1.5px solid var(--card-border);border-radius:50px;box-shadow:var(--shadow-soft);}
     .logo{font-size:31.2px;font-weight:700;color:var(--text-main);display:flex;align-items:center;gap:13px}
     .logo-badge{width:28px;height:28px;background:linear-gradient(135deg,#2d5a43,#1e3f2e);border-radius:50%;box-shadow:0 4px 10px rgba(45,90,67,0.25)}
     nav{display:flex;gap:8px;background:linear-gradient(135deg, rgba(235,243,238,0.8), rgba(215,235,222,0.6));padding:5px;border-radius:40px}
-    .nav-link-item{
-      text-decoration:none;color:var(--text-sub);font-size:21.6px;font-weight:500;
-      padding:8px 20px;border-radius:26px;transition:all .3s ease;cursor:pointer;display:inline-block;white-space:nowrap;
-    }
+    .nav-link-item{text-decoration:none;color:var(--text-sub);font-size:21.6px;font-weight:500;padding:8px 20px;border-radius:26px;transition:all .3s ease;cursor:pointer;display:inline-block;white-space:nowrap;}
     .nav-link-item:hover{color:#fff;background:linear-gradient(135deg,#2d5a43 0%,#1e3f2e 100%);box-shadow:0 6px 16px rgba(45,90,67,0.3)}
     .nav-link-item.active{color:#fff !important;background:linear-gradient(135deg,#2d5a43 0%,#1e3f2e 100%) !important;box-shadow:0 6px 16px rgba(45,90,67,0.35) !important}
-
-    /* 横向翻页 */
     .slider-container{width:calc(var(--base-width) * 7);height:100%;display:flex;transition:transform .6s cubic-bezier(.25,1,.5,1)}
-    section{
-      width:var(--base-width);height:var(--base-height);flex-shrink:0;
-      padding:120px 100px 40px 100px;display:flex;flex-direction:column;justify-content:center;align-items:center;position:relative;z-index:1;
-    }
+    section{width:var(--base-width);height:var(--base-height);flex-shrink:0;padding:120px 100px 40px 100px;display:flex;flex-direction:column;justify-content:center;align-items:center;position:relative;z-index:1;}
     .section-header{text-align:center;margin-top:10px;margin-bottom:30px}
     .section-slogan-cn{font-size:57.2px;font-weight:700;color:var(--text-main);letter-spacing:2px}
     .section-slogan-en{font-size:27.3px;font-family:'Poppins',sans-serif;color:var(--text-sub);margin-top:8px;font-weight:400;letter-spacing:1px;opacity:.88}
@@ -91,26 +46,13 @@
     .campus-header{margin-bottom:35px}
     .intern-header{margin-bottom:60px}
     .skill-header{margin-bottom:60px}
-
-    /* 左右翻页按钮 */
-    .nav-arrow{
-      position:absolute;top:50%;transform:translateY(-50%);width:58px;height:58px;
-      background:linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(230,245,236,0.8) 100%);
-      border:1.5px solid var(--card-border);border-radius:50%;display:flex;justify-content:center;align-items:center;
-      cursor:pointer;z-index:90;box-shadow:var(--shadow-soft);transition:all .3s ease;font-size:24px;color:var(--text-main);backdrop-filter:blur(10px);
-    }
+    .nav-arrow{position:absolute;top:50%;transform:translateY(-50%);width:58px;height:58px;background:linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(230,245,236,0.8) 100%);border:1.5px solid var(--card-border);border-radius:50%;display:flex;justify-content:center;align-items:center;cursor:pointer;z-index:90;box-shadow:var(--shadow-soft);transition:all .3s ease;font-size:24px;color:var(--text-main);backdrop-filter:blur(10px);}
     .nav-arrow:hover{background:linear-gradient(135deg,#2d5a43 0%,#1e3f2e 100%);color:#fff;transform:translateY(-50%) scale(1.1);box-shadow:var(--shadow-hover)}
     .nav-arrow.left{left:30px}
     .nav-arrow.right{right:30px}
     .nav-arrow.disabled{opacity:.25;cursor:not-allowed;transform:translateY(-50%) scale(1)}
-
-    .glass-card{
-      background:var(--card-glass);border:1.5px solid var(--card-border);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
-      border-radius:var(--border-radius);box-shadow:var(--shadow-soft);transition:all .35s cubic-bezier(.25,1,.5,1);
-    }
+    .glass-card{background:var(--card-glass);border:1.5px solid var(--card-border);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-radius:var(--border-radius);box-shadow:var(--shadow-soft);transition:all .35s cubic-bezier(.25,1,.5,1);}
     .glass-card:hover{transform:translateY(-8px) scale(1.015);box-shadow:var(--shadow-hover);border-color:rgba(255,255,255,1);background:linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(218,240,227,0.85) 100%)}
-
-    /* ================= 模块1 关于我 ================= */
     .who-container{display:flex;gap:50px;align-items:center;max-width:1620px;width:100%;height:100%}
     .who-left{flex:1.1;margin-left:20px;position:relative;z-index:20}
     .who-title{font-size:94.9px;font-weight:700;line-height:1.25;margin-bottom:45px}
@@ -118,34 +60,24 @@
     .who-subtitle-box{margin-bottom:36px}
     .who-subtitle-cn{font-size:40.3px;color:var(--accent-color);font-weight:600}
     .who-subtitle-en{font-size:22.1px;font-family:'Poppins',sans-serif;color:var(--text-sub);margin-top:5px}
-    .who-motto{
-      font-size:33.8px;font-weight:500;color:var(--text-main);margin-bottom:42px;line-height:1.6;
-      border-left:5px solid var(--accent-color);padding-left:20px;position:relative;z-index:25;
-    }
+    .who-motto{font-size:33.8px;font-weight:500;color:var(--text-main);margin-bottom:42px;line-height:1.6;border-left:5px solid var(--accent-color);padding-left:20px;position:relative;z-index:25;}
     .who-cards{display:flex;gap:20px}
-    .gradient-card{
-      padding:16px 31px;border-radius:18px;font-size:23.4px;font-weight:600;color:var(--accent-color);
-      background:linear-gradient(135deg, rgba(255,255,255,0.95), rgba(200,235,215,0.75));
-      border:1.5px solid rgba(255,255,255,0.95);box-shadow:0 8px 26px rgba(45,90,67,0.1);
-      transition:all .3s ease;animation:autoPulse 3s ease-in-out infinite alternate, autoFloat 4s ease-in-out infinite alternate;white-space:nowrap;
-    }
+    .gradient-card{padding:16px 31px;border-radius:18px;font-size:23.4px;font-weight:600;color:var(--accent-color);background:linear-gradient(135deg, rgba(255,255,255,0.95), rgba(200,235,215,0.75));border:1.5px solid rgba(255,255,255,0.95);box-shadow:0 8px 26px rgba(45,90,67,0.1);transition:all .3s ease;animation:autoPulse 3s ease-in-out infinite alternate, autoFloat 4s ease-in-out infinite alternate;white-space:nowrap;}
     .gradient-card:hover{transform:translateY(-6px) scale(1.05) !important;box-shadow:0 12px 30px rgba(45,90,67,0.25);background:linear-gradient(135deg,#2d5a43,#1e3f2e);color:#fff}
     .gradient-card:nth-child(2){animation-delay:.6s,.6s}
     .gradient-card:nth-child(3){animation-delay:1.2s,1.2s}
     @keyframes autoPulse{0%{background:linear-gradient(135deg, rgba(255,255,255,0.95), rgba(200,235,215,0.75))}100%{background:linear-gradient(135deg, rgba(210,240,222,0.85), rgba(255,255,255,0.95))}}
     @keyframes autoFloat{0%{transform:translateY(0)}100%{transform:translateY(-9px)}}
-
-    .who-right{position:relative;flex:1.3;display:flex;justify-content:center;align-items:center;height:100%;z-index:10;perspective:1000px}
-    .photo-wrapper{position:relative;width:598px;height:750px;display:flex;justify-content:center;align-items:center;transform-style:preserve-3d;transition:transform .3s ease-out;cursor:pointer;animation:portraitFloat 5s ease-in-out infinite}
-    @keyframes portraitFloat{0%{transform:translateY(0) rotateX(0) rotateY(0) rotateZ(0) scale(1)}25%{transform:translateY(-25px) rotateX(8deg) rotateY(-8deg) rotateZ(-2deg) scale(1.03)}50%{transform:translateY(0) rotateX(0) rotateY(0) rotateZ(0) scale(1)}75%{transform:translateY(25px) rotateX(-8deg) rotateY(8deg) rotateZ(2deg) scale(0.97)}100%{transform:translateY(0) rotateX(0) rotateY(0) rotateZ(0) scale(1)}}
+    .who-right{position:relative;flex:1.3;display:flex;justify-content:center;align-items:center;height:100%;z-index:10;perspective:1200px}
+    .photo-wrapper{position:relative;width:620px;height:780px;display:flex;justify-content:center;align-items:center;transform-style:preserve-3d;transition:transform .3s ease-out;cursor:pointer;animation:portraitFloat 5s ease-in-out infinite}
+    @keyframes portraitFloat{0%{transform:translateY(0) rotateX(0) rotateY(0) rotateZ(0) scale(1)}25%{transform:translateY(-22px) rotateX(6deg) rotateY(-6deg) rotateZ(-1.5deg) scale(1.025)}50%{transform:translateY(0) rotateX(0) rotateY(0) rotateZ(0) scale(1)}75%{transform:translateY(22px) rotateX(-6deg) rotateY(6deg) rotateZ(1.5deg) scale(0.975)}100%{transform:translateY(0) rotateX(0) rotateY(0) rotateZ(0) scale(1)}}
     .photo-wrapper.paused{animation-play-state:paused !important}
-    .runze-tag{position:absolute;top:20px;left:-26px;font-family:'Caveat','Segoe Script','Bradley Hand',cursive;font-size:91px;font-weight:700;color:var(--accent-color);transform:rotate(-45deg) translateZ(30px);z-index:10;text-shadow:2px 4px 10px rgba(45,90,67,0.15);pointer-events:none;white-space:nowrap}
-    .photo-bg-block{position:absolute;bottom:auto;width:100%;height:90%;background:linear-gradient(135deg, rgba(205,235,218,0.65), rgba(160,210,180,0.45));clip-path:polygon(6% 0%,96% 4%,100% 100%,0% 100%);border-radius:45px;z-index:1;transform:translateZ(0)}
-    .photo-crop{position:absolute;inset:0;z-index:2;border-radius:46px;overflow:hidden;border:6px solid rgba(255,255,255,0.95);box-shadow:0 30px 60px rgba(45,90,67,0.35), 0 0 0 2px rgba(45,90,67,0.15), inset 0 0 30px rgba(255,255,255,0.2);background:#ddece3}
-    .photo-crop::before{content:"";position:absolute;inset:0;z-index:3;background:linear-gradient(135deg, rgba(255,255,255,0.25) 0%, transparent 40%, transparent 60%, rgba(45,90,67,0.08) 100%);pointer-events:none;border-radius:40px}
-    .who-img{width:100%;height:100%;object-fit:cover;object-position:center 6%;transform:scale(1.5);transform-origin:50% 12%;display:block;filter:contrast(1.05) saturate(1.08)}
-
-    /* ================= 模块2 教育背景（左本科+中抠图人像+右研究生） ================= */
+    .photo-blob-bg{position:absolute;top:40px;left:30px;width:540px;height:700px;background:linear-gradient(150deg,#d8ecdd 0%,#b8dcc6 50%,#a5d0b5 100%);border-radius:58% 42% 55% 45% / 48% 55% 45% 52%;z-index:1;box-shadow:0 25px 55px rgba(45,90,67,0.22),inset 0 2px 20px rgba(255,255,255,0.4);transform:rotate(-5deg) translateZ(0)}
+    .photo-blob-bg::after{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(circle at 30% 20%,rgba(255,255,255,0.35),transparent 50%);pointer-events:none}
+    .photo-cutout{position:relative;z-index:2;width:530px;height:740px;border-radius:52% 48% 46% 54% / 42% 48% 52% 58%;overflow:hidden;box-shadow:0 35px 65px rgba(45,90,67,0.32),0 10px 25px rgba(0,0,0,0.12);transform:rotate(3deg) translate(12px,-14px) translateZ(30px)}
+    .photo-cutout::after{content:"";position:absolute;inset:0;z-index:3;background:linear-gradient(160deg,rgba(255,255,255,0.18) 0%,transparent 35%,transparent 65%,rgba(45,90,67,0.06) 100%);pointer-events:none;border-radius:inherit}
+    .who-img{width:100%;height:100%;object-fit:cover;object-position:center 12%;display:block;filter:contrast(1.06) saturate(1.1) brightness(1.02)}
+    .runze-tag{position:absolute;top:-5px;left:-10px;font-family:'Caveat','Segoe Script','Bradley Hand',cursive;font-size:88px;font-weight:700;color:var(--accent-color);transform:rotate(-18deg) translateZ(40px);z-index:10;text-shadow:2px 4px 12px rgba(45,90,67,0.18);pointer-events:none;white-space:nowrap;letter-spacing:2px}
     .edu-new-layout{position:relative;width:100%;max-width:1600px;flex:1;min-height:0;display:flex;justify-content:space-between;align-items:center;gap:24px;perspective:1200px}
     .edu-side-card{position:relative;flex:1;max-width:470px;height:580px;background:linear-gradient(145deg,rgba(255,255,255,0.96),rgba(220,242,228,0.9));border:2px solid rgba(255,255,255,0.98);border-radius:30px;box-shadow:0 20px 50px rgba(45,90,67,0.18),inset 0 1px 0 rgba(255,255,255,0.9);overflow:hidden;transition:all .4s cubic-bezier(.25,1,.5,1);display:flex;flex-direction:column}
     .edu-side-card:hover{transform:translateY(-10px) scale(1.02);box-shadow:0 32px 65px rgba(45,90,67,0.28)}
@@ -164,20 +96,14 @@
     .edu-card-desc{font-size:16.5px;color:var(--text-sub);line-height:1.6;margin-bottom:10px}
     .edu-card-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:auto}
     .edu-card-tags span{font-size:14.5px;font-weight:600;color:var(--accent-color);background:rgba(45,90,67,0.1);border:1px solid rgba(45,90,67,0.14);padding:4px 12px;border-radius:14px}
-    .edu-center-person{position:relative;width:400px;height:620px;flex-shrink:0;display:flex;justify-content:center;align-items:flex-end;transform-style:preserve-3d;animation:eduCenterFloat 5s ease-in-out infinite;z-index:5}
-    @keyframes eduCenterFloat{
-      0%{transform:translateY(0) rotateY(-5deg) rotateX(2deg) scale(1)}
-      50%{transform:translateY(-18px) rotateY(5deg) rotateX(-2deg) scale(1.02)}
-      100%{transform:translateY(0) rotateY(-5deg) rotateX(2deg) scale(1)}
-    }
-    .edu-center-person img{width:100%;height:100%;object-fit:contain;object-position:bottom center;filter:drop-shadow(0 28px 38px rgba(45,90,67,0.32)) drop-shadow(0 10px 14px rgba(0,0,0,0.15));display:block;transform:translateZ(30px)}
-    .edu-center-shadow{position:absolute;bottom:0;left:50%;width:260px;height:38px;margin-left:-130px;background:radial-gradient(ellipse at center,rgba(45,90,67,0.38) 0%,transparent 70%);z-index:1;animation:eduCenterShadow 5s ease-in-out infinite}
-    @keyframes eduCenterShadow{0%,100%{transform:scale(1);opacity:0.55}50%{transform:scale(0.82);opacity:0.32}}
+    .edu-center-person{position:relative;flex-shrink:0;display:flex;justify-content:center;align-items:flex-end;transform-style:preserve-3d;animation:eduCenterFloat 5s ease-in-out infinite;z-index:5;padding:0 10px}
+    @keyframes eduCenterFloat{0%{transform:translateY(0) rotateY(-6deg) rotateX(3deg) scale(1)}50%{transform:translateY(-20px) rotateY(6deg) rotateX(-3deg) scale(1.03)}100%{transform:translateY(0) rotateY(-6deg) rotateX(3deg) scale(1)}}
+    .edu-center-person img{max-height:640px;width:auto;object-fit:contain;object-position:bottom center;filter:drop-shadow(0 30px 40px rgba(45,90,67,0.35)) drop-shadow(0 12px 18px rgba(0,0,0,0.18));display:block;transform:translateZ(40px);pointer-events:none}
+    .edu-center-shadow{position:absolute;bottom:-5px;left:50%;width:280px;height:42px;margin-left:-140px;background:radial-gradient(ellipse at center,rgba(45,90,67,0.4) 0%,transparent 70%);z-index:1;animation:eduCenterShadow 5s ease-in-out infinite}
+    @keyframes eduCenterShadow{0%,100%{transform:scale(1);opacity:0.6}50%{transform:scale(0.8);opacity:0.35}}
     .edu-center-ring{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:520px;height:520px;border:2px dashed rgba(45,90,67,0.1);border-radius:50%;animation:ringRotate 25s linear infinite;z-index:0}
     .edu-center-ring.r2{width:640px;height:640px;border-color:rgba(45,90,67,0.06);animation-duration:35s;animation-direction:reverse}
     @keyframes ringRotate{0%{transform:translate(-50%,-50%) rotate(0deg)}100%{transform:translate(-50%,-50%) rotate(360deg)}}
-
-    /* ================= 模块3 校园成就 ================= */
     .campus-grid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:24px;max-width:1620px;width:100%}
     .paper-item-card{padding:26px 32px;display:flex;flex-direction:column;justify-content:space-between;min-height:220px}
     .paper-header-row{display:flex;align-items:center;gap:13px;margin-bottom:12px;flex-wrap:wrap}
@@ -205,9 +131,6 @@
     .award-sub-item{font-size:15px;line-height:1.35;color:var(--text-main);background:rgba(255,255,255,0.55);padding:6px 8px;border-radius:8px;transition:background .2s ease}
     .award-sub-item:hover{background:rgba(255,255,255,0.95)}
     .award-sub-item .date{font-size:13.5px;color:var(--accent-color);font-weight:700;margin-right:5px}
-    .award-level-tag{font-size:14px;font-weight:700;color:var(--accent-color);margin:6px 0 2px 0;border-bottom:1.5px dashed rgba(45,90,67,0.25);padding-bottom:2px}
-
-    /* ================= 模块4 实习经历 ================= */
     .intern-container{display:flex;gap:28px;max-width:1560px;width:100%}
     .intern-card{flex:1;overflow:hidden;display:flex;flex-direction:column}
     .intern-banner{height:188px;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
@@ -225,8 +148,6 @@
     .intern-tags{display:flex;flex-direction:column;gap:12px}
     .intern-tag-item{background:linear-gradient(135deg, rgba(255,255,255,0.95), rgba(230,245,236,0.85));padding:12px 18px;border-radius:13px;font-size:20.8px;color:var(--text-main);border-left:4px solid var(--accent-color);box-shadow:0 4px 13px rgba(0,0,0,0.03);line-height:1.4;display:flex;justify-content:center;align-items:center;text-align:center;font-weight:500;transition:all .3s ease}
     .intern-tag-item:hover{transform:translateX(4px);background:linear-gradient(135deg,#2d5a43,#1e3f2e);color:#fff}
-
-    /* ================= 模块5 项目经历 ================= */
     .proj-header{margin-bottom:18px}
     .proj-grid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:26px;max-width:1620px;width:100%;flex:1;min-height:0}
     .proj-card{overflow:hidden;display:flex;flex-direction:column;min-height:0}
@@ -246,8 +167,6 @@
     .proj-points li b{color:var(--text-main);font-weight:700}
     .proj-tags{display:flex;flex-wrap:wrap;gap:8px;flex-shrink:0}
     .proj-tags span{font-size:14.5px;font-weight:600;color:var(--accent-color);background:rgba(45,90,67,0.1);border:1px solid rgba(45,90,67,0.14);padding:3px 12px;border-radius:14px}
-
-    /* ================= 模块6 技能爱好 ================= */
     .skill-layout-container{display:flex;gap:36px;max-width:1560px;width:100%;align-items:stretch}
     .skill-left-panel{flex:1.1;display:flex;flex-direction:column;gap:24px}
     .tarot-area{display:flex;gap:24px;width:100%;height:100%}
@@ -267,39 +186,29 @@
     .carousel img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .5s ease}
     .carousel img.active{opacity:1}
     .hobby-title{padding:12px;font-size:22.1px;font-weight:700;color:var(--text-main);background:rgba(255,255,255,0.6)}
-
-    /* ================= 模块7 联系我（精美重设计） ================= */
     .contact-section{position:relative;width:100%;max-width:1500px;display:flex;flex-direction:column;align-items:center;justify-content:center}
-    /* 背景装饰 */
     .contact-bg-art{position:absolute;inset:0;pointer-events:none;overflow:hidden;border-radius:40px}
     .contact-blob{position:absolute;border-radius:50%;filter:blur(40px);animation:contactBlobFloat 10s ease-in-out infinite}
     .contact-blob.cb1{width:500px;height:500px;top:-120px;left:-80px;background:radial-gradient(circle,rgba(160,215,185,0.6),transparent 70%);animation-delay:0s}
     .contact-blob.cb2{width:560px;height:560px;bottom:-140px;right:-60px;background:radial-gradient(circle,rgba(200,230,210,0.7),transparent 70%);animation-delay:2s}
     .contact-blob.cb3{width:300px;height:300px;top:40%;right:15%;background:radial-gradient(circle,rgba(255,255,255,0.5),transparent 70%);animation-delay:4s}
     @keyframes contactBlobFloat{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(25px,-20px) scale(1.06)}}
-    /* 浮动装饰点 */
     .contact-dot{position:absolute;width:10px;height:10px;border-radius:50%;background:var(--accent-color);opacity:.3;animation:dotFloat 6s ease-in-out infinite}
     .contact-dot.cd1{top:15%;left:10%;animation-delay:0s}
     .contact-dot.cd2{top:25%;right:12%;width:8px;height:8px;animation-delay:1s}
     .contact-dot.cd3{bottom:20%;left:15%;width:12px;height:12px;animation-delay:2s}
     .contact-dot.cd4{bottom:30%;right:8%;animation-delay:3s}
     @keyframes dotFloat{0%,100%{transform:translateY(0);opacity:.3}50%{transform:translateY(-20px);opacity:.6}}
-    /* 主容器 */
     .contact-main{position:relative;z-index:2;text-align:center;width:100%;padding:60px 50px 50px;background:linear-gradient(145deg,rgba(255,255,255,0.94) 0%,rgba(215,240,225,0.82) 100%);border:2px solid rgba(255,255,255,0.98);border-radius:44px;backdrop-filter:blur(28px);box-shadow:0 35px 80px rgba(45,90,67,0.2),inset 0 1px 0 rgba(255,255,255,0.95);background-image:radial-gradient(rgba(45,90,67,0.05) 1.2px,transparent 0);background-size:30px 30px;transition:all .4s ease}
     .contact-main:hover{box-shadow:0 45px 95px rgba(45,90,67,0.28),inset 0 1px 0 rgba(255,255,255,1)}
-    /* 顶部装饰条 */
     .contact-top-bar{position:absolute;top:0;left:50%;transform:translateX(-50%);width:140px;height:6px;background:linear-gradient(90deg,transparent,var(--accent-color),#3f8060,var(--accent-color),transparent);border-radius:0 0 6px 6px}
     .contact-top-bar::before{content:"";position:absolute;top:-2px;left:50%;transform:translateX(-50%);width:14px;height:14px;background:linear-gradient(135deg,var(--accent-color),#3f8060);border-radius:50%;box-shadow:0 0 0 4px rgba(255,255,255,0.9),0 0 12px rgba(45,90,67,0.3)}
-    /* 标题区 */
     .contact-greeting{font-size:20px;color:var(--accent-color);font-weight:700;letter-spacing:4px;text-transform:uppercase;opacity:.7;margin-bottom:12px}
     .contact-big-title{font-size:68px;font-weight:700;color:var(--text-main);line-height:1.35;letter-spacing:2px;margin-bottom:20px;min-height:180px;display:flex;align-items:center;justify-content:center;cursor:pointer;text-shadow:0 2px 12px rgba(45,90,67,0.08)}
-    .contact-big-title .highlight{background:linear-gradient(120deg,var(--accent-color),#3f8060);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-    /* 分隔装饰 */
     .contact-divider-ornament{display:flex;align-items:center;justify-content:center;gap:16px;margin:10px 0 40px}
     .contact-divider-ornament .line{width:80px;height:3px;background:linear-gradient(90deg,transparent,var(--accent-color));border-radius:3px}
     .contact-divider-ornament .line.r{background:linear-gradient(90deg,var(--accent-color),transparent)}
     .contact-divider-ornament .diamond{width:14px;height:14px;background:linear-gradient(135deg,var(--accent-color),#3f8060);transform:rotate(45deg);box-shadow:0 0 0 4px rgba(255,255,255,0.8)}
-    /* 卡片组 */
     .contact-cards-row{display:flex;gap:32px;justify-content:center;flex-wrap:wrap;margin-bottom:35px}
     .contact-card{width:320px;height:175px;perspective:1400px;cursor:pointer}
     .contact-card-inner{position:relative;width:100%;height:100%;transition:transform .7s cubic-bezier(.4,0,.2,1);transform-style:preserve-3d}
@@ -316,53 +225,19 @@
     .contact-card-back .cc-back-icon{font-size:32px;margin-bottom:8px}
     .contact-card-back .cc-value{font-size:22px;line-height:1.4}
     .contact-card-back .cc-hint{font-size:14px;opacity:.75;margin-top:8px}
-    /* 底部 */
     .contact-bottom{display:flex;align-items:center;justify-content:center;gap:20px;margin-top:10px}
     .contact-bottom .dash{width:40px;height:2px;background:linear-gradient(90deg,transparent,var(--accent-color))}
     .contact-bottom .dash.r{background:linear-gradient(90deg,var(--accent-color),transparent)}
     .contact-bottom-text{font-size:18px;color:var(--text-sub);letter-spacing:3px;font-weight:600;opacity:.8}
-
-    /* ================= 悬浮音乐播放器 ================= */
-    .music-widget{
-      position:absolute;right:46px;bottom:34px;z-index:95;width:340px;
-      border-radius:20px;overflow:hidden;padding:8px 10px;
-      background:linear-gradient(135deg, rgba(255,255,255,0.92), rgba(228,244,234,0.85));
-      border:1.5px solid rgba(255,255,255,0.95);box-shadow:var(--shadow-soft);backdrop-filter:blur(14px);
-    }
-    .music-widget iframe{display:block;width:100%;height:66px;border:0}
+    .music-widget{position:absolute;right:46px;bottom:34px;z-index:95;width:340px;border-radius:20px;overflow:hidden;padding:8px 10px;background:linear-gradient(135deg, rgba(255,255,255,0.92), rgba(228,244,234,0.85));border:1.5px solid rgba(255,255,255,0.95);box-shadow:var(--shadow-soft);backdrop-filter:blur(14px);}
     .music-widget .mw-label{display:flex;align-items:center;gap:7px;font-size:15px;font-weight:700;color:var(--accent-color);margin-bottom:4px;padding:0 2px}
-
-    /* ================= 手机端性能优化 ================= */
-    @media (max-width: 900px){
-      *{-webkit-backdrop-filter:none !important;backdrop-filter:none !important}
-      .bg-mesh{filter:none}
-      .gradient-card{animation:none}
-      .photo-wrapper{animation-duration:8s}
-      .edu-center-person{animation-duration:7s}
-      .edu-center-ring{animation-duration:25s}
-      .edu-side-card{height:500px}
-      .contact-blob{animation-duration:12s}
-      header{padding:0 22px}
-      nav{gap:3px}
-      .nav-link-item{font-size:17px;padding:7px 12px}
-      .edu-card-school{font-size:22px}
-      .edu-card-major{font-size:18px}
-      .edu-card-desc{font-size:14px}
-      .contact-big-title{font-size:48px}
-      .contact-card{width:260px;height:150px}
-    }
+    @media (max-width: 900px){*{backdrop-filter:none !important;-webkit-backdrop-filter:none !important}.bg-mesh{filter:none}.gradient-card{animation:none}.photo-wrapper{animation-duration:8s}.edu-center-person{animation-duration:7s}.edu-center-ring{animation-duration:25s}.edu-side-card{height:500px}.contact-blob{animation-duration:12s}header{padding:0 22px}nav{gap:3px}.nav-link-item{font-size:17px;padding:7px 12px}.edu-card-school{font-size:22px}.edu-card-major{font-size:18px}.edu-card-desc{font-size:14px}.contact-big-title{font-size:48px}.contact-card{width:260px;height:150px}}
   </style>
 </head>
 <body>
-
-  <!-- 动态弥散渐变背景 + 底纹 -->
   <div class="bg-mesh"></div>
   <div class="bg-pattern"></div>
-
-  <!-- 视口自适应外层容器 -->
   <div class="app-viewport" id="appViewport">
-
-    <!-- 顶部悬浮胶囊导航栏 -->
     <header>
       <div class="logo"><span class="logo-badge"></span> Peng Runze</div>
       <nav>
@@ -375,21 +250,13 @@
         <a class="nav-link-item" onclick="goToSlide(6)">联系我</a>
       </nav>
     </header>
-
-    <!-- 左右翻页按钮 -->
     <div class="nav-arrow left disabled" id="prevBtn" onclick="prevSlide()">&#10094;</div>
     <div class="nav-arrow right" id="nextBtn" onclick="nextSlide()">&#10095;</div>
-
-    <!-- 悬浮背景音乐（樱花草 · 原生音频，点击网页任意处播放） -->
     <div class="music-widget">
       <div class="mw-label">♪ 樱花草 · Sweety</div>
       <audio id="bgmAudio" src="https://aka.doubaocdn.com/s/6lnLfqyEut" loop preload="auto"></audio>
     </div>
-
-    <!-- 全屏主容器 -->
     <div class="slider-container" id="slider">
-
-      <!-- 1. 关于我 -->
       <section>
         <div class="who-container">
           <div class="who-left">
@@ -408,14 +275,12 @@
           <div class="who-right">
             <div class="photo-wrapper" id="photoWrapper" onclick="pausePhotoAnimation()">
               <div class="runze-tag">Runze</div>
-              <div class="photo-bg-block"></div>
-              <div class="photo-crop"><img src="https://aka.doubaocdn.com/s/tUZNVr2QLC" alt="彭润泽" class="who-img" decoding="async" /></div>
+              <div class="photo-blob-bg"></div>
+              <div class="photo-cutout"><img src="https://aka.doubaocdn.com/s/tNMyFbMDLq" alt="彭润泽" class="who-img" decoding="async" /></div>
             </div>
           </div>
         </div>
       </section>
-
-      <!-- 2. 教育背景 -->
       <section>
         <div class="section-header edu-header">
           <div class="section-slogan-cn">在代码与算法之间，构建更智能的未来</div>
@@ -424,12 +289,11 @@
         <div class="edu-new-layout">
           <div class="edu-center-ring"></div>
           <div class="edu-center-ring r2"></div>
-          <!-- 左侧：本科教育经历 -->
           <div class="edu-side-card">
             <div class="edu-card-building">
               <div class="edu-card-badge"><img src="https://aka.doubaocdn.com/s/G4nW50gwvj" alt="西安交大校徽" decoding="async" /></div>
               <div class="edu-card-degree-tag">本科</div>
-              <img src="https://aka.doubaocdn.com/s/FwZdUcKPE0" alt="西安交大腾飞塔" loading="lazy" decoding="async" />
+              <img src="https://aka.doubaocdn.com/s/XLk443Zcd8" alt="西安交大钱学森图书馆" loading="lazy" decoding="async" />
             </div>
             <div class="edu-card-body">
               <div class="edu-card-school">西安交通大学</div>
@@ -440,17 +304,15 @@
               <div class="edu-card-tags"><span>控制理论</span><span>信号处理</span><span>机器学习</span></div>
             </div>
           </div>
-          <!-- 中间：抠图动漫立体人像 -->
           <div class="edu-center-person">
             <div class="edu-center-shadow"></div>
             <img src="https://aka.doubaocdn.com/s/IBPOiGcwY7" alt="动漫立体人像" decoding="async" />
           </div>
-          <!-- 右侧：研究生教育经历 -->
           <div class="edu-side-card">
             <div class="edu-card-building">
               <div class="edu-card-badge"><img src="https://aka.doubaocdn.com/s/G4nW50gwvj" alt="西安交大校徽" decoding="async" /></div>
               <div class="edu-card-degree-tag">硕士</div>
-              <img src="https://aka.doubaocdn.com/s/FwZdUcKPE0" alt="西安交大腾飞塔" loading="lazy" decoding="async" />
+              <img src="https://aka.doubaocdn.com/s/z8rcuX2EIS" alt="西安交大创新港主楼" loading="lazy" decoding="async" />
             </div>
             <div class="edu-card-body">
               <div class="edu-card-school">西安交通大学</div>
@@ -463,8 +325,6 @@
           </div>
         </div>
       </section>
-
-      <!-- 3. 校园成就 -->
       <section>
         <div class="section-header campus-header">
           <div class="section-slogan-cn">在自己的时区里，不断攀爬</div>
@@ -473,34 +333,20 @@
         <div class="campus-grid">
           <div class="paper-item-card glass-card">
             <div>
-              <div class="paper-header-row">
-                <span class="paper-date">2024 - 2026</span>
-                <span class="paper-tag-highlight">国家级</span>
-                <span class="paper-tag">数学建模</span>
-                <span class="paper-tag">算法竞赛</span>
-              </div>
+              <div class="paper-header-row"><span class="paper-date">2024 - 2026</span><span class="paper-tag-highlight">国家级</span><span class="paper-tag">数学建模</span><span class="paper-tag">算法竞赛</span></div>
               <h4>国家级建模算法竞赛 · 13 项</h4>
               <p>中国研究生数学建模竞赛全国二等奖、亚太地区数学建模竞赛全国二等奖、全国大学生算法设计与编程挑战赛银奖、Skill 开发竞赛全国一等奖等。</p>
             </div>
           </div>
-
           <div class="paper-item-card glass-card">
             <div>
-              <div class="paper-header-row">
-                <span class="paper-date">2024 - 2026</span>
-                <span class="paper-tag-highlight">荣誉表彰</span>
-                <span class="paper-tag">奖学金</span>
-              </div>
+              <div class="paper-header-row"><span class="paper-date">2024 - 2026</span><span class="paper-tag-highlight">荣誉表彰</span><span class="paper-tag">奖学金</span></div>
               <h4>奖学金与荣誉表彰</h4>
               <p>特等奖学金、优秀研究生、优秀研究生干部，多次获评先进个人与优秀学生干部。</p>
             </div>
           </div>
-
           <div class="scroll-card-box glass-card">
-            <div class="box-header-row">
-              <h4>学生工作</h4>
-              <span class="sub-tip">可上下滑动</span>
-            </div>
+            <div class="box-header-row"><h4>学生工作</h4><span class="sub-tip">可上下滑动</span></div>
             <div class="scroll-content-work-grid">
               <div class="work-item-row"><img src="https://aka.doubaocdn.com/s/038cYpFuts" loading="lazy" decoding="async" alt=""/><div class="info"><h5>安徽团省委青年驿站 · 首任站长</h5><span>2024 - 2025</span></div></div>
               <div class="work-item-row"><img src="https://aka.doubaocdn.com/s/tQGfzvt1g2" loading="lazy" decoding="async" alt=""/><div class="info"><h5>党委宣传部 · 学生通讯社部长</h5><span>2024 - 2025</span></div></div>
@@ -510,46 +356,16 @@
               <div class="work-item-row"><img src="https://aka.doubaocdn.com/s/wKFs4vADmS" loading="lazy" decoding="async" alt=""/><div class="info"><h5>辅导员助理 · 学习委员</h5><span>2020 - 2022</span></div></div>
             </div>
           </div>
-
           <div class="scroll-card-box glass-card">
-            <div class="box-header-row">
-              <h4>荣誉成就</h4>
-              <span class="sub-tip">可上下滑动</span>
-            </div>
+            <div class="box-header-row"><h4>荣誉成就</h4><span class="sub-tip">可上下滑动</span></div>
             <div class="award-triple-container">
-              <div class="award-sub-card">
-                <h5>奖学金</h5>
-                <div class="award-sub-list">
-                  <div class="award-sub-item"><span class="date">2026</span> 特等奖学金</div>
-                  <div class="award-sub-item"><span class="date">2023</span> 优秀学生</div>
-                  <div class="award-sub-item"><span class="date">2022</span> 一等奖学金</div>
-                </div>
-              </div>
-              <div class="award-sub-card">
-                <h5>荣誉表彰</h5>
-                <div class="award-sub-list">
-                  <div class="award-sub-item"><span class="date">2025</span> 优秀研究生</div>
-                  <div class="award-sub-item"><span class="date">2025</span> 优秀研究生干部</div>
-                  <div class="award-sub-item"><span class="date">2024</span> 陕西省优秀青年志愿者</div>
-                  <div class="award-sub-item"><span class="date">2024</span> 西安交大优秀干部</div>
-                  <div class="award-sub-item"><span class="date">2024</span> 校级优秀学生记者</div>
-                </div>
-              </div>
-              <div class="award-sub-card">
-                <h5>科研竞赛</h5>
-                <div class="award-sub-list">
-                  <div class="award-sub-item">中国研究生数学建模竞赛 · 全国二等奖</div>
-                  <div class="award-sub-item">亚太地区数学建模竞赛 · 二等奖</div>
-                  <div class="award-sub-item">全国大学生算法设计与编程挑战赛 · 银奖</div>
-                  <div class="award-sub-item">Skill 开发竞赛 · 全国一等奖</div>
-                </div>
-              </div>
+              <div class="award-sub-card"><h5>奖学金</h5><div class="award-sub-list"><div class="award-sub-item"><span class="date">2026</span> 特等奖学金</div><div class="award-sub-item"><span class="date">2023</span> 优秀学生</div><div class="award-sub-item"><span class="date">2022</span> 一等奖学金</div></div></div>
+              <div class="award-sub-card"><h5>荣誉表彰</h5><div class="award-sub-list"><div class="award-sub-item"><span class="date">2025</span> 优秀研究生</div><div class="award-sub-item"><span class="date">2025</span> 优秀研究生干部</div><div class="award-sub-item"><span class="date">2024</span> 陕西省优秀青年志愿者</div><div class="award-sub-item"><span class="date">2024</span> 西安交大优秀干部</div><div class="award-sub-item"><span class="date">2024</span> 校级优秀学生记者</div></div></div>
+              <div class="award-sub-card"><h5>科研竞赛</h5><div class="award-sub-list"><div class="award-sub-item">中国研究生数学建模竞赛 · 全国二等奖</div><div class="award-sub-item">亚太地区数学建模竞赛 · 二等奖</div><div class="award-sub-item">全国大学生算法设计与编程挑战赛 · 银奖</div><div class="award-sub-item">Skill 开发竞赛 · 全国一等奖</div></div></div>
             </div>
           </div>
         </div>
       </section>
-
-      <!-- 4. 实习经历 -->
       <section>
         <div class="section-header intern-header">
           <div class="section-slogan-cn">从 AI 算法到大模型开发，聚焦人工智能时代</div>
@@ -559,63 +375,29 @@
           <div class="intern-card glass-card">
             <div class="intern-banner b-alibaba"><img class="logo-img" src="https://aka.doubaocdn.com/s/ODcXoq0YkW" alt="阿里巴巴" loading="lazy" decoding="async" /></div>
             <div class="intern-body">
-              <div class="intern-header-row">
-                <h3>阿里巴巴·千问</h3>
-                <span class="intern-date">2026.05 - 2026.07</span>
-              </div>
-              <div class="intern-dept-post-row">
-                <span>大模型应用开发</span>
-                <span>应用开发工程师</span>
-              </div>
-              <div class="intern-tags">
-                <div class="intern-tag-item">MCP 智能体 · 端到端完成率 92%</div>
-                <div class="intern-tag-item">LoRA 微调 + RAG · 召回率 85%</div>
-                <div class="intern-tag-item">工具调用成功率 97% · 延迟 &lt;1.2s</div>
-              </div>
+              <div class="intern-header-row"><h3>阿里巴巴·千问</h3><span class="intern-date">2026.05 - 2026.07</span></div>
+              <div class="intern-dept-post-row"><span>大模型应用开发</span><span>应用开发工程师</span></div>
+              <div class="intern-tags"><div class="intern-tag-item">MCP 智能体 · 端到端完成率 92%</div><div class="intern-tag-item">LoRA 微调 + RAG · 召回率 85%</div><div class="intern-tag-item">工具调用成功率 97% · 延迟 &lt;1.2s</div></div>
             </div>
           </div>
-
           <div class="intern-card glass-card">
             <div class="intern-banner b-iflytek"><img class="logo-img" src="https://aka.doubaocdn.com/s/kaNga4i1US" alt="科大讯飞" loading="lazy" decoding="async" /></div>
             <div class="intern-body">
-              <div class="intern-header-row">
-                <h3>科大讯飞·星火</h3>
-                <span class="intern-date">2025.09 - 2026.04</span>
-              </div>
-              <div class="intern-dept-post-row">
-                <span>大模型算法</span>
-                <span>AI 算法实习生</span>
-              </div>
-              <div class="intern-tags">
-                <div class="intern-tag-item">指令微调 · 垂直 F1 91.2%</div>
-                <div class="intern-tag-item">6 维度 800+ 用例评测 · RAG 91%</div>
-                <div class="intern-tag-item">企业级 Skill 落地 · 2 个</div>
-              </div>
+              <div class="intern-header-row"><h3>科大讯飞·星火</h3><span class="intern-date">2025.09 - 2026.04</span></div>
+              <div class="intern-dept-post-row"><span>大模型算法</span><span>AI 算法实习生</span></div>
+              <div class="intern-tags"><div class="intern-tag-item">指令微调 · 垂直 F1 91.2%</div><div class="intern-tag-item">6 维度 800+ 用例评测 · RAG 91%</div><div class="intern-tag-item">企业级 Skill 落地 · 2 个</div></div>
             </div>
           </div>
-
           <div class="intern-card glass-card">
             <div class="intern-banner b-zte"><img class="logo-img" src="https://aka.doubaocdn.com/s/ip0P8XwIOV" alt="中兴通讯" loading="lazy" decoding="async" /></div>
             <div class="intern-body">
-              <div class="intern-header-row">
-                <h3>中兴通讯·西安</h3>
-                <span class="intern-date">2023.07 - 2023.11</span>
-              </div>
-              <div class="intern-dept-post-row">
-                <span>射频电路设计</span>
-                <span>设计实习生</span>
-              </div>
-              <div class="intern-tags">
-                <div class="intern-tag-item">HFSS 射频前端设计与仿真</div>
-                <div class="intern-tag-item">阻抗匹配网络优化</div>
-                <div class="intern-tag-item">信号完整性 · 工程落地</div>
-              </div>
+              <div class="intern-header-row"><h3>中兴通讯·西安</h3><span class="intern-date">2023.07 - 2023.11</span></div>
+              <div class="intern-dept-post-row"><span>射频电路设计</span><span>设计实习生</span></div>
+              <div class="intern-tags"><div class="intern-tag-item">HFSS 射频前端设计与仿真</div><div class="intern-tag-item">阻抗匹配网络优化</div><div class="intern-tag-item">信号完整性 · 工程落地</div></div>
             </div>
           </div>
         </div>
       </section>
-
-      <!-- 5. 项目经历 -->
       <section>
         <div class="section-header proj-header">
           <div class="section-slogan-cn">把想法，变成可以落地的系统</div>
@@ -623,73 +405,50 @@
         </div>
         <div class="proj-grid">
           <div class="proj-card glass-card">
-            <div class="proj-cover"><img src="https://aka.doubaocdn.com/s/JJ3VwuUGgn" alt="通信信号调制识别" loading="lazy" decoding="async" /></div>
+            <div class="proj-cover"><img src="https://aka.doubaocdn.com/s/KllVvURSDO" alt="通信信号调制识别" loading="lazy" decoding="async" /></div>
             <div class="proj-body">
-              <div class="proj-head">
-                <h3>基于深度学习的通信信号调制识别算法研究</h3>
-                <span class="proj-date">2025.06-07</span>
-              </div>
+              <div class="proj-head"><h3>基于深度学习的通信信号调制识别算法研究</h3><span class="proj-date">2025.06-07</span></div>
               <ul class="proj-points">
-                <li><b>信号建模与数据集：</b>Matlab 仿真生成 QPSK/16QAM/64QAM/LFM 等体制信号，叠加高斯白噪声模拟 -5dB~20dB 宽信噪比，构建含 IQ 时域序列与时频图的标准化数据集</li>
-                <li><b>特征提取与模型：</b>STFT 将 IQ 序列转为二维时频图，搭建轻量化 ResNet-18 自动特征提取分类，引入 SENet 通道注意力聚焦关键频带以提升低信噪比识别性能；对比 Transformer 在时域序列建模的表现</li>
-                <li><b>工程化部署：</b>ONNX 导出 + TensorRT + FP16 量化；SNR≥10dB 准确率 97.3%，0dB 下仍保持 82%，推理延迟低至 5ms</li>
+                <li><b>信号建模与数据集：</b>Matlab 仿真生成 QPSK/16QAM/64QAM/LFM 等体制信号，叠加高斯白噪声模拟 -5dB~20dB 宽信噪比环境，构建 IQ 时域序列与时频图标准化数据集</li>
+                <li><b>模型设计与部署：</b>STFT 时频图 + 轻量化 ResNet-18 + SENet 通道注意力，对比 Transformer 时域建模；ONNX + TensorRT + FP16 量化，SNR≥10dB 准确率 97.3%，推理延迟 5ms</li>
               </ul>
               <div class="proj-tags"><span>MATLAB</span><span>Python</span><span>PyTorch</span><span>TensorRT</span><span>ONNX</span></div>
             </div>
           </div>
-
           <div class="proj-card glass-card">
-            <div class="proj-cover"><img src="https://aka.doubaocdn.com/s/igi7iy7xgn" alt="园林路径规划" loading="lazy" decoding="async" /></div>
+            <div class="proj-cover"><img src="https://aka.doubaocdn.com/s/OievjvFCyi" alt="园林路径规划" loading="lazy" decoding="async" /></div>
             <div class="proj-body">
-              <div class="proj-head">
-                <h3>基于图论与视域分析的路径分析与规划</h3>
-                <span class="proj-date">2025.09-10</span>
-              </div>
+              <div class="proj-head"><h3>基于图论与视域分析的路径分析与规划</h3><span class="proj-date">2025.09-10</span></div>
               <ul class="proj-points">
-                <li><b>路径图模型：</b>解析十座园林（拙政园、留园、寄畅园等）道路/建筑/水体/植物矢量数据，将游览路径抽象为图网络，提取长度、转折点、交叉点等拓扑特征</li>
-                <li><b>异景程度量化：</b>以杰卡德相似度衡量相邻视点景观集合变化，结合香农熵景观多样性指数，构建趣味性综合评分函数</li>
-                <li><b>最优路径规划：</b>深度优先搜索 + 启发式回溯，生成高覆盖率（核心元素覆盖 46%）、低重复率路线；怡园趣味性最高（0.199），沈园异景变化率最突出（0.023）</li>
-                <li><b>可视化：</b>Voronoi 视野分区图、3D 游线曲率图、景观密度热力图</li>
+                <li><b>路径建模与异景量化：</b>解析十座园林（拙政园、留园、寄畅园等）矢量数据，将游览路径抽象为图网络；以杰卡德相似度 + 香农熵构建趣味性综合评分函数</li>
+                <li><b>最优路径与可视化：</b>深度优先搜索 + 启发式回溯，生成高覆盖率（核心元素 46%）低重复率路线；怡园趣味性最高（0.199），输出 Voronoi 分区图、3D 游线曲率图、景观热力图</li>
               </ul>
             </div>
           </div>
-
           <div class="proj-card glass-card">
-            <div class="proj-cover"><img src="https://aka.doubaocdn.com/s/mbKIwzHlLe" alt="SAR舰船检测" loading="lazy" decoding="async" /></div>
+            <div class="proj-cover"><img src="https://aka.doubaocdn.com/s/NYgVRVzF8P" alt="SAR舰船检测" loading="lazy" decoding="async" /></div>
             <div class="proj-body">
-              <div class="proj-head">
-                <h3>基于深度学习的 SAR 图像舰船目标检测</h3>
-                <span class="proj-date">2026.02-03</span>
-              </div>
+              <div class="proj-head"><h3>基于深度学习的 SAR 图像舰船目标检测</h3><span class="proj-date">2026.02-03</span></div>
               <ul class="proj-points">
-                <li><b>数据与预处理：</b>基于 OpenSARship 数据集，针对相干斑噪声设计自适应滤波算法进行增强与去噪，构建训练-验证-测试集</li>
-                <li><b>模型设计与优化：</b>YOLOv8 框架引入坐标注意力（CA）增强弱小目标特征提取；针对目标稀疏特性优化损失函数，解决正负样本不平衡</li>
+                <li><b>数据与模型设计：</b>基于 OpenSARship 数据集，自适应滤波去噪；YOLOv8 引入坐标注意力（CA）增强弱小目标特征，优化损失函数解决正负样本不平衡</li>
                 <li><b>轻量化部署：</b>TensorRT + FP16 量化，Jetson Xavier NX 推理延迟 &lt;30ms，mAP 达 85% 以上</li>
               </ul>
               <div class="proj-tags"><span>Python</span><span>PyTorch</span><span>YOLO</span><span>TensorRT</span><span>OpenCV</span></div>
             </div>
           </div>
-
           <div class="proj-card glass-card">
-            <div class="proj-cover"><img src="https://aka.doubaocdn.com/s/yyIddl9N55" alt="航空发动机RUL预测" loading="lazy" decoding="async" /></div>
+            <div class="proj-cover"><img src="https://aka.doubaocdn.com/s/mOGSW90OvX" alt="航空发动机RUL预测" loading="lazy" decoding="async" /></div>
             <div class="proj-body">
-              <div class="proj-head">
-                <h3>基于 SE-Transformer 的航空发动机剩余寿命预测</h3>
-                <span class="proj-date">2026.06-07</span>
-              </div>
+              <div class="proj-head"><h3>基于 SE-Transformer 的航空发动机剩余寿命预测</h3><span class="proj-date">2026.06-07</span></div>
               <ul class="proj-points">
-                <li><b>数据与特征工程：</b>基于 NASA C-MAPSS，按发动机 ID 分组生成 RUL 标签并阈值裁剪；滑动窗口（30 步/步长 1）构建时序样本；按运行工况分组独立标准化，剥离环境因素影响</li>
-                <li><b>模型设计：</b>基于 Transformer 的端到端 RUL 模型，双分支嵌入（传感器时序 + 运行工况），SE 模块自适应重校准传感器通道权重</li>
-                <li><b>超参数与验证：</b>Optuna 贝叶斯优化学习率/层数/头数/窗口；FD004 复杂场景 RMSE 13.80，远低于标准 LSTM 的 28.40</li>
-                <li><b>可解释性：</b>SE 注意力权重定位 nf、p30、ps30 为关键传感器，与发动机物理机理高度吻合</li>
+                <li><b>数据工程与模型设计：</b>基于 NASA C-MAPSS，滑动窗口构建时序样本，按运行工况分组标准化剥离环境影响；Transformer 双分支嵌入（传感器时序 + 工况）+ SE 通道重校准</li>
+                <li><b>优化与可解释性：</b>Optuna 贝叶斯超参优化，FD004 复杂场景 RMSE 13.80（远优于 LSTM 28.40）；SE 注意力定位 nf、p30、ps30 为关键传感器，与物理机理吻合</li>
               </ul>
               <div class="proj-tags"><span>Python</span><span>PyTorch</span><span>Optuna</span><span>Scikit-learn</span><span>Pandas</span><span>NumPy</span><span>Matplotlib</span></div>
             </div>
           </div>
         </div>
       </section>
-
-      <!-- 6. 技能爱好 -->
       <section>
         <div class="section-header skill-header">
           <div class="section-slogan-cn">底色多元，热爱不息</div>
@@ -698,316 +457,75 @@
         <div class="skill-layout-container">
           <div class="skill-left-panel">
             <div class="tarot-area">
-              <div class="tarot-box glass-card">
-                <h4>专业能力</h4>
-                <div class="deck" id="skillsDeck" onclick="drawCard('skills')"></div>
-                <div class="tarot-hint">点击卡片抽取</div>
-              </div>
-              <div class="tarot-box glass-card">
-                <h4>个人特质</h4>
-                <div class="deck" id="personalityDeck" onclick="drawCard('personality')"></div>
-                <div class="tarot-hint">点击卡片抽取</div>
-              </div>
+              <div class="tarot-box glass-card"><h4>专业能力</h4><div class="deck" id="skillsDeck" onclick="drawCard('skills')"></div><div class="tarot-hint">点击卡片抽取</div></div>
+              <div class="tarot-box glass-card"><h4>个人特质</h4><div class="deck" id="personalityDeck" onclick="drawCard('personality')"></div><div class="tarot-hint">点击卡片抽取</div></div>
             </div>
           </div>
           <div class="skill-right-panel">
             <div class="hobby-section-title">兴趣爱好</div>
             <div class="hobby-grid">
-              <div class="hobby-card glass-card">
-                <div class="carousel"><img src="https://aka.doubaocdn.com/s/qWVm27Q1rh" class="active" loading="lazy" decoding="async" alt="摄影" style="object-position:center 15%;" /></div>
-                <div class="hobby-title">📷 摄影</div>
-              </div>
-              <div class="hobby-card glass-card">
-                <div class="carousel"><img src="https://aka.doubaocdn.com/s/uVDXkKxFZI" class="active" loading="lazy" decoding="async" alt="旅游" /></div>
-                <div class="hobby-title">🏔️ 旅游</div>
-              </div>
-              <div class="hobby-card glass-card">
-                <div class="carousel"><img src="https://aka.doubaocdn.com/s/TDNxCOVjGJ" class="active" loading="lazy" decoding="async" alt="记者采访" /></div>
-                <div class="hobby-title">🎤 记者采访</div>
-              </div>
-              <div class="hobby-card glass-card">
-                <div class="carousel"><img src="https://aka.doubaocdn.com/s/frP6IyYp7p" class="active" loading="lazy" decoding="async" alt="算法设计" /></div>
-                <div class="hobby-title">🧩 算法设计</div>
-              </div>
+              <div class="hobby-card glass-card"><div class="carousel"><img src="https://aka.doubaocdn.com/s/qWVm27Q1rh" class="active" loading="lazy" decoding="async" alt="摄影" style="object-position:center 15%;" /></div><div class="hobby-title">📷 摄影</div></div>
+              <div class="hobby-card glass-card"><div class="carousel"><img src="https://aka.doubaocdn.com/s/uVDXkKxFZI" class="active" loading="lazy" decoding="async" alt="旅游" /></div><div class="hobby-title">🏔️ 旅游</div></div>
+              <div class="hobby-card glass-card"><div class="carousel"><img src="https://aka.doubaocdn.com/s/TDNxCOVjGJ" class="active" loading="lazy" decoding="async" alt="记者采访" /></div><div class="hobby-title">🎤 记者采访</div></div>
+              <div class="hobby-card glass-card"><div class="carousel"><img src="https://aka.doubaocdn.com/s/frP6IyYp7p" class="active" loading="lazy" decoding="async" alt="算法设计" /></div><div class="hobby-title">🧩 算法设计</div></div>
             </div>
           </div>
         </div>
       </section>
-
-      <!-- 7. 联系我 -->
       <section>
         <div class="contact-section">
-          <div class="contact-bg-art">
-            <div class="contact-blob cb1"></div>
-            <div class="contact-blob cb2"></div>
-            <div class="contact-blob cb3"></div>
-            <div class="contact-dot cd1"></div>
-            <div class="contact-dot cd2"></div>
-            <div class="contact-dot cd3"></div>
-            <div class="contact-dot cd4"></div>
-          </div>
+          <div class="contact-bg-art"><div class="contact-blob cb1"></div><div class="contact-blob cb2"></div><div class="contact-blob cb3"></div><div class="contact-dot cd1"></div><div class="contact-dot cd2"></div><div class="contact-dot cd3"></div><div class="contact-dot cd4"></div></div>
           <div class="contact-main">
             <div class="contact-top-bar"></div>
             <div class="contact-greeting">— GET IN TOUCH —</div>
             <h2 class="contact-big-title" id="contactTitle" onclick="handleContactClick()"></h2>
-            <div class="contact-divider-ornament">
-              <div class="line"></div>
-              <div class="diamond"></div>
-              <div class="line r"></div>
-            </div>
+            <div class="contact-divider-ornament"><div class="line"></div><div class="diamond"></div><div class="line r"></div></div>
             <div class="contact-cards-row">
-              <div class="contact-card" onclick="flipContactCard(this,'3345750865@qq.com')">
-                <div class="contact-card-inner">
-                  <div class="contact-card-face contact-card-front">
-                    <div class="cc-icon">✉️</div>
-                    <div class="cc-label">电子邮箱</div>
-                    <div class="cc-sub">EMAIL</div>
-                  </div>
-                  <div class="contact-card-face contact-card-back">
-                    <div class="cc-back-icon">✉️</div>
-                    <div class="cc-value">3345750865@qq.com</div>
-                    <div class="cc-hint">点击已复制到剪贴板</div>
-                  </div>
-                </div>
-              </div>
-              <div class="contact-card" onclick="flipContactCard(this,'19826026875')">
-                <div class="contact-card-inner">
-                  <div class="contact-card-face contact-card-front">
-                    <div class="cc-icon">📱</div>
-                    <div class="cc-label">电话 / 微信</div>
-                    <div class="cc-sub">PHONE & WECHAT</div>
-                  </div>
-                  <div class="contact-card-face contact-card-back">
-                    <div class="cc-back-icon">📱</div>
-                    <div class="cc-value">198 2602 6875</div>
-                    <div class="cc-hint">点击已复制到剪贴板</div>
-                  </div>
-                </div>
-              </div>
-              <div class="contact-card" onclick="downloadResumeV2(this)">
-                <div class="contact-card-inner">
-                  <div class="contact-card-face contact-card-front">
-                    <div class="cc-icon">📄</div>
-                    <div class="cc-label">个人简历</div>
-                    <div class="cc-sub">DOWNLOAD CV</div>
-                  </div>
-                  <div class="contact-card-face contact-card-back">
-                    <div class="cc-back-icon">📄</div>
-                    <div class="cc-value">彭润泽-个人简历.pdf</div>
-                    <div class="cc-hint">点击下载完整简历</div>
-                  </div>
-                </div>
-              </div>
+              <div class="contact-card" onclick="flipContactCard(this,'3345750865@qq.com')"><div class="contact-card-inner"><div class="contact-card-face contact-card-front"><div class="cc-icon">✉️</div><div class="cc-label">电子邮箱</div><div class="cc-sub">EMAIL</div></div><div class="contact-card-face contact-card-back"><div class="cc-back-icon">✉️</div><div class="cc-value">3345750865@qq.com</div><div class="cc-hint">点击已复制到剪贴板</div></div></div></div>
+              <div class="contact-card" onclick="flipContactCard(this,'19826026875')"><div class="contact-card-inner"><div class="contact-card-face contact-card-front"><div class="cc-icon">📱</div><div class="cc-label">电话 / 微信</div><div class="cc-sub">PHONE & WECHAT</div></div><div class="contact-card-face contact-card-back"><div class="cc-back-icon">📱</div><div class="cc-value">198 2602 6875</div><div class="cc-hint">点击已复制到剪贴板</div></div></div></div>
+              <div class="contact-card" onclick="downloadResumeV2(this)"><div class="contact-card-inner"><div class="contact-card-face contact-card-front"><div class="cc-icon">📄</div><div class="cc-label">个人简历</div><div class="cc-sub">DOWNLOAD CV</div></div><div class="contact-card-face contact-card-back"><div class="cc-back-icon">📄</div><div class="cc-value">彭润泽-个人简历.pdf</div><div class="cc-hint">点击下载完整简历</div></div></div></div>
             </div>
-            <div class="contact-bottom">
-              <div class="dash"></div>
-              <div class="contact-bottom-text">期待与你相遇 · THANK YOU</div>
-              <div class="dash r"></div>
-            </div>
+            <div class="contact-bottom"><div class="dash"></div><div class="contact-bottom-text">期待与你相遇 · THANK YOU</div><div class="dash r"></div></div>
           </div>
         </div>
       </section>
-
     </div>
   </div>
-
   <script>
-    /* ================= 自适应响应式缩放 ================= */
-    var BASE_WIDTH = 1965.6;
-    var BASE_HEIGHT = 1105;
-    function handleResize(){
-      var scale = Math.min(window.innerWidth / BASE_WIDTH, window.innerHeight / BASE_HEIGHT);
-      var vp = document.getElementById('appViewport');
-      vp.style.transform = 'translate(-50%, -50%) scale(' + scale + ')';
-    }
-    window.addEventListener('resize', handleResize);
-    window.addEventListener('orientationchange', handleResize);
-    document.addEventListener('DOMContentLoaded', handleResize);
-
-    /* ================= 全屏横向翻页 + 导航同步 ================= */
-    var currentSlide = 0;
-    var totalSlides = 7;
-    var slider = document.getElementById('slider');
-    var prevBtn = document.getElementById('prevBtn');
-    var nextBtn = document.getElementById('nextBtn');
-    var navLinks = document.querySelectorAll('.nav-link-item');
-    var sections = document.querySelectorAll('section');
-
-    function loadSectionImages(index){
-      if(!sections[index]) return;
-      sections[index].querySelectorAll('img').forEach(function(img){
-        if(img.loading === 'lazy') img.loading = 'eager';
-      });
-    }
-    function updateSlide(){
-      slider.style.transform = 'translateX(-' + (currentSlide * BASE_WIDTH) + 'px)';
-      prevBtn.classList.toggle('disabled', currentSlide === 0);
-      nextBtn.classList.toggle('disabled', currentSlide === totalSlides - 1);
-      navLinks.forEach(function(l){ l.classList.remove('active'); });
-      if(navLinks[currentSlide]) navLinks[currentSlide].classList.add('active');
-      loadSectionImages(currentSlide);
-      if(currentSlide + 1 < totalSlides) loadSectionImages(currentSlide + 1);
-      if(currentSlide - 1 >= 0) loadSectionImages(currentSlide - 1);
-    }
-    function goToSlide(index){ currentSlide = index; updateSlide(); }
-    function prevSlide(){ if(currentSlide > 0){ currentSlide--; updateSlide(); } }
-    function nextSlide(){ if(currentSlide < totalSlides - 1){ currentSlide++; updateSlide(); } }
-    document.addEventListener('DOMContentLoaded', function(){ loadSectionImages(0); loadSectionImages(1); });
-
-    /* 键盘方向键 */
-    window.addEventListener('keydown', function(e){
-      if(e.key === 'ArrowRight'){ nextSlide(); }
-      else if(e.key === 'ArrowLeft'){ prevSlide(); }
-    });
-
-    /* 触屏左右滑动 */
-    var touchStartX = 0, touchStartY = 0;
-    document.addEventListener('touchstart', function(e){
-      if(e.touches.length > 1) return;
-      touchStartX = e.touches[0].clientX;
-      touchStartY = e.touches[0].clientY;
-    }, {passive:true});
-    document.addEventListener('touchend', function(e){
-      if(e.touches.length > 0) return;
-      var t = e.target;
-      if(t && t.closest && (t.closest('.scroll-content-work-grid') || t.closest('.award-sub-list'))){
-        if(Math.abs(e.changedTouches[0].clientY - touchStartY) > 30) return;
-      }
-      var dx = e.changedTouches[0].clientX - touchStartX;
-      var dy = e.changedTouches[0].clientY - touchStartY;
-      if(Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy)){
-        if(dx < 0) nextSlide(); else prevSlide();
-      }
-    }, {passive:true});
-
-    /* ================= 关于我：打字效果 ================= */
-    var helloText = "Hello";
-    var helloElement = document.getElementById('helloTyping');
-    var helloIdx = 0, isDeleting = false;
-    function typeHello(){
-      if(!helloElement) return;
-      if(isDeleting){
-        helloElement.textContent = helloText.substring(0, helloIdx--);
-        if(helloIdx < 0){ isDeleting = false; setTimeout(typeHello, 500); return; }
-        setTimeout(typeHello, 120);
-      } else {
-        helloElement.textContent = helloText.substring(0, helloIdx++);
-        if(helloIdx > helloText.length){ isDeleting = true; setTimeout(typeHello, 1800); return; }
-        setTimeout(typeHello, 200);
-      }
-    }
+    var BASE_WIDTH = 1965.6; var BASE_HEIGHT = 1105;
+    function handleResize(){var scale = Math.min(window.innerWidth / BASE_WIDTH, window.innerHeight / BASE_HEIGHT);document.getElementById('appViewport').style.transform = 'translate(-50%, -50%) scale(' + scale + ')';}
+    window.addEventListener('resize', handleResize); window.addEventListener('orientationchange', handleResize); document.addEventListener('DOMContentLoaded', handleResize);
+    var currentSlide = 0, totalSlides = 7, slider = document.getElementById('slider'), prevBtn = document.getElementById('prevBtn'), nextBtn = document.getElementById('nextBtn'), navLinks = document.querySelectorAll('.nav-link-item'), sections = document.querySelectorAll('section');
+    function loadSectionImages(index){if(!sections[index])return;sections[index].querySelectorAll('img').forEach(function(img){if(img.loading==='lazy')img.loading='eager';});}
+    function updateSlide(){slider.style.transform='translateX(-'+(currentSlide*BASE_WIDTH)+'px)';prevBtn.classList.toggle('disabled',currentSlide===0);nextBtn.classList.toggle('disabled',currentSlide===totalSlides-1);navLinks.forEach(function(l){l.classList.remove('active');});if(navLinks[currentSlide])navLinks[currentSlide].classList.add('active');loadSectionImages(currentSlide);if(currentSlide+1<totalSlides)loadSectionImages(currentSlide+1);if(currentSlide-1>=0)loadSectionImages(currentSlide-1);}
+    function goToSlide(index){currentSlide=index;updateSlide();}
+    function prevSlide(){if(currentSlide>0){currentSlide--;updateSlide();}}
+    function nextSlide(){if(currentSlide<totalSlides-1){currentSlide++;updateSlide();}}
+    document.addEventListener('DOMContentLoaded',function(){loadSectionImages(0);loadSectionImages(1);});
+    window.addEventListener('keydown',function(e){if(e.key==='ArrowRight')nextSlide();else if(e.key==='ArrowLeft')prevSlide();});
+    var touchStartX=0,touchStartY=0;
+    document.addEventListener('touchstart',function(e){if(e.touches.length>1)return;touchStartX=e.touches[0].clientX;touchStartY=e.touches[0].clientY;},{passive:true});
+    document.addEventListener('touchend',function(e){if(e.touches.length>0)return;var t=e.target;if(t&&t.closest&&(t.closest('.scroll-content-work-grid')||t.closest('.award-sub-list'))){if(Math.abs(e.changedTouches[0].clientY-touchStartY)>30)return;}var dx=e.changedTouches[0].clientX-touchStartX;var dy=e.changedTouches[0].clientY-touchStartY;if(Math.abs(dx)>60&&Math.abs(dx)>Math.abs(dy)){if(dx<0)nextSlide();else prevSlide();}},{passive:true});
+    var helloText="Hello",helloElement=document.getElementById('helloTyping'),helloIdx=0,isDeleting=false;
+    function typeHello(){if(!helloElement)return;if(isDeleting){helloElement.textContent=helloText.substring(0,helloIdx--);if(helloIdx<0){isDeleting=false;setTimeout(typeHello,500);return;}setTimeout(typeHello,120);}else{helloElement.textContent=helloText.substring(0,helloIdx++);if(helloIdx>helloText.length){isDeleting=true;setTimeout(typeHello,1800);return;}setTimeout(typeHello,200);}}
     typeHello();
-
-    /* 照片点击暂停浮动动画 5s */
-    var photoWrapper = document.getElementById('photoWrapper');
-    var photoPauseTimer = null;
-    function pausePhotoAnimation(){
-      if(!photoWrapper) return;
-      photoWrapper.classList.add('paused');
-      if(photoPauseTimer) clearTimeout(photoPauseTimer);
-      photoPauseTimer = setTimeout(function(){ photoWrapper.classList.remove('paused'); }, 5000);
-    }
-
-    /* ================= 教育背景走路小人：纯CSS动画，无需JS ================= */
-
-    /* ================= 联系我：打字循环 ================= */
-    var contactLine1 = "心之所向，代码为桨";
-    var contactLine2 = "下一段旅程，期待与你同行";
-    var contactFullText = contactLine1 + "\n" + contactLine2;
-    var contactTitleElem = document.getElementById('contactTitle');
-    var contactIdx = 0, contactTimer = null, isContactPaused = false, contactResumeTimer = null;
-    var charSpeed = Math.floor(4500 / contactFullText.length);
-    function renderContactText(text){ contactTitleElem.innerHTML = text.replace('\n', '<br>'); }
-    function typeContact(){
-      if(isContactPaused) return;
-      if(contactIdx <= contactFullText.length){
-        renderContactText(contactFullText.substring(0, contactIdx));
-        contactIdx++;
-        contactTimer = setTimeout(typeContact, charSpeed);
-      } else {
-        contactTimer = setTimeout(function(){ if(isContactPaused) return; contactIdx = 0; typeContact(); }, 2000);
-      }
-    }
-    function handleContactClick(){
-      isContactPaused = true;
-      if(contactTimer) clearTimeout(contactTimer);
-      if(contactResumeTimer) clearTimeout(contactResumeTimer);
-      renderContactText(contactFullText);
-      contactResumeTimer = setTimeout(function(){ isContactPaused = false; contactIdx = 0; typeContact(); }, 5000);
-    }
+    var photoWrapper=document.getElementById('photoWrapper'),photoPauseTimer=null;
+    function pausePhotoAnimation(){if(!photoWrapper)return;photoWrapper.classList.add('paused');if(photoPauseTimer)clearTimeout(photoPauseTimer);photoPauseTimer=setTimeout(function(){photoWrapper.classList.remove('paused');},5000);}
+    var contactLine1="心之所向，代码为桨",contactLine2="下一段旅程，期待与你同行",contactFullText=contactLine1+"\n"+contactLine2,contactTitleElem=document.getElementById('contactTitle'),contactIdx=0,contactTimer=null,isContactPaused=false,contactResumeTimer=null,charSpeed=Math.floor(4500/contactFullText.length);
+    function renderContactText(text){contactTitleElem.innerHTML=text.replace('\n','<br>');}
+    function typeContact(){if(isContactPaused)return;if(contactIdx<=contactFullText.length){renderContactText(contactFullText.substring(0,contactIdx));contactIdx++;contactTimer=setTimeout(typeContact,charSpeed);}else{contactTimer=setTimeout(function(){if(isContactPaused)return;contactIdx=0;typeContact();},2000);}}
+    function handleContactClick(){isContactPaused=true;if(contactTimer)clearTimeout(contactTimer);if(contactResumeTimer)clearTimeout(contactResumeTimer);renderContactText(contactFullText);contactResumeTimer=setTimeout(function(){isContactPaused=false;contactIdx=0;typeContact();},5000);}
     typeContact();
-
-    /* ================= 塔罗抽卡 ================= */
-    var skillsItems = ['Python','深度学习','Agent 开发','LoRA 微调','RAG 检索','GCN 图网络','目标检测','TensorRT'];
-    var personalityItems = ['学习抗压','沟通协调','独立解决','宣传撰稿','强执行力','终身学习','多线程协调','工程落地'];
-    function initDeck(deckId, items){
-      var container = document.getElementById(deckId);
-      container.innerHTML = '';
-      items.forEach(function(item, idx){
-        var card = document.createElement('div');
-        card.className = 'tarot-card';
-        card.innerHTML = '<div class="tarot-card-symbol">✦</div><span class="tarot-card-text">' + item + '</span>';
-        card.style.transform = 'translate(' + (idx * 5 - 20) + 'px, ' + (idx * 3 - 10) + 'px) rotate(' + (idx * 3 - 5) + 'deg)';
-        card.style.zIndex = items.length - idx;
-        container.appendChild(card);
-      });
-    }
-    initDeck('skillsDeck', skillsItems);
-    initDeck('personalityDeck', personalityItems);
-    function drawCard(type){
-      var deckId = type === 'personality' ? 'personalityDeck' : 'skillsDeck';
-      var container = document.getElementById(deckId);
-      var cards = container.querySelectorAll('.tarot-card');
-      if(cards.length === 0) return;
-      var topCard = cards[0];
-      topCard.style.transform = 'translateY(-140px) scale(1.08) rotate(0deg)';
-      topCard.style.zIndex = 99;
-      setTimeout(function(){
-        container.appendChild(topCard);
-        var newCards = container.querySelectorAll('.tarot-card');
-        newCards.forEach(function(c, idx){
-          c.style.transform = 'translate(' + (idx * 5 - 20) + 'px, ' + (idx * 3 - 10) + 'px) rotate(' + (idx * 3 - 5) + 'deg)';
-          c.style.zIndex = newCards.length - idx;
-        });
-      }, 450);
-    }
-
-    /* ================= 联系卡片：翻转 + 复制 / 下载简历 ================= */
-    function flipContactCard(card, text){
-      card.classList.toggle('flipped');
-      if(navigator.clipboard && navigator.clipboard.writeText){
-        navigator.clipboard.writeText(text).catch(function(){});
-      }
-    }
-    function downloadResumeV2(card){
-      card.classList.toggle('flipped');
-      var a = document.createElement('a');
-      a.href = 'https://aka.doubaocdn.com/s/AeiHzsT7CH';
-      a.download = '彭润泽-个人简历.pdf';
-      a.click();
-    }
-
-    /* ================= 背景音乐：樱花草（点击网页任意位置即播放） =================
-       浏览器默认拦截带声音的自动播放，必须在用户手势后 play() 才有效。
-       这里监听整页任何一次点击/触摸/按键，首次交互即播放；加载时也尝试一次。 */
-    var bgmAudio = document.getElementById('bgmAudio');
-    var bgmStarted = false;
-    function startBGM(){
-      if(bgmStarted) return;
-      if(!bgmAudio) return;
-      var p = bgmAudio.play();
-      if(p && p.catch) p.catch(function(){});
-      bgmStarted = true;
-    }
-    /* 进入页面即尝试自动播放（部分设备/浏览器允许） */
-    if(bgmAudio){
-      var initPlay = bgmAudio.play();
-      if(initPlay && initPlay.catch) initPlay.catch(function(){});
-    }
-    /* 无论点击/触摸/按键/滚轮在哪，第一次交互就开播 */
-    ['pointerdown','touchstart','keydown','wheel'].forEach(function(ev){
-      document.addEventListener(ev, startBGM, {passive:true});
-    });
+    var skillsItems=['Python','深度学习','Agent 开发','LoRA 微调','RAG 检索','GCN 图网络','目标检测','TensorRT'],personalityItems=['学习抗压','沟通协调','独立解决','宣传撰稿','强执行力','终身学习','多线程协调','工程落地'];
+    function initDeck(deckId,items){var container=document.getElementById(deckId);container.innerHTML='';items.forEach(function(item,idx){var card=document.createElement('div');card.className='tarot-card';card.innerHTML='<div class="tarot-card-symbol">✦</div><span class="tarot-card-text">'+item+'</span>';card.style.transform='translate('+(idx*5-20)+'px, '+(idx*3-10)+'px) rotate('+(idx*3-5)+'deg)';card.style.zIndex=items.length-idx;container.appendChild(card);});}
+    initDeck('skillsDeck',skillsItems);initDeck('personalityDeck',personalityItems);
+    function drawCard(type){var deckId=type==='personality'?'personalityDeck':'skillsDeck';var container=document.getElementById(deckId);var cards=container.querySelectorAll('.tarot-card');if(cards.length===0)return;var topCard=cards[0];topCard.style.transform='translateY(-140px) scale(1.08) rotate(0deg)';topCard.style.zIndex=99;setTimeout(function(){container.appendChild(topCard);var newCards=container.querySelectorAll('.tarot-card');newCards.forEach(function(c,idx){c.style.transform='translate('+(idx*5-20)+'px, '+(idx*3-10)+'px) rotate('+(idx*3-5)+'deg)';c.style.zIndex=newCards.length-idx;});},450);}
+    function flipContactCard(card,text){card.classList.toggle('flipped');if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(text).catch(function(){});}}
+    function downloadResumeV2(card){card.classList.toggle('flipped');var a=document.createElement('a');a.href='https://aka.doubaocdn.com/s/AeiHzsT7CH';a.download='彭润泽-个人简历.pdf';a.click();}
+    var bgmAudio=document.getElementById('bgmAudio'),bgmStarted=false;
+    function startBGM(){if(bgmStarted)return;if(!bgmAudio)return;var p=bgmAudio.play();if(p&&p.catch)p.catch(function(){});bgmStarted=true;}
+    if(bgmAudio){var initPlay=bgmAudio.play();if(initPlay&&initPlay.catch)initPlay.catch(function(){});}
+    ['pointerdown','touchstart','keydown','wheel'].forEach(function(ev){document.addEventListener(ev,startBGM,{passive:true});});
   </script>
 </body>
 </html>
