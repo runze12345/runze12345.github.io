@@ -79,7 +79,7 @@
     .nav-link-item.active{color:#fff !important;background:linear-gradient(135deg,#2d5a43 0%,#1e3f2e 100%) !important;box-shadow:0 6px 16px rgba(45,90,67,0.35) !important}
 
     /* 横向翻页 */
-    .slider-container{width:calc(var(--base-width) * 6);height:100%;display:flex;transition:transform .6s cubic-bezier(.25,1,.5,1)}
+    .slider-container{width:calc(var(--base-width) * 7);height:100%;display:flex;transition:transform .6s cubic-bezier(.25,1,.5,1)}
     section{
       width:var(--base-width);height:var(--base-height);flex-shrink:0;
       padding:120px 100px 40px 100px;display:flex;flex-direction:column;justify-content:center;align-items:center;position:relative;z-index:1;
@@ -168,19 +168,31 @@
     .edu-node-tags{display:flex;gap:10px;flex-wrap:wrap}
     .edu-node-tags span{font-size:19.5px;font-weight:600;color:var(--accent-color);background:linear-gradient(135deg, rgba(45,90,67,0.12), rgba(45,90,67,0.06));border:1px solid rgba(45,90,67,0.16);padding:5px 16px;border-radius:18px}
     .edu-node-badge{position:absolute;top:-15px;right:32px;font-size:20.8px;font-weight:700;color:#fff;background:linear-gradient(135deg,#2d5a43,#1e3f2e);padding:6px 20px;border-radius:22px;box-shadow:0 8px 18px rgba(45,90,67,0.32)}
-    .edu-walker{position:absolute;left:0;right:0;bottom:0;height:280px;z-index:1;pointer-events:none;overflow:visible}
-    .edu-walker .ground-line{position:absolute;left:0;right:0;bottom:0;height:96px;background:linear-gradient(180deg, rgba(198,228,212,0) 0%, rgba(186,222,202,0.5) 100%)}
-    .walker-char{position:absolute;left:0;bottom:4px;width:195px;mix-blend-mode:multiply;animation:walkX 22s linear infinite alternate;will-change:left,transform;filter:drop-shadow(0 8px 12px rgba(45,90,67,0.16))}
+    .edu-walker{position:absolute;left:0;right:0;bottom:0;height:340px;z-index:1;pointer-events:none;overflow:visible}
+    .edu-walker .ground-line{position:absolute;left:0;right:0;bottom:0;height:104px;background:linear-gradient(180deg, rgba(198,228,212,0) 0%, rgba(186,222,202,0.5) 100%)}
+    /* 3D数字人：6面精灵图(前/右/后/左)立体旋转 + 水平走动 */
+    .walker-char{
+      position:absolute;left:0;bottom:16px;width:150px;height:300px;
+      background:url('https://aka.doubaocdn.com/s/aMwrnA92f4') no-repeat;
+      background-size:900px 300px;background-position:-150px 0;
+      mix-blend-mode:multiply;
+      animation:walkX 26s linear infinite alternate;
+      will-change:left,transform;pointer-events:none;
+    }
+    .walker-shadow{position:absolute;left:0;bottom:10px;width:140px;height:24px;border-radius:50%;background:radial-gradient(ellipse at center, rgba(45,90,67,0.3) 0%, transparent 70%);animation:walkXshadow 26s linear infinite alternate;pointer-events:none}
     @keyframes walkX{
-      0%{left:1%;transform:scaleX(1) translateY(0) rotate(-1.4deg)}
-      11%{transform:scaleX(1) translateY(-12px) rotate(1.6deg)}
-      22%{transform:scaleX(1) translateY(0) rotate(-1.4deg)}
-      33%{transform:scaleX(1) translateY(-12px) rotate(1.6deg)}
-      50%{transform:scaleX(-1) translateY(-12px) rotate(1.6deg)}
-      61%{transform:scaleX(-1) translateY(0) rotate(-1.4deg)}
-      72%{transform:scaleX(-1) translateY(-12px) rotate(1.6deg)}
-      83%{transform:scaleX(-1) translateY(0) rotate(-1.4deg)}
-      100%{left:calc(100% - 215px);transform:scaleX(-1) translateY(-12px) rotate(1.6deg)}
+      0%{left:1%;transform:translateY(0) rotate(-1deg)}
+      16%{transform:translateY(-14px) rotate(1.4deg)}
+      33%{transform:translateY(0) rotate(-1deg)}
+      50%{transform:translateY(-14px) rotate(1.4deg)}
+      66%{transform:translateY(0) rotate(-1deg)}
+      83%{transform:translateY(-14px) rotate(1.4deg)}
+      100%{left:calc(100% - 200px);transform:translateY(0) rotate(-1deg)}
+    }
+    @keyframes walkXshadow{
+      0%{left:1%;transform:translateX(5px)}
+      50%{transform:translateX(5px) scale(0.94)}
+      100%{left:calc(100% - 200px);transform:translateX(5px)}
     }
 
     /* ================= 模块3 校园成就 ================= */
@@ -232,7 +244,28 @@
     .intern-tag-item{background:linear-gradient(135deg, rgba(255,255,255,0.95), rgba(230,245,236,0.85));padding:12px 18px;border-radius:13px;font-size:20.8px;color:var(--text-main);border-left:4px solid var(--accent-color);box-shadow:0 4px 13px rgba(0,0,0,0.03);line-height:1.4;display:flex;justify-content:center;align-items:center;text-align:center;font-weight:500;transition:all .3s ease}
     .intern-tag-item:hover{transform:translateX(4px);background:linear-gradient(135deg,#2d5a43,#1e3f2e);color:#fff}
 
-    /* ================= 模块5 技能爱好 ================= */
+    /* ================= 模块5 项目经历 ================= */
+    .proj-header{margin-bottom:18px}
+    .proj-grid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:26px;max-width:1620px;width:100%;flex:1;min-height:0}
+    .proj-card{overflow:hidden;display:flex;flex-direction:column;min-height:0}
+    .proj-cover{position:relative;height:150px;flex-shrink:0;overflow:hidden}
+    .proj-cover img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+    .proj-card:hover .proj-cover img{transform:scale(1.08)}
+    .proj-cover::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(255,255,255,0.06), rgba(20,45,32,0.20));pointer-events:none}
+    .proj-body{padding:16px 24px 14px;display:flex;flex-direction:column;flex:1;min-height:0}
+    .proj-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:9px}
+    .proj-head h3{font-size:23.4px;color:var(--text-main);line-height:1.32}
+    .proj-date{font-size:16.9px;color:var(--accent-color);font-weight:700;background:rgba(45,90,67,0.08);padding:3px 12px;border-radius:14px;white-space:nowrap;flex-shrink:0}
+    .proj-points{list-style:none;overflow-y:auto;flex:1;min-height:0;padding-right:8px;display:flex;flex-direction:column;gap:8px;margin-bottom:9px}
+    .proj-points::-webkit-scrollbar{width:6px}
+    .proj-points::-webkit-scrollbar-thumb{background:#96bba6;border-radius:6px}
+    .proj-points li{position:relative;font-size:16.9px;color:var(--text-sub);line-height:1.55;padding-left:20px;text-align:left}
+    .proj-points li::before{content:"";position:absolute;left:2px;top:9px;width:7px;height:7px;border-radius:50%;background:var(--accent-color)}
+    .proj-points li b{color:var(--text-main);font-weight:700}
+    .proj-tags{display:flex;flex-wrap:wrap;gap:8px;flex-shrink:0}
+    .proj-tags span{font-size:14.5px;font-weight:600;color:var(--accent-color);background:rgba(45,90,67,0.1);border:1px solid rgba(45,90,67,0.14);padding:3px 12px;border-radius:14px}
+
+    /* ================= 模块6 技能爱好 ================= */
     .skill-layout-container{display:flex;gap:36px;max-width:1560px;width:100%;align-items:stretch}
     .skill-left-panel{flex:1.1;display:flex;flex-direction:column;gap:24px}
     .tarot-area{display:flex;gap:24px;width:100%;height:100%}
@@ -281,6 +314,19 @@
     }
     .music-widget iframe{display:block;width:100%;height:66px;border:0}
     .music-widget .mw-label{display:flex;align-items:center;gap:7px;font-size:15px;font-weight:700;color:var(--accent-color);margin-bottom:4px;padding:0 2px}
+
+    /* ================= 手机端性能优化 ================= */
+    @media (max-width: 900px){
+      *{-webkit-backdrop-filter:none !important;backdrop-filter:none !important}
+      .bg-mesh{filter:none}
+      .gradient-card{animation:none}
+      .photo-wrapper{animation-duration:7s}
+      .walker-char{animation-duration:32s}
+      .walker-shadow{animation-duration:32s}
+      header{padding:0 22px}
+      nav{gap:3px}
+      .nav-link-item{font-size:17px;padding:7px 12px}
+    }
   </style>
 </head>
 <body>
@@ -300,8 +346,9 @@
         <a class="nav-link-item" onclick="goToSlide(1)">教育背景</a>
         <a class="nav-link-item" onclick="goToSlide(2)">校园成就</a>
         <a class="nav-link-item" onclick="goToSlide(3)">实习经历</a>
-        <a class="nav-link-item" onclick="goToSlide(4)">技能爱好</a>
-        <a class="nav-link-item" onclick="goToSlide(5)">联系我</a>
+        <a class="nav-link-item" onclick="goToSlide(4)">项目经历</a>
+        <a class="nav-link-item" onclick="goToSlide(5)">技能爱好</a>
+        <a class="nav-link-item" onclick="goToSlide(6)">联系我</a>
       </nav>
     </header>
 
@@ -309,10 +356,10 @@
     <div class="nav-arrow left disabled" id="prevBtn" onclick="prevSlide()">&#10094;</div>
     <div class="nav-arrow right" id="nextBtn" onclick="nextSlide()">&#10095;</div>
 
-    <!-- 悬浮背景音乐（网易云 · 樱花草） -->
+    <!-- 悬浮背景音乐（樱花草 · 原生音频，点击网页任意处播放） -->
     <div class="music-widget">
       <div class="mw-label">♪ 樱花草 · Sweety</div>
-      <iframe id="bgmFrame" src="https://music.163.com/outchain/player?type=2&id=5256963&auto=1&height=66" loading="lazy" allow="autoplay; encrypted-media" title="樱花草"></iframe>
+      <audio id="bgmAudio" src="https://aka.doubaocdn.com/s/6lnLfqyEut" loop preload="auto"></audio>
     </div>
 
     <!-- 全屏主容器 -->
@@ -353,7 +400,8 @@
         <div class="edu-stage">
           <div class="edu-walker">
             <div class="ground-line"></div>
-            <img class="walker-char" src="https://aka.doubaocdn.com/s/kVaoZC7pEj" alt="3D数字人" loading="eager" decoding="async" />
+            <div class="walker-shadow"></div>
+            <div class="walker-char"></div>
           </div>
           <div class="edu-timeline">
             <div class="edu-node glass-card">
@@ -540,7 +588,81 @@
         </div>
       </section>
 
-      <!-- 5. 技能爱好 -->
+      <!-- 5. 项目经历 -->
+      <section>
+        <div class="section-header proj-header">
+          <div class="section-slogan-cn">把想法，变成可以落地的系统</div>
+          <div class="section-slogan-en">Turn ideas into deployable systems</div>
+        </div>
+        <div class="proj-grid">
+          <div class="proj-card glass-card">
+            <div class="proj-cover"><img src="https://aka.doubaocdn.com/s/LpBlHt4PGD" alt="通信信号调制识别" loading="lazy" decoding="async" /></div>
+            <div class="proj-body">
+              <div class="proj-head">
+                <h3>基于深度学习的通信信号调制识别算法研究</h3>
+                <span class="proj-date">2025.06-07</span>
+              </div>
+              <ul class="proj-points">
+                <li><b>信号建模与数据集：</b>Matlab 仿真生成 QPSK/16QAM/64QAM/LFM 等体制信号，叠加高斯白噪声模拟 -5dB~20dB 宽信噪比，构建含 IQ 时域序列与时频图的标准化数据集</li>
+                <li><b>特征提取与模型：</b>STFT 将 IQ 序列转为二维时频图，搭建轻量化 ResNet-18 自动特征提取分类，引入 SENet 通道注意力聚焦关键频带以提升低信噪比识别性能；对比 Transformer 在时域序列建模的表现</li>
+                <li><b>工程化部署：</b>ONNX 导出 + TensorRT + FP16 量化；SNR≥10dB 准确率 97.3%，0dB 下仍保持 82%，推理延迟低至 5ms</li>
+              </ul>
+              <div class="proj-tags"><span>MATLAB</span><span>Python</span><span>PyTorch</span><span>TensorRT</span><span>ONNX</span></div>
+            </div>
+          </div>
+
+          <div class="proj-card glass-card">
+            <div class="proj-cover"><img src="https://aka.doubaocdn.com/s/PZOHy94UKg" alt="园林路径规划" loading="lazy" decoding="async" /></div>
+            <div class="proj-body">
+              <div class="proj-head">
+                <h3>基于图论与视域分析的路径分析与规划</h3>
+                <span class="proj-date">2025.09-10</span>
+              </div>
+              <ul class="proj-points">
+                <li><b>路径图模型：</b>解析十座园林（拙政园、留园、寄畅园等）道路/建筑/水体/植物矢量数据，将游览路径抽象为图网络，提取长度、转折点、交叉点等拓扑特征</li>
+                <li><b>异景程度量化：</b>以杰卡德相似度衡量相邻视点景观集合变化，结合香农熵景观多样性指数，构建趣味性综合评分函数</li>
+                <li><b>最优路径规划：</b>深度优先搜索 + 启发式回溯，生成高覆盖率（核心元素覆盖 46%）、低重复率路线；怡园趣味性最高（0.199），沈园异景变化率最突出（0.023）</li>
+                <li><b>可视化：</b>Voronoi 视野分区图、3D 游线曲率图、景观密度热力图</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="proj-card glass-card">
+            <div class="proj-cover"><img src="https://aka.doubaocdn.com/s/Rh6hfwaPaB" alt="SAR舰船检测" loading="lazy" decoding="async" /></div>
+            <div class="proj-body">
+              <div class="proj-head">
+                <h3>基于深度学习的 SAR 图像舰船目标检测</h3>
+                <span class="proj-date">2026.02-03</span>
+              </div>
+              <ul class="proj-points">
+                <li><b>数据与预处理：</b>基于 OpenSARship 数据集，针对相干斑噪声设计自适应滤波算法进行增强与去噪，构建训练-验证-测试集</li>
+                <li><b>模型设计与优化：</b>YOLOv8 框架引入坐标注意力（CA）增强弱小目标特征提取；针对目标稀疏特性优化损失函数，解决正负样本不平衡</li>
+                <li><b>轻量化部署：</b>TensorRT + FP16 量化，Jetson Xavier NX 推理延迟 &lt;30ms，mAP 达 85% 以上</li>
+              </ul>
+              <div class="proj-tags"><span>Python</span><span>PyTorch</span><span>YOLO</span><span>TensorRT</span><span>OpenCV</span></div>
+            </div>
+          </div>
+
+          <div class="proj-card glass-card">
+            <div class="proj-cover"><img src="https://aka.doubaocdn.com/s/xbrytjhypr" alt="航空发动机RUL预测" loading="lazy" decoding="async" /></div>
+            <div class="proj-body">
+              <div class="proj-head">
+                <h3>基于 SE-Transformer 的航空发动机剩余寿命预测</h3>
+                <span class="proj-date">2026.06-07</span>
+              </div>
+              <ul class="proj-points">
+                <li><b>数据与特征工程：</b>基于 NASA C-MAPSS，按发动机 ID 分组生成 RUL 标签并阈值裁剪；滑动窗口（30 步/步长 1）构建时序样本；按运行工况分组独立标准化，剥离环境因素影响</li>
+                <li><b>模型设计：</b>基于 Transformer 的端到端 RUL 模型，双分支嵌入（传感器时序 + 运行工况），SE 模块自适应重校准传感器通道权重</li>
+                <li><b>超参数与验证：</b>Optuna 贝叶斯优化学习率/层数/头数/窗口；FD004 复杂场景 RMSE 13.80，远低于标准 LSTM 的 28.40</li>
+                <li><b>可解释性：</b>SE 注意力权重定位 nf、p30、ps30 为关键传感器，与发动机物理机理高度吻合</li>
+              </ul>
+              <div class="proj-tags"><span>Python</span><span>PyTorch</span><span>Optuna</span><span>Scikit-learn</span><span>Pandas</span><span>NumPy</span><span>Matplotlib</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. 技能爱好 -->
       <section>
         <div class="section-header skill-header">
           <div class="section-slogan-cn">底色多元，热爱不息</div>
@@ -565,16 +687,20 @@
             <div class="hobby-section-title">兴趣爱好</div>
             <div class="hobby-grid">
               <div class="hobby-card glass-card">
-                <div class="carousel"><img src="https://aka.doubaocdn.com/s/qWVm27Q1rh" class="active" loading="lazy" decoding="async" alt="赏花" /></div>
-                <div class="hobby-title">🌸 春日赏花</div>
+                <div class="carousel"><img src="https://aka.doubaocdn.com/s/qWVm27Q1rh" class="active" loading="lazy" decoding="async" alt="摄影" /></div>
+                <div class="hobby-title">📷 摄影</div>
               </div>
               <div class="hobby-card glass-card">
-                <div class="carousel"><img src="https://aka.doubaocdn.com/s/uVDXkKxFZI" class="active" loading="lazy" decoding="async" alt="古建打卡" /></div>
-                <div class="hobby-title">🏛️ 古建打卡</div>
+                <div class="carousel"><img src="https://aka.doubaocdn.com/s/uVDXkKxFZI" class="active" loading="lazy" decoding="async" alt="旅游" /></div>
+                <div class="hobby-title">🏔️ 旅游</div>
               </div>
               <div class="hobby-card glass-card">
-                <div class="carousel"><img src="https://aka.doubaocdn.com/s/1DypMLYnyJ" class="active" loading="lazy" decoding="async" alt="城市漫步" /></div>
-                <div class="hobby-title">🌃 城市漫步</div>
+                <div class="carousel"><img src="https://aka.doubaocdn.com/s/TDNxCOVjGJ" class="active" loading="lazy" decoding="async" alt="记者采访" /></div>
+                <div class="hobby-title">🎤 记者采访</div>
+              </div>
+              <div class="hobby-card glass-card">
+                <div class="carousel"><img src="https://aka.doubaocdn.com/s/frP6IyYp7p" class="active" loading="lazy" decoding="async" alt="算法设计" /></div>
+                <div class="hobby-title">🧩 算法设计</div>
               </div>
             </div>
           </div>
@@ -632,7 +758,7 @@
 
     /* ================= 全屏横向翻页 + 导航同步 ================= */
     var currentSlide = 0;
-    var totalSlides = 6;
+    var totalSlides = 7;
     var slider = document.getElementById('slider');
     var prevBtn = document.getElementById('prevBtn');
     var nextBtn = document.getElementById('nextBtn');
@@ -714,6 +840,17 @@
       photoPauseTimer = setTimeout(function(){ photoWrapper.classList.remove('paused'); }, 5000);
     }
 
+    /* ================= 3D数字人：立体旋转（前→右→后→左循环） ================= */
+    var walkerEl = document.querySelector('.walker-char');
+    if(walkerEl){
+      var walkerFrames = [1, 3, 4, 0]; /* 精灵帧索引：0左 1前 2前 3右 4后 5前 */
+      var walkerFrameIdx = 0;
+      setInterval(function(){
+        walkerFrameIdx = (walkerFrameIdx + 1) % walkerFrames.length;
+        walkerEl.style.backgroundPosition = (-(walkerFrames[walkerFrameIdx] * 150)) + 'px 0';
+      }, 900);
+    }
+
     /* ================= 联系我：打字循环 ================= */
     var contactLine1 = "心之所向，代码为桨";
     var contactLine2 = "下一段旅程，期待与你同行";
@@ -791,27 +928,27 @@
       a.click();
     }
 
-    /* ================= 背景音乐：自动播放 + 首次交互兜底 =================
-       浏览器默认拦截带声音的自动播放，connie 站实际也需要点击才播放。
-       这里采用最接近自动播放的实现：加载时尝试 auto=1；
-       若被浏览器拦截，用户第一次点击/滑动页面任意处时重建播放器并自动开播。 */
+    /* ================= 背景音乐：樱花草（点击网页任意位置即播放） =================
+       浏览器默认拦截带声音的自动播放，必须在用户手势后 play() 才有效。
+       这里监听整页任何一次点击/触摸/按键，首次交互即播放；加载时也尝试一次。 */
+    var bgmAudio = document.getElementById('bgmAudio');
     var bgmStarted = false;
     function startBGM(){
       if(bgmStarted) return;
+      if(!bgmAudio) return;
+      var p = bgmAudio.play();
+      if(p && p.catch) p.catch(function(){});
       bgmStarted = true;
-      var old = document.getElementById('bgmFrame');
-      if(old){
-        var nf = document.createElement('iframe');
-        nf.id = 'bgmFrame';
-        nf.src = 'https://music.163.com/outchain/player?type=2&id=5256963&auto=1&height=66';
-        nf.setAttribute('allow', 'autoplay; encrypted-media');
-        nf.loading = 'lazy';
-        nf.title = '樱花草';
-        old.parentNode.replaceChild(nf, old);
-      }
-      ['pointerdown','touchstart','keydown','wheel'].forEach(function(ev){ document.removeEventListener(ev, startBGM); });
     }
-    ['pointerdown','touchstart','keydown','wheel'].forEach(function(ev){ document.addEventListener(ev, startBGM, {passive:true}); });
+    /* 进入页面即尝试自动播放（部分设备/浏览器允许） */
+    if(bgmAudio){
+      var initPlay = bgmAudio.play();
+      if(initPlay && initPlay.catch) initPlay.catch(function(){});
+    }
+    /* 无论点击/触摸/按键/滚轮在哪，第一次交互就开播 */
+    ['pointerdown','touchstart','keydown','wheel'].forEach(function(ev){
+      document.addEventListener(ev, startBGM, {passive:true});
+    });
   </script>
 </body>
 </html>
