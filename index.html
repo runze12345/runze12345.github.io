@@ -96,12 +96,9 @@
     .edu-card-desc{font-size:16.5px;color:var(--text-sub);line-height:1.6;margin-bottom:10px}
     .edu-card-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:auto}
     .edu-card-tags span{font-size:14.5px;font-weight:600;color:var(--accent-color);background:rgba(45,90,67,0.1);border:1px solid rgba(45,90,67,0.14);padding:4px 12px;border-radius:14px}
-    .edu-center-person{position:relative;flex-shrink:0;display:flex;justify-content:center;align-items:flex-end;transform-style:preserve-3d;animation:eduCenterFloat 5s ease-in-out infinite;z-index:5;padding:0 10px}
-    @keyframes eduCenterFloat{0%{transform:translateY(0) rotateY(-6deg) rotateX(3deg) scale(1)}50%{transform:translateY(-20px) rotateY(6deg) rotateX(-3deg) scale(1.03)}100%{transform:translateY(0) rotateY(-6deg) rotateX(3deg) scale(1)}}
-    .edu-center-person img{max-height:700px;width:auto;object-fit:contain;object-position:bottom center;filter:drop-shadow(0 20px 30px rgba(45,90,67,0.25));display:block;transform:translateZ(40px);pointer-events:none}
-    .edu-center-ring{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:520px;height:520px;border:2px dashed rgba(45,90,67,0.1);border-radius:50%;animation:ringRotate 25s linear infinite;z-index:0}
-    .edu-center-ring.r2{width:640px;height:640px;border-color:rgba(45,90,67,0.06);animation-duration:35s;animation-direction:reverse}
-    @keyframes ringRotate{0%{transform:translate(-50%,-50%) rotate(0deg)}100%{transform:translate(-50%,-50%) rotate(360deg)}}
+    .edu-center-person{position:relative;flex-shrink:0;display:flex;justify-content:center;align-items:center;z-index:5;padding:0 10px;animation:eduCenterFloat 6s ease-in-out infinite;border-radius:28px;overflow:hidden;box-shadow:0 20px 50px rgba(45,90,67,0.25),0 0 0 3px rgba(255,255,255,0.6),inset 0 0 0 1px rgba(255,255,255,0.3)}
+    @keyframes eduCenterFloat{0%{transform:translateY(0) scale(1)}50%{transform:translateY(-16px) scale(1.02)}100%{transform:translateY(0) scale(1)}}
+    .edu-center-person img{height:640px;width:auto;object-fit:cover;object-position:center;display:block;pointer-events:none}
     .campus-grid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:24px;max-width:1620px;width:100%}
     .paper-item-card{padding:26px 32px;display:flex;flex-direction:column;justify-content:space-between;min-height:220px}
     .paper-header-row{display:flex;align-items:center;gap:13px;margin-bottom:12px;flex-wrap:wrap}
@@ -228,7 +225,7 @@
     .contact-bottom-text{font-size:18px;color:var(--text-sub);letter-spacing:3px;font-weight:600;opacity:.8}
     .music-widget{position:absolute;right:46px;bottom:34px;z-index:95;width:340px;border-radius:20px;overflow:hidden;padding:8px 10px;background:linear-gradient(135deg, rgba(255,255,255,0.92), rgba(228,244,234,0.85));border:1.5px solid rgba(255,255,255,0.95);box-shadow:var(--shadow-soft);backdrop-filter:blur(14px);}
     .music-widget .mw-label{display:flex;align-items:center;gap:7px;font-size:15px;font-weight:700;color:var(--accent-color);margin-bottom:4px;padding:0 2px}
-    @media (max-width: 900px){*{backdrop-filter:none !important;-webkit-backdrop-filter:none !important}.bg-mesh{filter:none}.gradient-card{animation:none}.photo-wrapper{animation-duration:8s}.edu-center-person{animation-duration:7s}.edu-center-ring{animation-duration:25s}.edu-side-card{height:500px}.contact-blob{animation-duration:12s}header{padding:0 22px}nav{gap:3px}.nav-link-item{font-size:17px;padding:7px 12px}.edu-card-school{font-size:22px}.edu-card-major{font-size:18px}.edu-card-desc{font-size:14px}.contact-big-title{font-size:48px}.contact-card{width:260px;height:150px}}
+    @media (max-width: 900px){*{backdrop-filter:none !important;-webkit-backdrop-filter:none !important}.bg-mesh{filter:none}.gradient-card{animation:none}.photo-wrapper{animation-duration:8s}.edu-center-person{animation-duration:7s}.edu-side-card{height:500px}.contact-blob{animation-duration:12s}header{padding:0 22px}nav{gap:3px}.nav-link-item{font-size:17px;padding:7px 12px}.edu-card-school{font-size:22px}.edu-card-major{font-size:18px}.edu-card-desc{font-size:14px}.contact-big-title{font-size:48px}.contact-card{width:260px;height:150px}}
   </style>
 </head>
 <body>
@@ -284,8 +281,6 @@
           <div class="section-slogan-en">Between code and algorithms, build a smarter future</div>
         </div>
         <div class="edu-new-layout">
-          <div class="edu-center-ring"></div>
-          <div class="edu-center-ring r2"></div>
           <div class="edu-side-card">
             <div class="edu-card-building">
               <div class="edu-card-badge"><img src="https://aka.doubaocdn.com/s/G4nW50gwvj" alt="西安交大校徽" decoding="async" /></div>
@@ -302,7 +297,7 @@
             </div>
           </div>
           <div class="edu-center-person">
-            <img src="https://aka.doubaocdn.com/s/jyuoZaFTXG" alt="彭润泽3D立体小人" decoding="async" />
+            <img src="https://aka.doubaocdn.com/s/jja45f6Ifn" alt="彭润泽3D立体小人" decoding="async" />
           </div>
           <div class="edu-side-card">
             <div class="edu-card-building">
