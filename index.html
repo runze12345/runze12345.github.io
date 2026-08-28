@@ -113,8 +113,10 @@
   .sec-head .en{display:block;font-size:13px;letter-spacing:4px;color:#a3b3c6;text-transform:uppercase;margin-bottom:8px;font-weight:600}
 
   .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
-  .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
-  .reveal.on{opacity:1;transform:none}
+  /* 滚动渐显：默认可见；仅当 JS + IntersectionObserver 可用时才先隐藏再渐显，保证无 JS 也能看到全部内容 */
+  .reveal{transition:opacity .7s ease,transform .7s ease}
+  html.anim .reveal{opacity:0;transform:translateY(28px)}
+  html.anim .reveal.on{opacity:1;transform:none}
 
   /* ---------- About ---------- */
   .about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:26px}
@@ -586,13 +588,16 @@
     img.onload = function(){ av.classList.add('has-photo'); av.appendChild(img); };
   })();
 
-  // 滚动渐显
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if(e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target); }
-    });
-  },{threshold:.12});
-  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+  // 滚动渐显（仅当浏览器支持 IntersectionObserver 时启用；否则全部直接显示，保证内容可见）
+  if('IntersectionObserver' in window){
+    document.documentElement.classList.add('anim');
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target); }
+      });
+    },{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+  }
 
   // 实习经历展开/收起
   function toggleExp(head){
