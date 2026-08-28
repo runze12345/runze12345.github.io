@@ -87,7 +87,7 @@
     .section-header{text-align:center;margin-top:10px;margin-bottom:30px}
     .section-slogan-cn{font-size:57.2px;font-weight:700;color:var(--text-main);letter-spacing:2px}
     .section-slogan-en{font-size:27.3px;font-family:'Poppins',sans-serif;color:var(--text-sub);margin-top:8px;font-weight:400;letter-spacing:1px;opacity:.88}
-    .edu-header{margin-bottom:60px}
+    .edu-header{margin-bottom:24px}
     .campus-header{margin-bottom:35px}
     .intern-header{margin-bottom:60px}
     .skill-header{margin-bottom:60px}
@@ -147,20 +147,41 @@
     .photo-wrapper.paused{animation-play-state:paused !important}
     .runze-tag{position:absolute;top:20px;left:-26px;font-family:'Caveat','Segoe Script','Bradley Hand',cursive;font-size:91px;font-weight:700;color:var(--accent-color);transform:rotate(-45deg) translateZ(30px);z-index:10;text-shadow:2px 4px 10px rgba(45,90,67,0.15);pointer-events:none;white-space:nowrap}
     .photo-bg-block{position:absolute;bottom:auto;width:100%;height:90%;background:linear-gradient(135deg, rgba(205,235,218,0.65), rgba(160,210,180,0.45));clip-path:polygon(6% 0%,96% 4%,100% 100%,0% 100%);border-radius:45px;z-index:1;transform:translateZ(0)}
-    .who-img{position:relative;max-width:100%;max-height:100%;object-fit:contain;z-index:2;transform:scale(1.05) translateZ(40px);transform-origin:center center;filter:drop-shadow(0 15px 30px rgba(45,90,67,0.2));display:block;transition:filter .3s ease}
+    .photo-crop{position:absolute;inset:0;z-index:2;border-radius:46px;overflow:hidden;border:5px solid rgba(255,255,255,0.92);box-shadow:0 22px 48px rgba(45,90,67,0.28);background:#ddece3}
+    .who-img{width:100%;height:100%;object-fit:cover;object-position:center 6%;transform:scale(1.5);transform-origin:50% 12%;display:block}
 
-    /* ================= 模块2 教育背景 ================= */
-    .edu-container{display:flex;justify-content:center;gap:40px;max-width:1620px;width:100%;margin:0 auto}
-    .edu-card{flex:1;overflow:hidden;display:flex;flex-direction:column}
-    .edu-card img{width:100%;aspect-ratio:16/9;object-fit:cover;transition:transform .5s ease}
-    .edu-card:hover img{transform:scale(1.08)}
-    .edu-card-body{padding:31px;flex:1;display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px}
-    .edu-school-row{display:flex;justify-content:space-between;align-items:center;width:100%;margin-bottom:3px}
-    .edu-school-row .school{font-size:33.8px;font-weight:700;color:var(--text-main)}
-    .edu-school-row .date{font-size:22.1px;color:var(--accent-color);font-weight:700}
-    .edu-card-body .college{font-size:23.4px;color:var(--text-sub)}
-    .edu-card-body .degree{font-size:22.1px;color:var(--text-sub)}
-    .major-highlight-full{width:100%;margin-top:10px;background:linear-gradient(135deg, rgba(45,90,67,0.12) 0%, rgba(45,90,67,0.05) 100%);color:var(--accent-color);font-size:23.4px;font-weight:700;padding:10px 0;border-radius:10px;border-left:4px solid var(--accent-color);border-right:4px solid var(--accent-color);text-align:center}
+    /* ================= 模块2 教育背景（时间线 + 走动3D数字人） ================= */
+    .edu-stage{position:relative;width:100%;max-width:1560px;flex:1;min-height:0;display:flex;flex-direction:column;justify-content:flex-start}
+    .edu-timeline{position:relative;z-index:2;display:flex;flex-direction:column;gap:32px;max-width:1500px;width:100%;margin:0 auto}
+    .edu-timeline::before{content:"";position:absolute;left:109px;top:40px;bottom:40px;width:4px;background:linear-gradient(180deg,var(--accent-color) 0%,rgba(45,90,67,0.12) 100%);border-radius:4px}
+    .edu-node{display:flex;align-items:center;gap:28px;padding:28px 36px;position:relative}
+    .edu-node-icon{width:152px;height:152px;flex-shrink:0;border-radius:26px;overflow:hidden;border:3px solid rgba(255,255,255,0.95);box-shadow:0 10px 24px rgba(45,90,67,0.18);position:relative}
+    .edu-node-icon img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+    .edu-node:hover .edu-node-icon img{transform:scale(1.1)}
+    .edu-node-dot{position:absolute;left:98px;top:50%;width:22px;height:22px;background:linear-gradient(135deg,#2d5a43,#1e3f2e);border:5px solid #fff;border-radius:50%;box-shadow:0 4px 12px rgba(45,90,67,0.35);transform:translateY(-50%);z-index:3}
+    .edu-node-main{flex:1;min-width:0}
+    .edu-node-head{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:9px}
+    .edu-node-head h3{font-size:37.7px;color:var(--text-main)}
+    .edu-node-date{font-size:22.1px;font-weight:700;color:var(--accent-color);background:rgba(45,90,67,0.08);padding:5px 16px;border-radius:20px;white-space:nowrap}
+    .edu-node-sub{font-size:23.4px;color:var(--text-sub);margin-bottom:6px}
+    .edu-node-degree{font-size:26px;color:var(--text-main);font-weight:700;margin-bottom:13px}
+    .edu-node-tags{display:flex;gap:10px;flex-wrap:wrap}
+    .edu-node-tags span{font-size:19.5px;font-weight:600;color:var(--accent-color);background:linear-gradient(135deg, rgba(45,90,67,0.12), rgba(45,90,67,0.06));border:1px solid rgba(45,90,67,0.16);padding:5px 16px;border-radius:18px}
+    .edu-node-badge{position:absolute;top:-15px;right:32px;font-size:20.8px;font-weight:700;color:#fff;background:linear-gradient(135deg,#2d5a43,#1e3f2e);padding:6px 20px;border-radius:22px;box-shadow:0 8px 18px rgba(45,90,67,0.32)}
+    .edu-walker{position:absolute;left:0;right:0;bottom:0;height:280px;z-index:1;pointer-events:none;overflow:visible}
+    .edu-walker .ground-line{position:absolute;left:0;right:0;bottom:0;height:96px;background:linear-gradient(180deg, rgba(198,228,212,0) 0%, rgba(186,222,202,0.5) 100%)}
+    .walker-char{position:absolute;left:0;bottom:4px;width:195px;mix-blend-mode:multiply;animation:walkX 22s linear infinite alternate;will-change:left,transform;filter:drop-shadow(0 8px 12px rgba(45,90,67,0.16))}
+    @keyframes walkX{
+      0%{left:1%;transform:scaleX(1) translateY(0) rotate(-1.4deg)}
+      11%{transform:scaleX(1) translateY(-12px) rotate(1.6deg)}
+      22%{transform:scaleX(1) translateY(0) rotate(-1.4deg)}
+      33%{transform:scaleX(1) translateY(-12px) rotate(1.6deg)}
+      50%{transform:scaleX(-1) translateY(-12px) rotate(1.6deg)}
+      61%{transform:scaleX(-1) translateY(0) rotate(-1.4deg)}
+      72%{transform:scaleX(-1) translateY(-12px) rotate(1.6deg)}
+      83%{transform:scaleX(-1) translateY(0) rotate(-1.4deg)}
+      100%{left:calc(100% - 215px);transform:scaleX(-1) translateY(-12px) rotate(1.6deg)}
+    }
 
     /* ================= 模块3 校园成就 ================= */
     .campus-grid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:24px;max-width:1620px;width:100%}
@@ -291,7 +312,7 @@
     <!-- 悬浮背景音乐（网易云 · 樱花草） -->
     <div class="music-widget">
       <div class="mw-label">♪ 樱花草 · Sweety</div>
-      <iframe src="https://music.163.com/outchain/player?type=2&id=5256963&auto=1&height=66" loading="lazy" allow="autoplay; encrypted-media" title="樱花草"></iframe>
+      <iframe id="bgmFrame" src="https://music.163.com/outchain/player?type=2&id=5256963&auto=1&height=66" loading="lazy" allow="autoplay; encrypted-media" title="樱花草"></iframe>
     </div>
 
     <!-- 全屏主容器 -->
@@ -317,7 +338,7 @@
             <div class="photo-wrapper" id="photoWrapper" onclick="pausePhotoAnimation()">
               <div class="runze-tag">Runze</div>
               <div class="photo-bg-block"></div>
-              <img src="https://aka.doubaocdn.com/s/wKFs4vADmS" alt="彭润泽3D卡通形象" class="who-img" decoding="async" />
+              <div class="photo-crop"><img src="https://aka.doubaocdn.com/s/tUZNVr2QLC" alt="彭润泽" class="who-img" decoding="async" /></div>
             </div>
           </div>
         </div>
@@ -329,29 +350,39 @@
           <div class="section-slogan-cn">在代码与算法之间，构建更智能的未来</div>
           <div class="section-slogan-en">Between code and algorithms, build a smarter future</div>
         </div>
-        <div class="edu-container">
-          <div class="edu-card glass-card">
-            <img src="https://aka.doubaocdn.com/s/dO7P4ZX9BR" alt="西安交通大学硕士" loading="lazy" decoding="async" />
-            <div class="edu-card-body">
-              <div class="edu-school-row">
-                <span class="school">西安交通大学</span>
-                <span class="date">2024.09 - 2027.06</span>
-              </div>
-              <div class="college">电信学部 · 自动化学院</div>
-              <div class="degree">控制科学与工程 · 工学硕士</div>
-              <div class="major-highlight-full">智能控制算法 · 大模型智能体</div>
-            </div>
+        <div class="edu-stage">
+          <div class="edu-walker">
+            <div class="ground-line"></div>
+            <img class="walker-char" src="https://aka.doubaocdn.com/s/kVaoZC7pEj" alt="3D数字人" loading="eager" decoding="async" />
           </div>
-          <div class="edu-card glass-card">
-            <img src="https://aka.doubaocdn.com/s/lZqwVIe3vH" alt="西安交通大学本科" loading="lazy" decoding="async" />
-            <div class="edu-card-body">
-              <div class="edu-school-row">
-                <span class="school">西安交通大学</span>
-                <span class="date">2020.09 - 2024.06</span>
+          <div class="edu-timeline">
+            <div class="edu-node glass-card">
+              <div class="edu-node-dot"></div>
+              <div class="edu-node-icon"><img src="https://aka.doubaocdn.com/s/dO7P4ZX9BR" alt="西安交通大学" loading="lazy" decoding="async" /></div>
+              <div class="edu-node-main">
+                <div class="edu-node-head">
+                  <h3>西安交通大学</h3>
+                  <span class="edu-node-date">2024.09 - 2027.06</span>
+                </div>
+                <div class="edu-node-sub">电信学部 · 自动化学院</div>
+                <div class="edu-node-degree">控制科学与工程 · 工学硕士</div>
+                <div class="edu-node-tags"><span>智能控制算法</span><span>大模型智能体</span><span>Agent 开发</span></div>
               </div>
-              <div class="college">电信学部 · 自动化学院</div>
-              <div class="degree">自动化 · 工学学士</div>
-              <div class="major-highlight-full">控制理论 · 信号处理 · 机器学习</div>
+              <div class="edu-node-badge">硕士</div>
+            </div>
+            <div class="edu-node glass-card">
+              <div class="edu-node-dot"></div>
+              <div class="edu-node-icon"><img src="https://aka.doubaocdn.com/s/lZqwVIe3vH" alt="西安交通大学" loading="lazy" decoding="async" /></div>
+              <div class="edu-node-main">
+                <div class="edu-node-head">
+                  <h3>西安交通大学</h3>
+                  <span class="edu-node-date">2020.09 - 2024.06</span>
+                </div>
+                <div class="edu-node-sub">电信学部 · 自动化学院</div>
+                <div class="edu-node-degree">自动化 · 工学学士</div>
+                <div class="edu-node-tags"><span>控制理论</span><span>信号处理</span><span>机器学习</span></div>
+              </div>
+              <div class="edu-node-badge">本科</div>
             </div>
           </div>
         </div>
@@ -759,6 +790,28 @@
       a.download = '彭润泽-个人简历.pdf';
       a.click();
     }
+
+    /* ================= 背景音乐：自动播放 + 首次交互兜底 =================
+       浏览器默认拦截带声音的自动播放，connie 站实际也需要点击才播放。
+       这里采用最接近自动播放的实现：加载时尝试 auto=1；
+       若被浏览器拦截，用户第一次点击/滑动页面任意处时重建播放器并自动开播。 */
+    var bgmStarted = false;
+    function startBGM(){
+      if(bgmStarted) return;
+      bgmStarted = true;
+      var old = document.getElementById('bgmFrame');
+      if(old){
+        var nf = document.createElement('iframe');
+        nf.id = 'bgmFrame';
+        nf.src = 'https://music.163.com/outchain/player?type=2&id=5256963&auto=1&height=66';
+        nf.setAttribute('allow', 'autoplay; encrypted-media');
+        nf.loading = 'lazy';
+        nf.title = '樱花草';
+        old.parentNode.replaceChild(nf, old);
+      }
+      ['pointerdown','touchstart','keydown','wheel'].forEach(function(ev){ document.removeEventListener(ev, startBGM); });
+    }
+    ['pointerdown','touchstart','keydown','wheel'].forEach(function(ev){ document.addEventListener(ev, startBGM, {passive:true}); });
   </script>
 </body>
 </html>
