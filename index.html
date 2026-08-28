@@ -192,23 +192,30 @@
     .carousel img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .5s ease}
     .carousel img.active{opacity:1}
     .hobby-title{padding:12px;font-size:22.1px;font-weight:700;color:var(--text-main);background:rgba(255,255,255,0.6)}
-    .contact-wrapper{position:relative;max-width:1235px;width:100%;display:flex;justify-content:center;align-items:center}
+    .contact-wrapper{position:relative;max-width:1300px;width:100%;display:flex;justify-content:center;align-items:center}
     .art-bg-decoration{position:absolute;width:100%;height:100%;pointer-events:none;z-index:0}
-    .art-circle-1{position:absolute;width:440px;height:440px;top:-80px;left:-65px;background:radial-gradient(circle, rgba(160,215,185,0.45) 0%, transparent 70%);filter:blur(25px);animation:floatBg 8s ease-in-out infinite alternate}
-    .art-circle-2{position:absolute;width:520px;height:520px;bottom:-90px;right:-50px;background:radial-gradient(circle, rgba(200,230,210,0.55) 0%, transparent 70%);filter:blur(30px);animation:floatBg 10s ease-in-out infinite alternate-reverse}
+    .art-circle-1{position:absolute;width:460px;height:460px;top:-100px;left:-80px;background:radial-gradient(circle, rgba(160,215,185,0.5) 0%, transparent 70%);filter:blur(30px);animation:floatBg 8s ease-in-out infinite alternate}
+    .art-circle-2{position:absolute;width:540px;height:540px;bottom:-110px;right:-60px;background:radial-gradient(circle, rgba(200,230,210,0.6) 0%, transparent 70%);filter:blur(35px);animation:floatBg 10s ease-in-out infinite alternate-reverse}
+    .art-circle-3{position:absolute;width:200px;height:200px;top:30%;right:10%;background:radial-gradient(circle, rgba(255,255,255,0.5) 0%, transparent 70%);filter:blur(20px);animation:floatBg 7s ease-in-out infinite alternate}
     @keyframes floatBg{0%{transform:translate(0,0) scale(1)}100%{transform:translate(30px,25px) scale(1.08)}}
-    .contact-container{text-align:center;width:100%;position:relative;z-index:1;padding:62px 52px;background:linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(215,240,225,0.75) 100%);border:2px solid rgba(255,255,255,0.95);border-radius:42px;backdrop-filter:blur(20px);box-shadow:0 26px 65px rgba(45,90,67,0.15);background-image:radial-gradient(rgba(45,90,67,0.08) 1.2px, transparent 0);background-size:26px 26px;transition:all .35s ease}
-    .contact-container:hover{box-shadow:0 32px 75px rgba(45,90,67,0.22)}
-    .contact-title{font-size:71.5px;font-weight:700;margin-bottom:58px;color:var(--text-main);line-height:1.4;letter-spacing:1px;min-height:200px;display:flex;align-items:center;justify-content:center;cursor:pointer}
-    .cards-wrapper{display:flex;gap:40px;justify-content:center}
-    .flip-card{width:325px;height:150px;perspective:1000px;cursor:pointer}
-    .flip-card-inner{position:relative;width:100%;height:100%;transition:transform .6s cubic-bezier(.4,0,.2,1);transform-style:preserve-3d}
-    .flip-card:hover .flip-card-inner{transform:translateY(-5px)}
-    .flip-card.flipped .flip-card-inner{transform:rotateY(180deg) translateY(-5px)}
-    .flip-front,.flip-back{position:absolute;width:100%;height:100%;backface-visibility:hidden;border-radius:20px;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:16px;box-shadow:0 10px 30px rgba(45,90,67,0.12)}
-    .flip-front{background:linear-gradient(135deg, rgba(255,255,255,0.95), rgba(220,242,228,0.85));border:1.5px solid rgba(255,255,255,0.95);font-size:28.6px;font-weight:700;color:var(--accent-color)}
-    .flip-back{background:linear-gradient(135deg,#2d5a43,#1e3f2e);color:#fff;transform:rotateY(180deg);font-size:22.1px;word-break:break-all}
-    .flip-back span{margin-top:8px;font-size:16.9px;opacity:.8}
+    .contact-container{text-align:center;width:100%;position:relative;z-index:1;padding:70px 60px 55px 60px;background:linear-gradient(145deg, rgba(255,255,255,0.92) 0%, rgba(215,240,225,0.8) 100%);border:2px solid rgba(255,255,255,0.95);border-radius:48px;backdrop-filter:blur(24px);box-shadow:0 30px 70px rgba(45,90,67,0.18), inset 0 1px 0 rgba(255,255,255,0.9);background-image:radial-gradient(rgba(45,90,67,0.06) 1.2px, transparent 0);background-size:28px 28px;transition:all .4s ease}
+    .contact-container:hover{box-shadow:0 38px 85px rgba(45,90,67,0.25), inset 0 1px 0 rgba(255,255,255,1);transform:translateY(-3px)}
+    .contact-container::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:120px;height:5px;background:linear-gradient(90deg,transparent,var(--accent-color),transparent);border-radius:0 0 5px 5px}
+    .contact-title{font-size:74px;font-weight:700;margin-bottom:35px;color:var(--text-main);line-height:1.4;letter-spacing:2px;min-height:200px;display:flex;align-items:center;justify-content:center;cursor:pointer;text-shadow:0 2px 10px rgba(45,90,67,0.08)}
+    .contact-divider{width:80px;height:4px;background:linear-gradient(90deg,var(--accent-color),#3f8060);border-radius:4px;margin:0 auto 45px auto}
+    .contact-footer{margin-top:45px;font-size:18px;color:var(--text-sub);opacity:.7;letter-spacing:2px}
+    .cards-wrapper{display:flex;gap:36px;justify-content:center;flex-wrap:wrap}
+    .flip-card{width:330px;height:160px;perspective:1200px;cursor:pointer}
+    .flip-card-inner{position:relative;width:100%;height:100%;transition:transform .7s cubic-bezier(.4,0,.2,1);transform-style:preserve-3d}
+    .flip-card:hover .flip-card-inner{transform:translateY(-6px) scale(1.02)}
+    .flip-card.flipped .flip-card-inner{transform:rotateY(180deg) translateY(-6px)}
+    .flip-front,.flip-back{position:absolute;width:100%;height:100%;backface-visibility:hidden;border-radius:24px;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:18px;box-shadow:0 14px 35px rgba(45,90,67,0.15), inset 0 1px 0 rgba(255,255,255,0.8)}
+    .flip-front{background:linear-gradient(145deg, rgba(255,255,255,0.98), rgba(220,242,228,0.9));border:2px solid rgba(255,255,255,1);font-size:28px;font-weight:700;color:var(--accent-color);position:relative;overflow:hidden}
+    .flip-front::before{content:"";position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:linear-gradient(45deg,transparent 40%,rgba(255,255,255,0.3) 50%,transparent 60%);animation:shine 3s ease-in-out infinite}
+    @keyframes shine{0%{transform:translateX(-100%) rotate(45deg)}100%{transform:translateX(100%) rotate(45deg)}}
+    .flip-front .card-icon{font-size:34px;margin-bottom:6px}
+    .flip-back{background:linear-gradient(145deg,#2d5a43,#1e3f2e);color:#fff;transform:rotateY(180deg);font-size:23px;word-break:break-all;border:2px solid rgba(255,255,255,0.2)}
+    .flip-back span{margin-top:10px;font-size:17px;opacity:.85}
     .music-widget{position:absolute;right:46px;bottom:34px;z-index:95;width:340px;border-radius:20px;overflow:hidden;padding:8px 10px;background:linear-gradient(135deg, rgba(255,255,255,0.92), rgba(228,244,234,0.85));border:1.5px solid rgba(255,255,255,0.95);box-shadow:var(--shadow-soft);backdrop-filter:blur(14px);}
     .music-widget iframe{display:block;width:100%;height:66px;border:0}
     .music-widget .mw-label{display:flex;align-items:center;gap:7px;font-size:15px;font-weight:700;color:var(--accent-color);margin-bottom:4px;padding:0 2px}
@@ -403,7 +410,7 @@
             <div class="intern-banner b-alibaba"><img class="logo-img" src="https://aka.doubaocdn.com/s/ODcXoq0YkW" alt="阿里巴巴" loading="lazy" decoding="async" /></div>
             <div class="intern-body">
               <div class="intern-header-row">
-                <h3>阿里巴巴 · 千问事业部</h3>
+                <h3>阿里巴巴·千问</h3>
                 <span class="intern-date">2026.05 - 2026.07</span>
               </div>
               <div class="intern-dept-post-row">
@@ -421,7 +428,7 @@
             <div class="intern-banner b-iflytek"><img class="logo-img" src="https://aka.doubaocdn.com/s/kaNga4i1US" alt="科大讯飞" loading="lazy" decoding="async" /></div>
             <div class="intern-body">
               <div class="intern-header-row">
-                <h3>科大讯飞</h3>
+                <h3>科大讯飞·星火</h3>
                 <span class="intern-date">2025.09 - 2026.04</span>
               </div>
               <div class="intern-dept-post-row">
@@ -439,7 +446,7 @@
             <div class="intern-banner b-zte"><img class="logo-img" src="https://aka.doubaocdn.com/s/ip0P8XwIOV" alt="中兴通讯" loading="lazy" decoding="async" /></div>
             <div class="intern-body">
               <div class="intern-header-row">
-                <h3>中兴通讯 · 西安研究所</h3>
+                <h3>中兴通讯·西安</h3>
                 <span class="intern-date">2023.07 - 2023.11</span>
               </div>
               <div class="intern-dept-post-row">
@@ -572,29 +579,32 @@
           <div class="art-bg-decoration">
             <div class="art-circle-1"></div>
             <div class="art-circle-2"></div>
+            <div class="art-circle-3"></div>
           </div>
           <div class="contact-container">
             <h2 class="contact-title" id="contactTitle" onclick="handleContactClick()"></h2>
+            <div class="contact-divider"></div>
             <div class="cards-wrapper">
               <div class="flip-card" onclick="flipAndCopy(this, '3345750865@qq.com')">
                 <div class="flip-card-inner">
-                  <div class="flip-front">电子邮箱</div>
+                  <div class="flip-front"><span class="card-icon">✉️</span>电子邮箱</div>
                   <div class="flip-back">3345750865@qq.com<span>(点击已复制)</span></div>
                 </div>
               </div>
               <div class="flip-card" onclick="flipAndCopy(this, '19826026875')">
                 <div class="flip-card-inner">
-                  <div class="flip-front">电话与微信</div>
+                  <div class="flip-front"><span class="card-icon">📱</span>电话与微信</div>
                   <div class="flip-back">198 2602 6875<span>(点击已复制)</span></div>
                 </div>
               </div>
               <div class="flip-card" onclick="downloadResume(this)">
                 <div class="flip-card-inner">
-                  <div class="flip-front">个人简历</div>
+                  <div class="flip-front"><span class="card-icon">📄</span>个人简历</div>
                   <div class="flip-back">点击下载完整简历<span>(彭润泽-个人简历.pdf)</span></div>
                 </div>
               </div>
             </div>
+            <div class="contact-footer">— 期待与你相遇 —</div>
           </div>
         </div>
       </section>
