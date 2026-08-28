@@ -1,879 +1,764 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>彭润泽 · 个人主页</title>
-<meta name="description" content="彭润泽 - 西安交通大学控制科学与工程硕士在读，研究方向：智能控制算法、大模型。" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Serif+SC:wght@600;700;900&display=swap" rel="stylesheet" />
-<style>
-  :root{
-    --green:#2e9e63;
-    --green-2:#3fb575;
-    --mint:#7fd4a5;
-    --mint-light:#e2f5ea;
-    --mint-bg:#eef8f1;
-    --deep:#175a3c;
-    --ink:#24413a;
-    --gray:#6b8a7a;
-    --card:#ffffff;
-    --line:#dfeee4;
-    --gold:#e8b339;
-    --purple:#8b6fe0;
-    --blue:#4a8fe0;
-    --shadow:0 10px 30px rgba(46,158,99,.10);
-    --shadow-lg:0 24px 55px rgba(46,158,99,.18);
-    --radius:22px;
-  }
-  *{margin:0;padding:0;box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{
-    font-family:"Inter","PingFang SC","Microsoft YaHei",system-ui,sans-serif;
-    color:var(--ink);background:var(--mint-bg);line-height:1.75;-webkit-font-smoothing:antialiased;
-  }
-  ::selection{background:var(--green);color:#fff}
-  a{color:inherit;text-decoration:none}
-  img{display:block;max-width:100%}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.1, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover"/>
+  <title>彭润泽 | 个人主页</title>
+  <meta name="description" content="彭润泽 - 西安交通大学控制科学与工程硕士在读，研究方向：智能控制算法、大模型应用。" />
+  <style>
+    /* ================= 莫兰迪绿主题变量 ================= */
+    :root {
+      --bg-green-light: #f2f7f4;
+      --bg-green-mid: #e1efe6;
+      --bg-green-soft: #d3e7da;
+      --accent-color: #2d5a43;
+      --accent-hover: #1e3f2e;
+      --text-main: #1f3329;
+      --text-sub: #547063;
+      --card-glass: linear-gradient(135deg, rgba(255,255,255,0.88) 0%, rgba(225,242,232,0.72) 100%);
+      --card-border: rgba(255,255,255,0.95);
+      --shadow-soft: 0 16px 40px rgba(45,90,67,0.1);
+      --shadow-hover: 0 24px 50px rgba(45,90,67,0.2);
+      --border-radius: 24px;
+      --gold: #d4af37;
+      --base-width: 1965.6px;
+      --base-height: 1105px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{
+      width:100%;height:100%;overflow:hidden;position:relative;
+      font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+      color:var(--text-main);background-color:var(--bg-green-light);
+      touch-action:manipulation;-webkit-text-size-adjust:100%;
+    }
+    ::selection{background:var(--accent-color);color:#fff}
+    a{color:inherit;text-decoration:none}
 
-  /* ---------- Nav ---------- */
-  nav{
-    position:fixed;top:0;left:0;right:0;z-index:100;
-    display:flex;align-items:center;justify-content:space-between;
-    padding:0 5vw;height:64px;
-    background:rgba(255,255,255,.75);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
-    border-bottom:1px solid rgba(46,158,99,.12);transition:.3s;
-  }
-  nav .brand{font-weight:800;letter-spacing:1px;font-size:18px;color:var(--deep)}
-  nav .brand b{color:var(--green)}
-  nav ul{display:flex;gap:22px;list-style:none;font-size:14px;font-weight:600;color:#3d5c4f}
-  nav ul a{opacity:.85;transition:.2s;padding:4px 2px}
-  nav ul a:hover{opacity:1;color:var(--green)}
+    /* 全局背景：渐变 + 网格底纹 */
+    .bg-mesh{
+      position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:-1;
+      background:
+        radial-gradient(circle at 12% 18%, rgba(200,230,210,0.85) 0%, transparent 45%),
+        radial-gradient(circle at 85% 15%, rgba(225,245,230,0.9) 0%, transparent 50%),
+        radial-gradient(circle at 50% 80%, rgba(185,220,200,0.75) 0%, transparent 55%),
+        linear-gradient(135deg,#eaf3ed 0%,#d8ebd9 50%,#cce3d5 100%);
+      filter:blur(10px);
+    }
+    .bg-pattern{
+      position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:-1;opacity:0.35;pointer-events:none;
+      background-image:
+        radial-gradient(var(--accent-color) 0.8px, transparent 0.8px),
+        linear-gradient(to right, rgba(45,90,67,0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(45,90,67,0.03) 1px, transparent 1px);
+      background-size:30px 30px,50px 50px,50px 50px;
+    }
 
-  /* ---------- Hero ---------- */
-  .hero{
-    min-height:100vh;position:relative;display:flex;align-items:center;overflow:hidden;
-    background:
-      radial-gradient(700px 420px at 88% -10%, rgba(127,212,165,.5), transparent 60%),
-      radial-gradient(620px 460px at -8% 108%, rgba(120,205,160,.4), transparent 55%),
-      linear-gradient(160deg,#eaf6ee 0%,#eef8f1 55%,#e3f3e9 100%);
-  }
-  .blob{position:absolute;border-radius:50%;filter:blur(60px);opacity:.55;z-index:0}
-  .blob.b1{width:340px;height:340px;background:#bfe8cf;top:-80px;right:8%}
-  .blob.b2{width:280px;height:280px;background:#a9e0c0;bottom:-60px;left:6%}
-  .blob.b3{width:200px;height:200px;background:#c9efdb;top:40%;left:46%}
-  .hero-inner{position:relative;z-index:2;width:100%;max-width:1180px;margin:0 auto;padding:120px 5vw 80px;display:grid;grid-template-columns:1.2fr .8fr;gap:56px;align-items:center}
-  .hero .tag{display:inline-flex;align-items:center;gap:9px;font-size:13px;letter-spacing:2px;color:var(--green);border:1px solid rgba(46,158,99,.3);padding:6px 16px;border-radius:999px;margin-bottom:24px;background:rgba(255,255,255,.6)}
-  .hero .tag .dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px rgba(46,158,99,.16)}
-  .hero h1{font-family:"Noto Serif SC",serif;font-size:clamp(46px,7vw,84px);font-weight:900;letter-spacing:3px;line-height:1.1;color:var(--deep);margin-bottom:8px}
-  .hero h1 .c{color:var(--deep)}
-  .hero .en-name{font-size:clamp(15px,1.9vw,20px);font-weight:700;letter-spacing:5px;color:var(--green);margin-bottom:22px;text-transform:uppercase}
-  .hero .motto{font-size:clamp(15.5px,2vw,19px);font-weight:500;color:#4c6b5c;line-height:1.85;margin-bottom:30px;max-width:33em}
-  .hero .motto .hi{display:block;font-size:14px;color:var(--green);letter-spacing:4px;margin-bottom:10px;font-weight:700}
-  .hero .chips{display:flex;flex-wrap:wrap;gap:11px}
-  .hero .chip{display:inline-flex;align-items:center;gap:7px;font-size:13.5px;color:#315b47;border:1px solid rgba(46,158,99,.22);padding:9px 15px;border-radius:12px;background:rgba(255,255,255,.65)}
-  .hero .chip b{color:var(--green);font-weight:700}
-  .hero-actions{margin-top:32px;display:flex;gap:15px;flex-wrap:wrap}
-  .btn{display:inline-flex;align-items:center;gap:9px;font-size:15px;font-weight:700;padding:13px 26px;border-radius:14px;transition:.25s;border:1px solid transparent;cursor:pointer}
-  .btn.primary{background:linear-gradient(120deg,var(--green),var(--green-2));color:#fff;box-shadow:0 12px 28px rgba(46,158,99,.32)}
-  .btn.primary:hover{transform:translateY(-3px);box-shadow:0 18px 38px rgba(46,158,99,.42)}
-  .btn.ghost{color:var(--green);border-color:rgba(46,158,99,.4);background:rgba(255,255,255,.5)}
-  .btn.ghost:hover{background:#fff;transform:translateY(-3px)}
+    /* 视口自适应外层容器 */
+    .app-viewport{
+      position:absolute;top:50%;left:50%;width:var(--base-width);height:var(--base-height);
+      transform-origin:center center;
+    }
 
-  /* ---------- 3D avatar ---------- */
-  .avatar3d{position:relative;display:flex;justify-content:center;perspective:1200px}
-  .avatar3d .stage{width:min(340px,78vw);height:min(420px,96vw);position:relative;transform-style:preserve-3d;animation:floaty 5s ease-in-out infinite}
-  @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
-  .avatar3d .cube{position:absolute;inset:0;transform-style:preserve-3d;transform:rotateX(-6deg) rotateY(-14deg);transition:transform .08s linear}
-  .avatar3d .face{position:absolute;inset:0;border-radius:26px;overflow:hidden;backface-visibility:hidden;box-shadow:0 22px 50px rgba(46,158,99,.28);border:1px solid rgba(255,255,255,.7)}
-  .avatar3d .face.front{transform:translateZ(34px);background:#fff}
-  .avatar3d .face.front img{width:100%;height:100%;object-fit:cover}
-  .avatar3d .face.back{transform:rotateY(180deg) translateZ(34px);background:linear-gradient(150deg,#dff2e7,#b9e6cc);display:flex;align-items:center;justify-content:center;flex-direction:column;padding:30px;text-align:center;gap:10px;color:var(--deep)}
-  .avatar3d .face.back .bk{font-family:"Noto Serif SC",serif;font-size:30px;font-weight:900;letter-spacing:4px}
-  .avatar3d .face.back p{font-size:13.5px;line-height:1.9;color:#3f6b55}
-  .avatar3d .hint{position:absolute;bottom:-42px;left:50%;transform:translateX(-50%);font-size:12.5px;color:var(--gray);letter-spacing:2px;white-space:nowrap;display:flex;align-items:center;gap:6px}
-  .avatar3d .ring{position:absolute;inset:-16px;border:1.5px dashed rgba(46,158,99,.35);border-radius:34px;z-index:-1;animation:spin 22s linear infinite}
-  @keyframes spin{to{transform:rotate(360deg)}}
+    /* 顶部导航栏 */
+    header{
+      position:absolute;top:26px;left:50%;transform:translateX(-50%);
+      width:calc(100% - 100px);max-width:1700px;height:85px;
+      display:flex;justify-content:space-between;align-items:center;padding:0 36px;
+      background:linear-gradient(135deg, rgba(255,255,255,0.92) 0%, rgba(230,245,236,0.82) 100%);
+      backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+      z-index:100;border:1.5px solid var(--card-border);border-radius:50px;box-shadow:var(--shadow-soft);
+    }
+    .logo{font-size:31.2px;font-weight:700;color:var(--text-main);display:flex;align-items:center;gap:13px}
+    .logo-badge{width:28px;height:28px;background:linear-gradient(135deg,#2d5a43,#1e3f2e);border-radius:50%;box-shadow:0 4px 10px rgba(45,90,67,0.25)}
+    nav{display:flex;gap:8px;background:linear-gradient(135deg, rgba(235,243,238,0.8), rgba(215,235,222,0.6));padding:5px;border-radius:40px}
+    .nav-link-item{
+      text-decoration:none;color:var(--text-sub);font-size:21.6px;font-weight:500;
+      padding:8px 20px;border-radius:26px;transition:all .3s ease;cursor:pointer;display:inline-block;white-space:nowrap;
+    }
+    .nav-link-item:hover{color:#fff;background:linear-gradient(135deg,#2d5a43 0%,#1e3f2e 100%);box-shadow:0 6px 16px rgba(45,90,67,0.3)}
+    .nav-link-item.active{color:#fff !important;background:linear-gradient(135deg,#2d5a43 0%,#1e3f2e 100%) !important;box-shadow:0 6px 16px rgba(45,90,67,0.35) !important}
 
-  .scroll-hint{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);color:var(--gray);font-size:12px;letter-spacing:2px;z-index:2;display:flex;flex-direction:column;align-items:center;gap:7px}
-  .scroll-hint .mouse{width:22px;height:33px;border:2px solid var(--mint);border-radius:12px;position:relative}
-  .scroll-hint .mouse::after{content:"";position:absolute;top:6px;left:50%;transform:translateX(-50%);width:3px;height:7px;border-radius:3px;background:var(--green);animation:wheel 1.6s infinite}
-  @keyframes wheel{0%{opacity:1;transform:translate(-50%,0)}70%{opacity:0;transform:translate(-50%,10px)}100%{opacity:0}}
+    /* 横向翻页 */
+    .slider-container{width:calc(var(--base-width) * 6);height:100%;display:flex;transition:transform .6s cubic-bezier(.25,1,.5,1)}
+    section{
+      width:var(--base-width);height:var(--base-height);flex-shrink:0;
+      padding:120px 100px 40px 100px;display:flex;flex-direction:column;justify-content:center;align-items:center;position:relative;z-index:1;
+    }
+    .section-header{text-align:center;margin-top:10px;margin-bottom:30px}
+    .section-slogan-cn{font-size:57.2px;font-weight:700;color:var(--text-main);letter-spacing:2px}
+    .section-slogan-en{font-size:27.3px;font-family:'Poppins',sans-serif;color:var(--text-sub);margin-top:8px;font-weight:400;letter-spacing:1px;opacity:.88}
+    .edu-header{margin-bottom:60px}
+    .campus-header{margin-bottom:35px}
+    .intern-header{margin-bottom:60px}
+    .skill-header{margin-bottom:60px}
 
-  /* ---------- Sections ---------- */
-  section{padding:96px 5vw}
-  .wrap{max-width:1180px;margin:0 auto}
-  .sec-head{margin-bottom:50px;max-width:780px}
-  .sec-head .kicker{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:700;letter-spacing:3px;color:var(--green);text-transform:uppercase}
-  .sec-head .kicker::before{content:"";width:34px;height:2px;background:var(--green);border-radius:2px}
-  .sec-head h2{font-family:"Noto Serif SC",serif;font-size:clamp(28px,4vw,40px);font-weight:900;color:var(--deep);margin:14px 0 12px;letter-spacing:1px}
-  .sec-head p{color:var(--gray);font-size:15.5px}
-  .sec-head .en{display:block;font-size:13px;letter-spacing:4px;color:#9db8a8;text-transform:uppercase;margin-bottom:8px;font-weight:600}
+    /* 左右翻页按钮 */
+    .nav-arrow{
+      position:absolute;top:50%;transform:translateY(-50%);width:58px;height:58px;
+      background:linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(230,245,236,0.8) 100%);
+      border:1.5px solid var(--card-border);border-radius:50%;display:flex;justify-content:center;align-items:center;
+      cursor:pointer;z-index:90;box-shadow:var(--shadow-soft);transition:all .3s ease;font-size:24px;color:var(--text-main);backdrop-filter:blur(10px);
+    }
+    .nav-arrow:hover{background:linear-gradient(135deg,#2d5a43 0%,#1e3f2e 100%);color:#fff;transform:translateY(-50%) scale(1.1);box-shadow:var(--shadow-hover)}
+    .nav-arrow.left{left:30px}
+    .nav-arrow.right{right:30px}
+    .nav-arrow.disabled{opacity:.25;cursor:not-allowed;transform:translateY(-50%) scale(1)}
 
-  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
-  .reveal{transition:opacity .7s ease,transform .7s ease}
-  .reveal.pre{opacity:0;transform:translateY(28px)}
-  .reveal.on{opacity:1;transform:none}
+    .glass-card{
+      background:var(--card-glass);border:1.5px solid var(--card-border);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+      border-radius:var(--border-radius);box-shadow:var(--shadow-soft);transition:all .35s cubic-bezier(.25,1,.5,1);
+    }
+    .glass-card:hover{transform:translateY(-8px) scale(1.015);box-shadow:var(--shadow-hover);border-color:rgba(255,255,255,1);background:linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(218,240,227,0.85) 100%)}
 
-  /* ---------- char pop ---------- */
-  .c{display:inline-block;opacity:0;animation:pop .55s cubic-bezier(.2,.8,.3,1.15) forwards}
-  @keyframes pop{0%{opacity:0;transform:translateY(14px) scale(.5) rotate(-4deg)}60%{opacity:1;transform:translateY(-3px) scale(1.08) rotate(1deg)}100%{opacity:1;transform:none}}
+    /* ================= 模块1 关于我 ================= */
+    .who-container{display:flex;gap:50px;align-items:center;max-width:1620px;width:100%;height:100%}
+    .who-left{flex:1.1;margin-left:20px;position:relative;z-index:20}
+    .who-title{font-size:94.9px;font-weight:700;line-height:1.25;margin-bottom:45px}
+    .who-title .c-name{background:linear-gradient(120deg,var(--accent-color),#3f8060);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+    .who-subtitle-box{margin-bottom:36px}
+    .who-subtitle-cn{font-size:40.3px;color:var(--accent-color);font-weight:600}
+    .who-subtitle-en{font-size:22.1px;font-family:'Poppins',sans-serif;color:var(--text-sub);margin-top:5px}
+    .who-motto{
+      font-size:33.8px;font-weight:500;color:var(--text-main);margin-bottom:42px;line-height:1.6;
+      border-left:5px solid var(--accent-color);padding-left:20px;position:relative;z-index:25;
+    }
+    .who-cards{display:flex;gap:20px}
+    .gradient-card{
+      padding:16px 31px;border-radius:18px;font-size:23.4px;font-weight:600;color:var(--accent-color);
+      background:linear-gradient(135deg, rgba(255,255,255,0.95), rgba(200,235,215,0.75));
+      border:1.5px solid rgba(255,255,255,0.95);box-shadow:0 8px 26px rgba(45,90,67,0.1);
+      transition:all .3s ease;animation:autoPulse 3s ease-in-out infinite alternate, autoFloat 4s ease-in-out infinite alternate;white-space:nowrap;
+    }
+    .gradient-card:hover{transform:translateY(-6px) scale(1.05) !important;box-shadow:0 12px 30px rgba(45,90,67,0.25);background:linear-gradient(135deg,#2d5a43,#1e3f2e);color:#fff}
+    .gradient-card:nth-child(2){animation-delay:.6s,.6s}
+    .gradient-card:nth-child(3){animation-delay:1.2s,1.2s}
+    @keyframes autoPulse{0%{background:linear-gradient(135deg, rgba(255,255,255,0.95), rgba(200,235,215,0.75))}100%{background:linear-gradient(135deg, rgba(210,240,222,0.85), rgba(255,255,255,0.95))}}
+    @keyframes autoFloat{0%{transform:translateY(0)}100%{transform:translateY(-9px)}}
 
-  /* ---------- About ---------- */
-  .about-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:26px}
-  .about-card{padding:34px}
-  .about-card h3{font-size:19px;font-weight:800;color:var(--deep);margin-bottom:16px;display:flex;align-items:center;gap:10px}
-  .about-card h3 .no{font-size:13px;color:#fff;background:var(--green);border-radius:9px;padding:3px 10px}
-  .about-card p{font-size:15px;color:#3f5f50;margin-bottom:12px}
-  .info-list{display:grid;grid-template-columns:1fr 1fr;gap:2px 22px}
-  .info-list div{display:flex;justify-content:space-between;gap:14px;padding:11px 0;border-bottom:1px dashed var(--line);font-size:14.5px}
-  .info-list div span:first-child{color:#93a99b;white-space:nowrap}
-  .info-list div span:last-child{font-weight:600;color:var(--deep);text-align:right}
-  .stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
-  .stat{background:var(--mint-light);border-radius:15px;padding:18px 10px;text-align:center}
-  .stat b{display:block;font-size:26px;font-weight:800;color:var(--green);font-family:"Inter"}
-  .stat span{font-size:12px;color:#5c7d6b}
+    .who-right{position:relative;flex:1.3;display:flex;justify-content:center;align-items:center;height:100%;z-index:10;perspective:1000px}
+    .photo-wrapper{position:relative;width:598px;height:750px;display:flex;justify-content:center;align-items:center;transform-style:preserve-3d;transition:transform .3s ease-out;cursor:pointer;animation:portraitFloat 5s ease-in-out infinite}
+    @keyframes portraitFloat{
+      0%{transform:translateY(0) rotateX(0) rotateY(0) rotateZ(0) scale(1)}
+      25%{transform:translateY(-25px) rotateX(8deg) rotateY(-8deg) rotateZ(-2deg) scale(1.03)}
+      50%{transform:translateY(0) rotateX(0) rotateY(0) rotateZ(0) scale(1)}
+      75%{transform:translateY(25px) rotateX(-8deg) rotateY(8deg) rotateZ(2deg) scale(0.97)}
+      100%{transform:translateY(0) rotateX(0) rotateY(0) rotateZ(0) scale(1)}
+    }
+    .photo-wrapper.paused{animation-play-state:paused !important}
+    .runze-tag{position:absolute;top:20px;left:-26px;font-family:'Caveat','Segoe Script','Bradley Hand',cursive;font-size:91px;font-weight:700;color:var(--accent-color);transform:rotate(-45deg) translateZ(30px);z-index:10;text-shadow:2px 4px 10px rgba(45,90,67,0.15);pointer-events:none;white-space:nowrap}
+    .photo-bg-block{position:absolute;bottom:auto;width:100%;height:90%;background:linear-gradient(135deg, rgba(205,235,218,0.65), rgba(160,210,180,0.45));clip-path:polygon(6% 0%,96% 4%,100% 100%,0% 100%);border-radius:45px;z-index:1;transform:translateZ(0)}
+    .who-img{position:relative;max-width:100%;max-height:100%;object-fit:contain;z-index:2;transform:scale(1.05) translateZ(40px);transform-origin:center center;filter:drop-shadow(0 15px 30px rgba(45,90,67,0.2));display:block;transition:filter .3s ease}
 
-  /* ---------- Timeline (education) ---------- */
-  .tl{position:relative;margin-left:12px;padding-left:36px;border-left:2px solid var(--mint)}
-  .tl-item{position:relative;padding-bottom:38px}
-  .tl-item:last-child{padding-bottom:0}
-  .tl-item::before{content:"";position:absolute;left:-43px;top:6px;width:14px;height:14px;border-radius:50%;background:#fff;border:4px solid var(--green);box-shadow:0 0 0 5px var(--mint-light)}
-  .tl-item .when{display:inline-block;font-size:12.5px;font-weight:700;color:var(--green);background:var(--mint-light);padding:3px 12px;border-radius:999px;margin-bottom:10px}
-  .tl-item h3{font-size:20px;font-weight:800;color:var(--deep)}
-  .tl-item .sub{font-size:14.5px;color:var(--gray);margin-top:2px}
-  .tl-item .desc{font-size:14.5px;color:#4a6a5a;margin-top:10px}
+    /* ================= 模块2 教育背景 ================= */
+    .edu-container{display:flex;justify-content:center;gap:40px;max-width:1620px;width:100%;margin:0 auto}
+    .edu-card{flex:1;overflow:hidden;display:flex;flex-direction:column}
+    .edu-card img{width:100%;aspect-ratio:16/9;object-fit:cover;transition:transform .5s ease}
+    .edu-card:hover img{transform:scale(1.08)}
+    .edu-card-body{padding:31px;flex:1;display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px}
+    .edu-school-row{display:flex;justify-content:space-between;align-items:center;width:100%;margin-bottom:3px}
+    .edu-school-row .school{font-size:33.8px;font-weight:700;color:var(--text-main)}
+    .edu-school-row .date{font-size:22.1px;color:var(--accent-color);font-weight:700}
+    .edu-card-body .college{font-size:23.4px;color:var(--text-sub)}
+    .edu-card-body .degree{font-size:22.1px;color:var(--text-sub)}
+    .major-highlight-full{width:100%;margin-top:10px;background:linear-gradient(135deg, rgba(45,90,67,0.12) 0%, rgba(45,90,67,0.05) 100%);color:var(--accent-color);font-size:23.4px;font-weight:700;padding:10px 0;border-radius:10px;border-left:4px solid var(--accent-color);border-right:4px solid var(--accent-color);text-align:center}
 
-  /* ---------- Awards ---------- */
-  .award-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-  .award{padding:22px 26px;display:flex;gap:18px;align-items:flex-start}
-  .award .medal{flex:0 0 auto;width:46px;height:46px;border-radius:14px;background:linear-gradient(135deg,var(--green),var(--mint));color:#fff;display:flex;align-items:center;justify-content:center;font-size:21px;font-weight:800}
-  .award h4{font-size:16px;font-weight:700;color:var(--deep)}
-  .award p{font-size:13.5px;color:var(--gray);margin-top:4px}
-  .award .lvl{display:inline-block;font-size:11.5px;font-weight:700;padding:2px 10px;border-radius:999px;margin-top:8px}
-  .lvl.n{background:var(--mint-light);color:var(--green)}
-  .lvl.s{background:#fff4e6;color:#d9822b}
-  .lvl.h{background:#eefaf2;color:#22a06b}
+    /* ================= 模块3 校园成就 ================= */
+    .campus-grid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:24px;max-width:1620px;width:100%}
+    .paper-item-card{padding:26px 32px;display:flex;flex-direction:column;justify-content:space-between;min-height:220px}
+    .paper-header-row{display:flex;align-items:center;gap:13px;margin-bottom:12px;flex-wrap:wrap}
+    .paper-date{font-size:22.1px;font-weight:700;color:var(--accent-color);margin-right:8px}
+    .paper-tag-highlight{font-size:19.5px;padding:4px 13px;border-radius:16px;background:linear-gradient(135deg,#2d5a43,#1e3f2e);color:#fff;font-weight:700;box-shadow:0 5px 13px rgba(45,90,67,0.25)}
+    .paper-tag{font-size:18.2px;padding:4px 10px;border-radius:8px;background:rgba(45,90,67,0.12);color:var(--accent-color);font-weight:600}
+    .paper-item-card h4{font-size:27.3px;margin-bottom:8px;color:var(--text-main)}
+    .paper-item-card p{font-size:20.8px;color:var(--text-sub);line-height:1.45}
+    .scroll-card-box{padding:20px 24px;display:flex;flex-direction:column;height:288px;box-sizing:border-box}
+    .box-header-row{display:flex;align-items:baseline;gap:13px;margin-bottom:12px;padding-bottom:6px;border-bottom:1px solid rgba(45,90,67,0.15);flex-shrink:0}
+    .box-header-row h4{font-size:26px;color:var(--accent-color);font-weight:700}
+    .box-header-row span.sub-tip{font-size:16px;color:var(--text-sub);opacity:.8}
+    .scroll-content-work-grid{overflow-y:auto !important;display:grid;grid-template-columns:1fr 1fr;gap:10px;padding-right:8px;flex:1;height:100%;-webkit-overflow-scrolling:touch}
+    .scroll-content-work-grid::-webkit-scrollbar,.award-sub-list::-webkit-scrollbar{width:6px}
+    .scroll-content-work-grid::-webkit-scrollbar-thumb,.award-sub-list::-webkit-scrollbar-thumb{background:#96bba6;border-radius:6px}
+    .work-item-row{display:flex;align-items:center;gap:13px;background:linear-gradient(135deg, rgba(255,255,255,0.85), rgba(225,242,232,0.65));padding:8px 12px;border-radius:13px;border:1px solid rgba(255,255,255,0.9);transition:all .3s ease}
+    .work-item-row:hover{transform:translateY(-2px);background:rgba(255,255,255,0.95);box-shadow:0 4px 12px rgba(45,90,67,0.1)}
+    .work-item-row img{width:40px;height:40px;border-radius:10px;object-fit:cover;flex-shrink:0}
+    .work-item-row .info h5{font-size:18px;color:var(--text-main);line-height:1.3}
+    .work-item-row .info span{font-size:15px;color:var(--text-sub)}
+    .award-triple-container{display:grid;grid-template-columns:1fr 1fr 1.2fr;gap:12px;flex:1;height:calc(100% - 40px);overflow:hidden}
+    .award-sub-card{background:linear-gradient(135deg, rgba(255,255,255,0.65), rgba(225,242,232,0.45));border-radius:16px;padding:10px;display:flex;flex-direction:column;height:100%;border:1px solid rgba(255,255,255,0.7);box-sizing:border-box;overflow:hidden}
+    .award-sub-card h5{font-size:19px;color:var(--accent-color);margin-bottom:8px;font-weight:700;flex-shrink:0}
+    .award-sub-list{overflow-y:auto !important;display:flex;flex-direction:column;gap:6px;padding-right:6px;flex:1;min-height:0;-webkit-overflow-scrolling:touch}
+    .award-sub-item{font-size:15px;line-height:1.35;color:var(--text-main);background:rgba(255,255,255,0.55);padding:6px 8px;border-radius:8px;transition:background .2s ease}
+    .award-sub-item:hover{background:rgba(255,255,255,0.95)}
+    .award-sub-item .date{font-size:13.5px;color:var(--accent-color);font-weight:700;margin-right:5px}
+    .award-level-tag{font-size:14px;font-weight:700;color:var(--accent-color);margin:6px 0 2px 0;border-bottom:1.5px dashed rgba(45,90,67,0.25);padding-bottom:2px}
 
-  /* ---------- Experience ---------- */
-  .exp{display:grid;grid-template-columns:230px 1fr;overflow:hidden;margin-bottom:26px}
-  .exp .side{position:relative;min-height:220px;overflow:hidden}
-  .exp .side img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
-  .exp .side::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 60%,rgba(255,255,255,.95))}
-  .exp .main{padding:28px 30px}
-  .exp .co{display:flex;align-items:center;gap:16px;margin-bottom:6px}
-  .exp .co .logo{width:52px;height:52px;border-radius:15px;display:flex;align-items:center;justify-content:center;flex:0 0 auto;box-shadow:0 6px 16px rgba(0,0,0,.12)}
-  .exp .co .logo img{width:100%;height:100%;object-fit:contain;padding:7px;border-radius:12px}
-  .exp .co h3{font-size:19px;font-weight:800;color:var(--deep)}
-  .exp .co .role{font-size:14px;color:var(--green);font-weight:700}
-  .exp .co .org{font-size:12.5px;color:var(--gray)}
-  .exp .date{display:inline-block;font-size:12.5px;font-weight:700;color:var(--green);background:var(--mint-light);padding:4px 13px;border-radius:999px;margin-bottom:12px}
-  .exp ul{list-style:none}
-  .exp li{position:relative;padding-left:20px;margin-bottom:11px;font-size:14.5px;color:#41604f}
-  .exp li::before{content:"";position:absolute;left:1px;top:10px;width:8px;height:8px;border-radius:2px;background:var(--green);transform:rotate(45deg)}
-  .exp li b{color:var(--deep)}
-  .exp .summary{font-size:13px;color:var(--gray);margin-top:12px;display:flex;gap:8px;flex-wrap:wrap}
-  .exp .summary span{background:#f2f9f4;border:1px solid var(--line);padding:3px 11px;border-radius:999px}
+    /* ================= 模块4 实习经历 ================= */
+    .intern-container{display:flex;gap:28px;max-width:1560px;width:100%}
+    .intern-card{flex:1;overflow:hidden;display:flex;flex-direction:column}
+    .intern-banner{height:188px;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
+    .intern-banner .logo-img{height:120px;max-width:75%;object-fit:contain;filter:drop-shadow(0 8px 18px rgba(45,90,67,0.25));position:relative;z-index:2;transition:transform .5s ease}
+    .intern-card:hover .logo-img{transform:scale(1.08)}
+    .intern-banner::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 30%, rgba(255,255,255,0.55), transparent 65%);pointer-events:none}
+    .intern-banner.b-alibaba{background:linear-gradient(135deg,#ffe8c9,#ffd6a0)}
+    .intern-banner.b-iflytek{background:linear-gradient(135deg,#e0f1ff,#c8e4fb)}
+    .intern-banner.b-zte{background:linear-gradient(135deg,#d8ecfb,#bcdcf6)}
+    .intern-body{padding:26px;flex:1}
+    .intern-header-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+    .intern-body h3{font-size:32.5px}
+    .intern-date{font-size:20.8px;color:var(--accent-color);font-weight:700}
+    .intern-dept-post-row{display:flex;justify-content:space-between;align-items:center;font-size:18.7px;font-weight:700;color:var(--accent-color);margin-bottom:18px;background:rgba(45,90,67,0.08);padding:10px 14px;border-radius:10px}
+    .intern-tags{display:flex;flex-direction:column;gap:12px}
+    .intern-tag-item{background:linear-gradient(135deg, rgba(255,255,255,0.95), rgba(230,245,236,0.85));padding:12px 18px;border-radius:13px;font-size:20.8px;color:var(--text-main);border-left:4px solid var(--accent-color);box-shadow:0 4px 13px rgba(0,0,0,0.03);line-height:1.4;display:flex;justify-content:center;align-items:center;text-align:center;font-weight:500;transition:all .3s ease}
+    .intern-tag-item:hover{transform:translateX(4px);background:linear-gradient(135deg,#2d5a43,#1e3f2e);color:#fff}
 
-  /* ---------- Projects ---------- */
-  .proj{display:grid;grid-template-columns:1fr 1fr;gap:22px}
-  .proj-card{overflow:hidden;display:flex;flex-direction:column;transition:transform .3s,box-shadow .3s}
-  .proj-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
-  .proj-card .pimg{height:180px;overflow:hidden;position:relative}
-  .proj-card .pimg img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
-  .proj-card:hover .pimg img{transform:scale(1.06)}
-  .proj-card .pimg .tag{position:absolute;top:14px;left:14px;font-size:11.5px;font-weight:700;color:var(--deep);background:rgba(255,255,255,.85);padding:4px 12px;border-radius:999px;backdrop-filter:blur(4px)}
-  .proj-card .pimg .year{position:absolute;bottom:12px;right:14px;font-size:11.5px;font-weight:700;color:#fff;background:rgba(23,90,60,.6);padding:3px 11px;border-radius:999px;backdrop-filter:blur(4px)}
-  .proj-card .pbody{padding:22px 26px 26px;display:flex;flex-direction:column;flex:1}
-  .proj-card h3{font-size:18.5px;font-weight:800;color:var(--deep);line-height:1.4;margin-bottom:12px}
-  .proj-card ul{list-style:none;margin-bottom:16px}
-  .proj-card li{position:relative;padding-left:19px;margin-bottom:9px;font-size:13.5px;color:#4a6a5a}
-  .proj-card li::before{content:"▸";position:absolute;left:0;color:var(--green);font-weight:700}
-  .proj-card .stack{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto}
-  .proj-card .stack span{font-size:11.5px;font-weight:600;color:#3d5c4f;background:var(--mint-light);border:1px solid var(--line);padding:4px 11px;border-radius:999px}
+    /* ================= 模块5 技能爱好 ================= */
+    .skill-layout-container{display:flex;gap:36px;max-width:1560px;width:100%;align-items:stretch}
+    .skill-left-panel{flex:1.1;display:flex;flex-direction:column;gap:24px}
+    .tarot-area{display:flex;gap:24px;width:100%;height:100%}
+    .tarot-box{flex:1;padding:26px 20px 20px 20px;text-align:center;display:flex;flex-direction:column;justify-content:space-between}
+    .tarot-box h4{font-size:36.4px;color:var(--accent-color);margin-bottom:16px;font-weight:700}
+    .deck{position:relative;height:234px;display:flex;justify-content:center;align-items:center;cursor:pointer}
+    .tarot-card{position:absolute;width:136px;height:227px;background:linear-gradient(145deg,#1b2820 0%,#0d1612 100%);border:1.5px solid var(--gold);border-radius:10px;display:flex;flex-direction:column;justify-content:space-between;align-items:center;padding:13px 8px;color:#fce8b3;box-shadow:0 10px 20px rgba(0,0,0,0.2);transition:all .5s cubic-bezier(.25,1,.5,1);user-select:none;overflow:hidden}
+    .tarot-card::before{content:"";position:absolute;top:4px;left:4px;right:4px;bottom:4px;border:1px solid rgba(212,175,55,0.4);border-radius:7px;pointer-events:none}
+    .tarot-card-symbol{width:54px;height:54px;border:1px dashed rgba(212,175,55,0.5);border-radius:50%;display:flex;justify-content:center;align-items:center;margin-top:20px;font-size:20px;color:#d4af37}
+    .tarot-card-text{font-size:20.8px;font-weight:700;color:#fce8b3;margin-bottom:13px;text-align:center}
+    .tarot-hint{font-size:20.8px;color:var(--text-sub);margin-top:18px;font-weight:600;opacity:.85}
+    .skill-right-panel{flex:1.2;display:flex;flex-direction:column}
+    .hobby-section-title{font-size:36.4px;font-weight:700;color:var(--accent-color);margin-bottom:18px;text-align:center}
+    .hobby-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;flex:1}
+    .hobby-card{overflow:hidden;text-align:center;display:flex;flex-direction:column}
+    .carousel{position:relative;width:100%;aspect-ratio:16/9;flex:1}
+    .carousel img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .5s ease}
+    .carousel img.active{opacity:1}
+    .hobby-title{padding:12px;font-size:22.1px;font-weight:700;color:var(--text-main);background:rgba(255,255,255,0.6)}
 
-  /* ---------- Skills & Hobbies ---------- */
-  .sk-wrap{display:grid;grid-template-columns:1fr 1fr;gap:22px}
-  .sk-card{padding:30px}
-  .sk-card h3{font-size:18px;font-weight:800;color:var(--deep);margin-bottom:16px;display:flex;align-items:center;gap:10px}
-  .sk-card h3 .ic{width:38px;height:38px;border-radius:12px;background:var(--mint-light);color:var(--green);display:flex;align-items:center;justify-content:center;font-size:18px}
-  .tags{display:flex;flex-wrap:wrap;gap:9px;margin-top:4px}
-  .tags span{font-size:12.5px;font-weight:600;color:#3d5c4f;background:var(--mint-light);border:1px solid var(--line);padding:5px 13px;border-radius:999px;transition:.2s;cursor:default}
-  .tags span:hover{background:var(--green);color:#fff;border-color:var(--green);transform:translateY(-2px)}
-  .sk-card li{list-style:none;display:flex;gap:12px;margin-bottom:12px;font-size:14px;color:#4a6a5a}
-  .sk-card li .k{flex:0 0 auto;font-weight:800;color:var(--deep);min-width:72px}
+    /* ================= 模块6 联系我 ================= */
+    .contact-wrapper{position:relative;max-width:1235px;width:100%;display:flex;justify-content:center;align-items:center}
+    .art-bg-decoration{position:absolute;width:100%;height:100%;pointer-events:none;z-index:0}
+    .art-circle-1{position:absolute;width:440px;height:440px;top:-80px;left:-65px;background:radial-gradient(circle, rgba(160,215,185,0.45) 0%, transparent 70%);filter:blur(25px);animation:floatBg 8s ease-in-out infinite alternate}
+    .art-circle-2{position:absolute;width:520px;height:520px;bottom:-90px;right:-50px;background:radial-gradient(circle, rgba(200,230,210,0.55) 0%, transparent 70%);filter:blur(30px);animation:floatBg 10s ease-in-out infinite alternate-reverse}
+    @keyframes floatBg{0%{transform:translate(0,0) scale(1)}100%{transform:translate(30px,25px) scale(1.08)}}
+    .contact-container{text-align:center;width:100%;position:relative;z-index:1;padding:62px 52px;background:linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(215,240,225,0.75) 100%);border:2px solid rgba(255,255,255,0.95);border-radius:42px;backdrop-filter:blur(20px);box-shadow:0 26px 65px rgba(45,90,67,0.15);background-image:radial-gradient(rgba(45,90,67,0.08) 1.2px, transparent 0);background-size:26px 26px;transition:all .35s ease}
+    .contact-container:hover{box-shadow:0 32px 75px rgba(45,90,67,0.22)}
+    .contact-title{font-size:71.5px;font-weight:700;margin-bottom:58px;color:var(--text-main);line-height:1.4;letter-spacing:1px;min-height:200px;display:flex;align-items:center;justify-content:center;cursor:pointer}
+    .cards-wrapper{display:flex;gap:40px;justify-content:center}
+    .flip-card{width:325px;height:150px;perspective:1000px;cursor:pointer}
+    .flip-card-inner{position:relative;width:100%;height:100%;transition:transform .6s cubic-bezier(.4,0,.2,1);transform-style:preserve-3d}
+    .flip-card:hover .flip-card-inner{transform:translateY(-5px)}
+    .flip-card.flipped .flip-card-inner{transform:rotateY(180deg) translateY(-5px)}
+    .flip-front,.flip-back{position:absolute;width:100%;height:100%;backface-visibility:hidden;border-radius:20px;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:16px;box-shadow:0 10px 30px rgba(45,90,67,0.12)}
+    .flip-front{background:linear-gradient(135deg, rgba(255,255,255,0.95), rgba(220,242,228,0.85));border:1.5px solid rgba(255,255,255,0.95);font-size:28.6px;font-weight:700;color:var(--accent-color)}
+    .flip-back{background:linear-gradient(135deg,#2d5a43,#1e3f2e);color:#fff;transform:rotateY(180deg);font-size:22.1px;word-break:break-all}
+    .flip-back span{margin-top:8px;font-size:16.9px;opacity:.8}
 
-  /* gacha */
-  .gacha{margin-top:26px;text-align:center}
-  .gacha .deck{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:22px;min-height:150px}
-  .gacha .cardback{width:104px;height:140px;border-radius:16px;background:repeating-linear-gradient(45deg,#2e9e63,#2e9e63 8px,#3fb575 8px,#3fb575 16px);box-shadow:var(--shadow);display:flex;align-items:center;justify-content:center;font-size:34px;color:rgba(255,255,255,.85);position:relative;animation:cardIn .5s backwards}
-  @keyframes cardIn{from{transform:translateY(30px) rotate(6deg);opacity:0}to{transform:none;opacity:1}}
-  .gacha .cardback .q{width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center}
-  .gacha .result{min-height:170px;display:flex;align-items:center;justify-content:center}
-  .gacha .rcard{width:150px;height:196px;border-radius:18px;background:#fff;box-shadow:var(--shadow-lg);transform-style:preserve-3d;position:relative;transition:transform .7s cubic-bezier(.2,.8,.3,1.2);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:16px}
-  .gacha .rcard.flip{animation:draw 1s cubic-bezier(.2,.8,.3,1.2) forwards}
-  @keyframes draw{0%{transform:translateY(-40px) rotateY(0) scale(.4);opacity:0}60%{transform:translateY(6px) rotateY(180deg) scale(1.08)}100%{transform:none rotateY(0) scale(1);opacity:1}}
-  .gacha .rcard .ic{font-size:44px}
-  .gacha .rcard .nm{font-size:16px;font-weight:800;color:var(--deep)}
-  .gacha .rcard .ty{font-size:11.5px;color:var(--gray)}
-  .gacha .rcard .rar{font-size:11px;font-weight:800;letter-spacing:2px;padding:3px 12px;border-radius:999px}
-  .gacha .rcard.r-ssr{border:2px solid var(--gold);box-shadow:0 0 26px rgba(232,179,57,.5)}
-  .gacha .rcard.r-ssr .rar{background:linear-gradient(120deg,#f7d77e,#e8b339);color:#7a5200}
-  .gacha .rcard.r-sr{border:2px solid var(--purple);box-shadow:0 0 22px rgba(139,111,224,.4)}
-  .gacha .rcard.r-sr .rar{background:linear-gradient(120deg,#c7b6f5,#8b6fe0);color:#3d2b7a}
-  .gacha .rcard.r-r{border:2px solid var(--blue);box-shadow:0 0 18px rgba(74,143,224,.35)}
-  .gacha .rcard.r-r .rar{background:linear-gradient(120deg,#bcd9f5,#4a8fe0);color:#17477e}
-  .gacha .rcard.r-n{border:2px solid var(--mint)}
-  .gacha .rcard.r-n .rar{background:linear-gradient(120deg,#d9f2e2,#7fd4a5);color:#1d6e44}
-  .gacha .btn.draw{background:linear-gradient(120deg,var(--green),var(--green-2));color:#fff;font-size:15px;font-weight:800;padding:14px 34px;border:none;border-radius:999px;cursor:pointer;box-shadow:0 10px 26px rgba(46,158,99,.35);transition:.25s;letter-spacing:1px}
-  .gacha .btn.draw:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 16px 34px rgba(46,158,99,.45)}
-  .gacha .btn.draw:disabled{opacity:.5;transform:none;cursor:not-allowed}
-  .gacha .pool{margin-top:20px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
-  .gacha .pool .got{font-size:12px;font-weight:700;padding:5px 13px;border-radius:999px;background:#fff;border:1px solid var(--line);color:#4a6a5a;animation:cardIn .4s backwards}
-  .gacha .pool .got.ssr{background:linear-gradient(120deg,#fbf0d4,#f7e2ab);border-color:var(--gold);color:#7a5200}
-
-  /* hobbies gallery */
-  .hobby-gal{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px}
-  .hobby-gal figure{border-radius:18px;overflow:hidden;position:relative;aspect-ratio:3/3.6;box-shadow:var(--shadow)}
-  .hobby-gal img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
-  .hobby-gal figure:hover img{transform:scale(1.07)}
-  .hobby-gal figcaption{position:absolute;left:0;right:0;bottom:0;padding:26px 14px 12px;background:linear-gradient(transparent,rgba(23,90,60,.75));color:#fff;font-size:13.5px;font-weight:700;letter-spacing:1px}
-
-  /* ---------- Contact ---------- */
-  .contact{position:relative;border-radius:26px;overflow:hidden;color:#fff;text-align:center;padding:70px 40px;background:
-      radial-gradient(600px 340px at 50% -20%,rgba(127,212,165,.45),transparent 60%),
-      linear-gradient(150deg,#175a3c,#256b49 60%,#1a6242);
-    box-shadow:var(--shadow-lg)}
-  .contact::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.12) 1px,transparent 1px);background-size:26px 26px;mask-image:radial-gradient(ellipse 70% 80% at 50% 0,#000,transparent 75%)}
-  .contact h2{position:relative;font-family:"Noto Serif SC",serif;font-size:clamp(26px,3.6vw,40px);font-weight:900;margin-bottom:14px;letter-spacing:2px}
-  .contact p{position:relative;color:#cde9d8;font-size:15px;margin-bottom:34px}
-  .contact .links{position:relative;display:flex;flex-wrap:wrap;justify-content:center;gap:15px}
-  .contact .links a{display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);padding:13px 22px;border-radius:14px;font-size:14px;font-weight:700;backdrop-filter:blur(8px);transition:.25s}
-  .contact .links a:hover{background:rgba(255,255,255,.22);transform:translateY(-3px)}
-
-  footer{padding:34px 5vw;text-align:center;color:#93a99b;font-size:13px}
-  footer b{color:var(--green)}
-
-  /* ---------- Quick navigation (第二页) ---------- */
-  .quick{
-    min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:0;
-    background:linear-gradient(165deg,#e8f5ec 0%,#f4faf5 60%,#e2f3e9 100%);
-  }
-  .quick-inner{position:relative;z-index:2;width:100%;max-width:1180px;margin:0 auto;padding:120px 5vw 80px;display:grid;grid-template-columns:.95fr 1.05fr;gap:60px;align-items:center}
-  .quick .qk{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:700;letter-spacing:3px;color:var(--green);text-transform:uppercase}
-  .quick .qk::before{content:"";width:34px;height:2px;background:var(--green);border-radius:2px}
-  .quick h2{font-family:"Noto Serif SC",serif;font-size:clamp(30px,4.4vw,48px);font-weight:900;color:var(--deep);margin:16px 0 14px;letter-spacing:1px}
-  .quick .lead{color:var(--gray);font-size:15px;max-width:30em;margin-bottom:34px}
-  .quick-links{display:flex;flex-direction:column;gap:13px}
-  .quick-links a{display:flex;align-items:center;gap:16px;background:rgba(255,255,255,.75);border:1px solid var(--line);border-radius:16px;padding:14px 20px;font-size:16px;font-weight:700;color:var(--deep);transition:.25s;backdrop-filter:blur(6px)}
-  .quick-links a:hover{background:#fff;transform:translateX(8px);box-shadow:var(--shadow);color:var(--green)}
-  .quick-links a .no{flex:0 0 auto;width:34px;height:34px;border-radius:10px;background:var(--mint-light);color:var(--green);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800}
-  .quick-links a .arr{margin-left:auto;color:var(--mint);transition:.25s;font-weight:700}
-  .quick-links a:hover .arr{color:var(--green);transform:translateX(4px)}
-  .quick-photo{position:relative}
-  .quick-photo .frame{position:relative;border-radius:26px;overflow:hidden;box-shadow:var(--shadow-lg);transform:rotate(-1.5deg)}
-  .quick-photo img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/5;display:block}
-  .quick-photo .cap{position:absolute;left:16px;bottom:16px;background:rgba(23,90,60,.74);color:#fff;font-size:13px;font-weight:700;padding:7px 14px;border-radius:999px;backdrop-filter:blur(4px)}
-  .quick-photo::before{content:"";position:absolute;inset:-14px;border:1.5px dashed rgba(46,158,99,.35);border-radius:32px;z-index:-1;transform:rotate(2deg)}
-
-  /* ---------- Music button ---------- */
-  .music-btn{position:fixed;right:26px;bottom:26px;z-index:200;width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--green),var(--green-2));color:#fff;border:none;cursor:pointer;box-shadow:0 10px 26px rgba(46,158,99,.4);display:flex;align-items:center;justify-content:center;font-size:23px;transition:.25s}
-  .music-btn:hover{transform:scale(1.08)}
-  .music-btn.playing{animation:pulse 1.7s infinite}
-  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(46,158,99,.45)}70%{box-shadow:0 0 0 15px rgba(46,158,99,0)}100%{box-shadow:0 0 0 0 rgba(46,158,99,0)}}
-
-  /* ---------- responsive ---------- */
-  @media(max-width:960px){
-    nav ul{display:none}
-    .hero-inner{grid-template-columns:1fr;text-align:center;padding-top:120px;gap:70px}
-    .hero .chips,.hero-actions{justify-content:center}
-    .about-grid,.sk-wrap,.award-grid,.proj{grid-template-columns:1fr}
-    .info-list{grid-template-columns:1fr}
-    .exp{grid-template-columns:1fr}
-    .exp .side{min-height:140px}
-    .exp .side::after{background:linear-gradient(180deg,transparent 30%,rgba(255,255,255,.95))}
-    .hobby-gal{grid-template-columns:repeat(3,1fr)}
-    section{padding:72px 5vw}
-    .avatar3d{order:-1}
-    .quick-inner{grid-template-columns:1fr;text-align:center;padding-top:120px}
-    .quick .qk{justify-content:center}
-    .quick .lead{margin:0 auto 34px}
-    .quick-links a{justify-content:flex-start;text-align:left}
-    .quick-photo{max-width:380px;margin:0 auto}
-  }
-  @media(max-width:520px){.hobby-gal{grid-template-columns:1fr}}
-</style>
+    /* ================= 悬浮音乐播放器 ================= */
+    .music-widget{
+      position:absolute;right:46px;bottom:34px;z-index:95;width:340px;
+      border-radius:20px;overflow:hidden;padding:8px 10px;
+      background:linear-gradient(135deg, rgba(255,255,255,0.92), rgba(228,244,234,0.85));
+      border:1.5px solid rgba(255,255,255,0.95);box-shadow:var(--shadow-soft);backdrop-filter:blur(14px);
+    }
+    .music-widget iframe{display:block;width:100%;height:66px;border:0}
+    .music-widget .mw-label{display:flex;align-items:center;gap:7px;font-size:15px;font-weight:700;color:var(--accent-color);margin-bottom:4px;padding:0 2px}
+  </style>
 </head>
 <body>
 
-<nav>
-  <div class="brand">彭润泽 <b>·</b> 主页</div>
-  <ul>
-    <li><a href="#quick">快速导航</a></li>
-    <li><a href="#about">关于我</a></li>
-    <li><a href="#edu">教育背景</a></li>
-    <li><a href="#honor">校园成就</a></li>
-    <li><a href="#exp">实习经历</a></li>
-    <li><a href="#proj">项目案例</a></li>
-    <li><a href="#skill">技能爱好</a></li>
-    <li><a href="#contact">联系我</a></li>
-  </ul>
-</nav>
+  <!-- 动态弥散渐变背景 + 底纹 -->
+  <div class="bg-mesh"></div>
+  <div class="bg-pattern"></div>
 
-<!-- ===================== HERO ===================== -->
-<header class="hero">
-  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
-  <div class="hero-inner">
-    <div>
-      <span class="tag"><span class="dot"></span> 智能控制算法 · 大模型 · 研究生在读</span>
-      <h1 id="heroName">彭润泽</h1>
-      <div class="en-name" id="heroEn">Peng Runze · Control Science &amp; Engineering</div>
-      <p class="motto" id="heroMotto">
-        <span class="hi">HELLO · 你好</span>
-        我是彭润泽，西安交通大学控制科学与工程硕士在读。专注智能控制算法与大模型应用，在代码与算法之间，构建更智能的未来。
-      </p>
-      <div class="chips">
-        <span class="chip">📞 <b>198 2602 6875</b></span>
-        <span class="chip">✉️ <b>3345750865@qq.com</b></span>
-        <span class="chip">📍 江苏徐州 · 西安</span>
-        <span class="chip">🎓 中共党员</span>
-      </div>
-      <div class="hero-actions">
-        <a class="btn primary" href="#exp">查看实习经历 ↓</a>
-        <a class="btn ghost" href="#proj">项目案例 ↓</a>
-      </div>
+  <!-- 视口自适应外层容器 -->
+  <div class="app-viewport" id="appViewport">
+
+    <!-- 顶部悬浮胶囊导航栏 -->
+    <header>
+      <div class="logo"><span class="logo-badge"></span> 彭润泽 · 主页</div>
+      <nav>
+        <a class="nav-link-item active" onclick="goToSlide(0)">关于我</a>
+        <a class="nav-link-item" onclick="goToSlide(1)">教育背景</a>
+        <a class="nav-link-item" onclick="goToSlide(2)">校园成就</a>
+        <a class="nav-link-item" onclick="goToSlide(3)">实习经历</a>
+        <a class="nav-link-item" onclick="goToSlide(4)">技能爱好</a>
+        <a class="nav-link-item" onclick="goToSlide(5)">联系我</a>
+      </nav>
+    </header>
+
+    <!-- 左右翻页按钮 -->
+    <div class="nav-arrow left disabled" id="prevBtn" onclick="prevSlide()">&#10094;</div>
+    <div class="nav-arrow right" id="nextBtn" onclick="nextSlide()">&#10095;</div>
+
+    <!-- 悬浮背景音乐（网易云 · 樱花草） -->
+    <div class="music-widget">
+      <div class="mw-label">♪ 樱花草 · Sweety</div>
+      <iframe src="https://music.163.com/outchain/player?type=2&id=5256963&auto=1&height=66" loading="lazy" allow="autoplay; encrypted-media" title="樱花草"></iframe>
     </div>
 
-    <!-- 3D 立体卡通形象（可拖拽旋转） -->
-    <div class="avatar3d">
-      <div class="ring"></div>
-      <div class="stage" id="stage">
-        <div class="cube" id="cube">
-          <div class="face front"><img src="https://aka.doubaocdn.com/s/wKFs4vADmS" alt="彭润泽3D卡通形象" /></div>
-          <div class="face back">
-            <div class="bk">彭润泽</div>
-            <p>保持好奇，持续进化<br/>在算法与智能的世界里<br/>不断探索新的可能</p>
+    <!-- 全屏主容器 -->
+    <div class="slider-container" id="slider">
+
+      <!-- 1. 关于我 -->
+      <section>
+        <div class="who-container">
+          <div class="who-left">
+            <div class="who-title"><span id="helloTyping"></span><br><span class="c-name">我是彭润泽</span></div>
+            <div class="who-subtitle-box">
+              <div class="who-subtitle-cn">智能控制算法 · 大模型应用</div>
+              <div class="who-subtitle-en">Intelligent Control Algorithms · LLM Applications</div>
+            </div>
+            <p class="who-motto">「去做想做的，寻找阶段性的最优解」</p>
+            <div class="who-cards">
+              <div class="gradient-card">建模竞赛国奖 13 项</div>
+              <div class="gradient-card">三段大厂实习</div>
+              <div class="gradient-card">智能体成功率 97%</div>
+            </div>
+          </div>
+          <div class="who-right">
+            <div class="photo-wrapper" id="photoWrapper" onclick="pausePhotoAnimation()">
+              <div class="runze-tag">Runze</div>
+              <div class="photo-bg-block"></div>
+              <img src="https://aka.doubaocdn.com/s/wKFs4vADmS" alt="彭润泽3D卡通形象" class="who-img" decoding="async" />
+            </div>
           </div>
         </div>
-      </div>
-      <div class="hint">🖱️ 拖拽旋转 · 查看立体</div>
-    </div>
-  </div>
-  <div class="scroll-hint"><div class="mouse"></div>向下滚动</div>
-</header>
+      </section>
 
-<!-- ===================== QUICK NAVIGATION (第二页) ===================== -->
-<section class="quick" id="quick">
-  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
-  <div class="quick-inner">
-    <div class="reveal">
-      <span class="qk">Quick Navigation</span>
-      <h2>快速导览</h2>
-      <p class="lead">点击下方快捷入口，一键直达我的各个板块——从校园经历到大厂实习，从科研项目到技能爱好，尽在掌握。</p>
-      <div class="quick-links">
-        <a href="#about"><span class="no">01</span> 关于我<span class="arr">→</span></a>
-        <a href="#edu"><span class="no">02</span> 教育背景<span class="arr">→</span></a>
-        <a href="#honor"><span class="no">03</span> 校园成就<span class="arr">→</span></a>
-        <a href="#exp"><span class="no">04</span> 实习经历<span class="arr">→</span></a>
-        <a href="#proj"><span class="no">05</span> 项目经历<span class="arr">→</span></a>
-        <a href="#skill"><span class="no">06</span> 技能爱好<span class="arr">→</span></a>
-        <a href="#contact"><span class="no">07</span> 联系我<span class="arr">→</span></a>
-      </div>
-    </div>
-    <div class="quick-photo reveal">
-      <div class="frame"><img src="https://aka.doubaocdn.com/s/038cYpFuts" alt="彭润泽·科大讯飞开放平台" /><span class="cap">📷 科大讯飞 · 讯飞开放平台</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== ABOUT ===================== -->
-<section id="about">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="kicker">About Me</span>
-      <span class="en">PERSONAL PROFILE</span>
-      <h2>关于我</h2>
-      <p>「在自己的时区里，不断攀爬」——一个从建模竞赛、射频电路到大模型应用的持续学习者。</p>
-    </div>
-    <div class="about-grid">
-      <div class="card about-card reveal">
-        <h3><span class="no">01</span> 个人档案</h3>
-        <div class="info-list">
-          <div><span>姓名</span><span>彭润泽</span></div>
-          <div><span>籍贯</span><span>江苏徐州</span></div>
-          <div><span>出生年月</span><span>2002.06</span></div>
-          <div><span>政治面貌</span><span>中共党员</span></div>
-          <div><span>毕业时间</span><span>2027.06</span></div>
-          <div><span>研究方向</span><span>智能控制 · 大模型</span></div>
+      <!-- 2. 教育背景 -->
+      <section>
+        <div class="section-header edu-header">
+          <div class="section-slogan-cn">在代码与算法之间，构建更智能的未来</div>
+          <div class="section-slogan-en">Between code and algorithms, build a smarter future</div>
         </div>
-        <div class="stat-row">
-          <div class="stat"><b>13+</b><span>国家级建模算法<br>竞赛一、二等奖</span></div>
-          <div class="stat"><b>3</b><span>段大厂实习经历<br>（阿里 / 讯飞 / 中兴）</span></div>
-          <div class="stat"><b>97%</b><span>智能体工具调用<br>成功率</span></div>
-        </div>
-      </div>
-      <div class="card about-card reveal">
-        <h3><span class="no">02</span> 一句话了解我</h3>
-        <p>我是一个「多面手」型工程师——既能在建模竞赛中两天两夜啃下难题，也能在企业里把一个大模型智能体从 0 做到 92% 端到端任务完成率。</p>
-        <p>在校期间主导多项科研项目与竞赛，获得国家级建模算法竞赛一、二等奖共计 13 项；同时担任安徽团省委青年驿站首任站长，从零搭建组织运营体系，统筹跨省校地对接。</p>
-        <p>我相信：<b style="color:var(--green)">「去做想做的，寻找阶段性的最优解」</b>。</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== EDUCATION ===================== -->
-<section id="edu" style="background:#fff">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="kicker">Education</span>
-      <span class="en">ACADEMIC BACKGROUND</span>
-      <h2>教育背景</h2>
-    </div>
-    <div class="tl reveal">
-      <div class="tl-item">
-        <span class="when">2024.09 - 2027.06</span>
-        <h3>西安交通大学 · 控制科学与工程（工学硕士）</h3>
-        <div class="sub">电信学部 自动化学院</div>
-        <p class="desc">研究方向：智能控制算法、大模型。研究生阶段同时深耕大模型智能体开发与强化学习驱动的智能控制。</p>
-      </div>
-      <div class="tl-item">
-        <span class="when">2020.09 - 2024.06</span>
-        <h3>西安交通大学 · 自动化（工学学士）</h3>
-        <div class="sub">电信学部 自动化学院</div>
-        <p class="desc">本科期间广泛涉猎控制理论、信号处理、机器学习与计算机视觉，奠定扎实的工程与算法基础。</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== HONORS ===================== -->
-<section id="honor">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="kicker">Campus Achievements</span>
-      <span class="en">HONORS &amp; AWARDS</span>
-      <h2>校园成就</h2>
-      <p>累计获得国家级建模算法竞赛一、二等奖 13 项，另有奖学金、优秀个人及学生工作荣誉多项。</p>
-    </div>
-    <div class="award-grid">
-      <div class="card award reveal">
-        <div class="medal">🏆</div>
-        <div>
-          <h4>学术竞赛 · 国家级</h4>
-          <p>中国研究生数学建模竞赛全国二等奖、亚太地区数学建模竞赛全国二等奖、全国大学生算法设计与编程挑战赛银奖、Skill 开发竞赛全国一等奖等</p>
-          <span class="lvl n">国家级 · 13 项</span>
-        </div>
-      </div>
-      <div class="card award reveal">
-        <div class="medal">🎖️</div>
-        <div>
-          <h4>荣誉表彰</h4>
-          <p>特等奖学金、优秀研究生、优秀研究生干部</p>
-          <span class="lvl h">荣誉表彰</span>
-        </div>
-      </div>
-      <div class="card award reveal">
-        <div class="medal">🤝</div>
-        <div>
-          <h4>学生工作</h4>
-          <p>安徽团省委青年驿站站长、党委宣传部学生通讯社部长、校团委社会实践指导中心组长、校党委宣传部助管、西安交通大学学生记者、辅导员助理、学习委员等</p>
-          <span class="lvl s">组织 · 宣传</span>
-        </div>
-      </div>
-      <div class="card award reveal">
-        <div class="medal">📝</div>
-        <div>
-          <h4>学生经历</h4>
-          <p>校党委宣传部任职期间独立撰写并发布校级新闻稿 10 余篇；参与国资委国企宣传实践活动并撰稿，具备面向国家重大专项的文档撰写与保密意识</p>
-          <span class="lvl s">撰稿 · 实践</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== EXPERIENCE ===================== -->
-<section id="exp" style="background:#fff">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="kicker">Experience</span>
-      <span class="en">INTERNSHIP EXPERIENCE</span>
-      <h2>实习经历</h2>
-      <p>从射频电路到 AI 算法，三段大厂实习，逐步聚焦大模型应用开发。</p>
-    </div>
-
-    <!-- 阿里 -->
-    <div class="card exp reveal">
-      <div class="side" style="background:linear-gradient(135deg,#ffe3c2,#ffd0a0)">
-        <svg viewBox="0 0 100 100" style="position:absolute;inset:0;width:100%;height:100%" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g fill="rgba(255,255,255,.5)"><circle cx="24" cy="26" r="10"/><circle cx="78" cy="22" r="6"/><circle cx="60" cy="80" r="12"/><circle cx="18" cy="76" r="7"/><circle cx="86" cy="62" r="8"/><circle cx="42" cy="52" r="5"/></g></svg>
-      </div>
-      <div class="main">
-        <div class="co">
-          <div class="logo" style="background:#fff;border:1px solid #eee"><img src="https://aka.doubaocdn.com/s/ODcXoq0YkW" alt="阿里巴巴logo" /></div>
-          <div>
-            <h3>阿里巴巴 · 千问事业部</h3>
-            <div class="role">大模型应用开发工程师</div>
+        <div class="edu-container">
+          <div class="edu-card glass-card">
+            <img src="https://aka.doubaocdn.com/s/dO7P4ZX9BR" alt="西安交通大学硕士" loading="lazy" decoding="async" />
+            <div class="edu-card-body">
+              <div class="edu-school-row">
+                <span class="school">西安交通大学</span>
+                <span class="date">2024.09 - 2027.06</span>
+              </div>
+              <div class="college">电信学部 · 自动化学院</div>
+              <div class="degree">控制科学与工程 · 工学硕士</div>
+              <div class="major-highlight-full">智能控制算法 · 大模型智能体</div>
+            </div>
+          </div>
+          <div class="edu-card glass-card">
+            <img src="https://aka.doubaocdn.com/s/lZqwVIe3vH" alt="西安交通大学本科" loading="lazy" decoding="async" />
+            <div class="edu-card-body">
+              <div class="edu-school-row">
+                <span class="school">西安交通大学</span>
+                <span class="date">2020.09 - 2024.06</span>
+              </div>
+              <div class="college">电信学部 · 自动化学院</div>
+              <div class="degree">自动化 · 工学学士</div>
+              <div class="major-highlight-full">控制理论 · 信号处理 · 机器学习</div>
+            </div>
           </div>
         </div>
-        <div class="date">2026.05 - 2026.07</div>
-        <ul>
-          <li><b>MCP 工具调用智能体开发</b>：基于 Qwen-2.5-7B + Function Calling，将淘宝闪购 API、天气查询、日程管理等 MCP 工具动态接入，智能体自主规划调用链完成「点外卖」等多步任务，<b>端到端完成率 92%</b>。</li>
-          <li><b>微调与 RAG 增强</b>：构建 20000+ 对话样本指令数据集，LoRA 微调使工具选择准确率提升 18%；FAISS 构建 10 万+ 菜品知识库，模糊召回率提升至 85%。</li>
-          <li><b>富交互卡片 + 工作流设计</b>：MCP 协议驱动服务端组装卡片 JSON Schema；ReAct「规划-执行-反思」循环集成自纠错，<b>工具调用成功率 97%</b>、决策延迟 &lt;1.2s。</li>
-        </ul>
-        <div class="summary"><span>MCP 智能体</span><span>LoRA 微调</span><span>RAG</span><span>Qwen-2.5</span></div>
-      </div>
-    </div>
+      </section>
 
-    <!-- 讯飞 -->
-    <div class="card exp reveal">
-      <div class="side"><img src="https://aka.doubaocdn.com/s/tQGfzvt1g2" alt="科大讯飞" /></div>
-      <div class="main">
-        <div class="co">
-          <div class="logo" style="background:#fff;border:1px solid #eee"><img src="https://aka.doubaocdn.com/s/kaNga4i1US" alt="科大讯飞logo" /></div>
-          <div>
-            <h3>科大讯飞</h3>
-            <div class="role">AI 算法实习生</div>
+      <!-- 3. 校园成就 -->
+      <section>
+        <div class="section-header campus-header">
+          <div class="section-slogan-cn">在自己的时区里，不断攀爬</div>
+          <div class="section-slogan-en">Ascend at my own pace, one steady step at a time</div>
+        </div>
+        <div class="campus-grid">
+          <div class="paper-item-card glass-card">
+            <div>
+              <div class="paper-header-row">
+                <span class="paper-date">2024 - 2026</span>
+                <span class="paper-tag-highlight">国家级</span>
+                <span class="paper-tag">数学建模</span>
+                <span class="paper-tag">算法竞赛</span>
+              </div>
+              <h4>国家级建模算法竞赛 · 13 项</h4>
+              <p>中国研究生数学建模竞赛全国二等奖、亚太地区数学建模竞赛全国二等奖、全国大学生算法设计与编程挑战赛银奖、Skill 开发竞赛全国一等奖等。</p>
+            </div>
+          </div>
+
+          <div class="paper-item-card glass-card">
+            <div>
+              <div class="paper-header-row">
+                <span class="paper-date">2024 - 2026</span>
+                <span class="paper-tag-highlight">荣誉表彰</span>
+                <span class="paper-tag">奖学金</span>
+              </div>
+              <h4>奖学金与荣誉表彰</h4>
+              <p>特等奖学金、优秀研究生、优秀研究生干部，多次获评先进个人与优秀学生干部。</p>
+            </div>
+          </div>
+
+          <div class="scroll-card-box glass-card">
+            <div class="box-header-row">
+              <h4>学生工作</h4>
+              <span class="sub-tip">可上下滑动</span>
+            </div>
+            <div class="scroll-content-work-grid">
+              <div class="work-item-row"><img src="https://aka.doubaocdn.com/s/038cYpFuts" loading="lazy" decoding="async" alt=""/><div class="info"><h5>安徽团省委青年驿站 · 首任站长</h5><span>2024 - 2025</span></div></div>
+              <div class="work-item-row"><img src="https://aka.doubaocdn.com/s/tQGfzvt1g2" loading="lazy" decoding="async" alt=""/><div class="info"><h5>党委宣传部 · 学生通讯社部长</h5><span>2024 - 2025</span></div></div>
+              <div class="work-item-row"><img src="https://aka.doubaocdn.com/s/uVDXkKxFZI" loading="lazy" decoding="async" alt=""/><div class="info"><h5>校团委 · 社会实践指导中心组长</h5><span>2023 - 2024</span></div></div>
+              <div class="work-item-row"><img src="https://aka.doubaocdn.com/s/1DypMLYnyJ" loading="lazy" decoding="async" alt=""/><div class="info"><h5>校党委宣传部 · 助管</h5><span>2024 - 2026</span></div></div>
+              <div class="work-item-row"><img src="https://aka.doubaocdn.com/s/qWVm27Q1rh" loading="lazy" decoding="async" alt=""/><div class="info"><h5>西安交通大学 · 学生记者</h5><span>2024 - 2026</span></div></div>
+              <div class="work-item-row"><img src="https://aka.doubaocdn.com/s/wKFs4vADmS" loading="lazy" decoding="async" alt=""/><div class="info"><h5>辅导员助理 · 学习委员</h5><span>2020 - 2022</span></div></div>
+            </div>
+          </div>
+
+          <div class="scroll-card-box glass-card">
+            <div class="box-header-row">
+              <h4>荣誉成就</h4>
+              <span class="sub-tip">可上下滑动</span>
+            </div>
+            <div class="award-triple-container">
+              <div class="award-sub-card">
+                <h5>奖学金</h5>
+                <div class="award-sub-list">
+                  <div class="award-sub-item"><span class="date">2024-26</span> 特等奖学金</div>
+                  <div class="award-sub-item"><span class="date">2023</span> 优秀学生</div>
+                  <div class="award-sub-item"><span class="date">2022</span> 一等奖学金</div>
+                </div>
+              </div>
+              <div class="award-sub-card">
+                <h5>荣誉表彰</h5>
+                <div class="award-sub-list">
+                  <div class="award-sub-item"><span class="date">2025</span> 优秀研究生</div>
+                  <div class="award-sub-item"><span class="date">2025</span> 优秀研究生干部</div>
+                  <div class="award-sub-item"><span class="date">2024</span> 陕西省优秀青年志愿者</div>
+                  <div class="award-sub-item"><span class="date">2024</span> 西安交大优秀干部</div>
+                  <div class="award-sub-item"><span class="date">2024</span> 校级优秀新闻稿</div>
+                </div>
+              </div>
+              <div class="award-sub-card">
+                <h5>科研竞赛</h5>
+                <div class="award-sub-list">
+                  <div class="award-level-tag">【国家级】</div>
+                  <div class="award-sub-item">中国研究生数学建模竞赛 · 全国二等奖</div>
+                  <div class="award-sub-item">亚太地区数学建模竞赛 · 二等奖</div>
+                  <div class="award-sub-item">全国大学生算法设计与编程挑战赛 · 银奖</div>
+                  <div class="award-sub-item">Skill 开发竞赛 · 全国一等奖</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="date">2025.09 - 2026.04</div>
-        <ul>
-          <li><b>大模型微调调参</b>：星火教育垂域指令微调数据集构建；网格扫描样本配比 + 贝叶斯搜索 LoRA 超参，引入 AdaLoRA 动态秩分配，<b>垂直 F1 达 91.2%</b>。</li>
-          <li><b>评测与 RAG 增强</b>：6 维度 800+ 用例自动化评测、5 版本回归与 badcase 分析；Hook 监控注意力熵定位「Lost in the Middle」，选择性检索 + 上下文压缩将准确率从 78% 提升至 <b>91%</b>。</li>
-          <li><b>企业级 Skill 落地</b>：基于星火大模型 + AstronClaw 独立完成 2 个 Skill（文本检测改写、会议纪要生成），并建立量化评测闭环。</li>
-        </ul>
-        <div class="summary"><span>大模型微调</span><span>AdaLoRA</span><span>RAG</span><span>Badcase 分析</span><span>Skill 开发</span></div>
-      </div>
-    </div>
+      </section>
 
-    <!-- 中兴 -->
-    <div class="card exp reveal">
-      <div class="side" style="background:linear-gradient(135deg,#bfe0f7,#9fd0f0)">
-        <svg viewBox="0 0 100 100" style="position:absolute;inset:0;width:100%;height:100%" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g fill="rgba(255,255,255,.55)"><circle cx="26" cy="30" r="9"/><circle cx="74" cy="24" r="6"/><circle cx="56" cy="76" r="11"/><circle cx="16" cy="72" r="6"/><circle cx="84" cy="60" r="8"/></g></svg>
-      </div>
-      <div class="main">
-        <div class="co">
-          <div class="logo" style="background:#fff;border:1px solid #eee"><img src="https://aka.doubaocdn.com/s/ip0P8XwIOV" alt="中兴通讯logo" /></div>
-          <div>
-            <h3>中兴通讯 · 西安研究所</h3>
-            <div class="role">射频电路设计实习生</div>
+      <!-- 4. 实习经历 -->
+      <section>
+        <div class="section-header intern-header">
+          <div class="section-slogan-cn">从射频电路到 AI 算法，聚焦大模型应用</div>
+          <div class="section-slogan-en">From RF circuits to AI algorithms, focusing on LLM applications</div>
+        </div>
+        <div class="intern-container">
+          <div class="intern-card glass-card">
+            <div class="intern-banner b-alibaba"><img class="logo-img" src="https://aka.doubaocdn.com/s/ODcXoq0YkW" alt="阿里巴巴" loading="lazy" decoding="async" /></div>
+            <div class="intern-body">
+              <div class="intern-header-row">
+                <h3>阿里巴巴 · 千问事业部</h3>
+                <span class="intern-date">2026.05 - 2026.07</span>
+              </div>
+              <div class="intern-dept-post-row">
+                <span>大模型应用开发</span>
+                <span>应用开发工程师</span>
+              </div>
+              <div class="intern-tags">
+                <div class="intern-tag-item">MCP 智能体 · 端到端完成率 92%</div>
+                <div class="intern-tag-item">LoRA 微调 + RAG · 召回率 85%</div>
+                <div class="intern-tag-item">工具调用成功率 97% · 延迟 &lt;1.2s</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="intern-card glass-card">
+            <div class="intern-banner b-iflytek"><img class="logo-img" src="https://aka.doubaocdn.com/s/kaNga4i1US" alt="科大讯飞" loading="lazy" decoding="async" /></div>
+            <div class="intern-body">
+              <div class="intern-header-row">
+                <h3>科大讯飞</h3>
+                <span class="intern-date">2025.09 - 2026.04</span>
+              </div>
+              <div class="intern-dept-post-row">
+                <span>大模型算法</span>
+                <span>AI 算法实习生</span>
+              </div>
+              <div class="intern-tags">
+                <div class="intern-tag-item">指令微调 · 垂直 F1 91.2%</div>
+                <div class="intern-tag-item">6 维度 800+ 用例评测 · RAG 91%</div>
+                <div class="intern-tag-item">企业级 Skill 落地 · 2 个</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="intern-card glass-card">
+            <div class="intern-banner b-zte"><img class="logo-img" src="https://aka.doubaocdn.com/s/ip0P8XwIOV" alt="中兴通讯" loading="lazy" decoding="async" /></div>
+            <div class="intern-body">
+              <div class="intern-header-row">
+                <h3>中兴通讯 · 西安研究所</h3>
+                <span class="intern-date">2023.07 - 2023.11</span>
+              </div>
+              <div class="intern-dept-post-row">
+                <span>射频电路设计</span>
+                <span>设计实习生</span>
+              </div>
+              <div class="intern-tags">
+                <div class="intern-tag-item">HFSS 射频前端设计与仿真</div>
+                <div class="intern-tag-item">阻抗匹配网络优化</div>
+                <div class="intern-tag-item">信号完整性 · 工程落地</div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="date">2023.07 - 2023.11</div>
-        <ul>
-          <li><b>射频前端电路设计与仿真</b>：使用 HFSS 完成阻抗匹配网络与滤波网络方案设计，优化射频信号处理算法降低信号损耗，改善无线通信系统整体性能。</li>
-          <li><b>算法优化与工程落地</b>：针对射频链路信号完整性问题，迭代优化匹配结构与滤波参数，使关键指标满足系统要求。</li>
-        </ul>
-        <div class="summary"><span>HFSS 仿真</span><span>阻抗匹配</span><span>信号完整性</span></div>
-      </div>
+      </section>
+
+      <!-- 5. 技能爱好 -->
+      <section>
+        <div class="section-header skill-header">
+          <div class="section-slogan-cn">底色多元，热爱不息</div>
+          <div class="section-slogan-en">Diverse in essence, fueled by passion</div>
+        </div>
+        <div class="skill-layout-container">
+          <div class="skill-left-panel">
+            <div class="tarot-area">
+              <div class="tarot-box glass-card">
+                <h4>专业能力</h4>
+                <div class="deck" id="skillsDeck" onclick="drawCard('skills')"></div>
+                <div class="tarot-hint">点击卡片抽取</div>
+              </div>
+              <div class="tarot-box glass-card">
+                <h4>个人特质</h4>
+                <div class="deck" id="personalityDeck" onclick="drawCard('personality')"></div>
+                <div class="tarot-hint">点击卡片抽取</div>
+              </div>
+            </div>
+          </div>
+          <div class="skill-right-panel">
+            <div class="hobby-section-title">兴趣爱好</div>
+            <div class="hobby-grid">
+              <div class="hobby-card glass-card">
+                <div class="carousel"><img src="https://aka.doubaocdn.com/s/qWVm27Q1rh" class="active" loading="lazy" decoding="async" alt="赏花" /></div>
+                <div class="hobby-title">🌸 春日赏花</div>
+              </div>
+              <div class="hobby-card glass-card">
+                <div class="carousel"><img src="https://aka.doubaocdn.com/s/uVDXkKxFZI" class="active" loading="lazy" decoding="async" alt="古建打卡" /></div>
+                <div class="hobby-title">🏛️ 古建打卡</div>
+              </div>
+              <div class="hobby-card glass-card">
+                <div class="carousel"><img src="https://aka.doubaocdn.com/s/1DypMLYnyJ" class="active" loading="lazy" decoding="async" alt="城市漫步" /></div>
+                <div class="hobby-title">🌃 城市漫步</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. 联系我 -->
+      <section>
+        <div class="contact-wrapper">
+          <div class="art-bg-decoration">
+            <div class="art-circle-1"></div>
+            <div class="art-circle-2"></div>
+          </div>
+          <div class="contact-container">
+            <h2 class="contact-title" id="contactTitle" onclick="handleContactClick()"></h2>
+            <div class="cards-wrapper">
+              <div class="flip-card" onclick="flipAndCopy(this, '3345750865@qq.com')">
+                <div class="flip-card-inner">
+                  <div class="flip-front">电子邮箱</div>
+                  <div class="flip-back">3345750865@qq.com<span>(点击已复制)</span></div>
+                </div>
+              </div>
+              <div class="flip-card" onclick="flipAndCopy(this, '19826026875')">
+                <div class="flip-card-inner">
+                  <div class="flip-front">电话与微信</div>
+                  <div class="flip-back">198 2602 6875<span>(点击已复制)</span></div>
+                </div>
+              </div>
+              <div class="flip-card" onclick="downloadResume(this)">
+                <div class="flip-card-inner">
+                  <div class="flip-front">个人简历</div>
+                  <div class="flip-back">点击下载完整简历<span>(彭润泽-个人简历.pdf)</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
     </div>
   </div>
-</section>
 
-<!-- ===================== PROJECTS ===================== -->
-<section id="proj">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="kicker">Project Cases</span>
-      <span class="en">PROJECT CASES</span>
-      <h2>项目案例</h2>
-      <p>从发动机剩余寿命预测到空域扇区智能划分，再到 SAR 舰船检测，覆盖智能控制、图神经网络与目标检测。</p>
-    </div>
-    <div class="proj">
-      <div class="card proj-card reveal">
-        <div class="pimg"><img src="https://aka.doubaocdn.com/s/j17UOjRDYk" alt="航空发动机剩余寿命预测" /><span class="tag">时序预测 · Transformer</span><span class="year">2026.06 - 2026.07</span></div>
-        <div class="pbody">
-          <h3>基于 SE-Transformer 的航空发动机剩余寿命预测</h3>
-          <ul>
-            <li>NASA C-MAPSS 数据集，滑动窗口构建时序样本，按工况分组独立标准化剥离环境因素。</li>
-            <li>双分支嵌入（传感器时序 + 运行工况）+ SE 模块自适应重校准通道权重。</li>
-            <li>Optuna 贝叶斯调参，FD004 最复杂场景 <b>RMSE 13.80</b>，远低于 LSTM 的 28.40。</li>
-          </ul>
-          <div class="stack"><span>Python</span><span>PyTorch</span><span>Optuna</span><span>Scikit-learn</span><span>Pandas</span><span>NumPy</span></div>
-        </div>
-      </div>
+  <script>
+    /* ================= 自适应响应式缩放 ================= */
+    var BASE_WIDTH = 1965.6;
+    var BASE_HEIGHT = 1105;
+    function handleResize(){
+      var scale = Math.min(window.innerWidth / BASE_WIDTH, window.innerHeight / BASE_HEIGHT);
+      var vp = document.getElementById('appViewport');
+      vp.style.transform = 'translate(-50%, -50%) scale(' + scale + ')';
+    }
+    window.addEventListener('resize', handleResize);
+    window.addEventListener('orientationchange', handleResize);
+    document.addEventListener('DOMContentLoaded', handleResize);
 
-      <div class="card proj-card reveal">
-        <div class="pimg"><img src="https://aka.doubaocdn.com/s/aOzMqICoJy" alt="涡喷发动机建模与控制" /><span class="tag">系统建模 · 闭环控制</span><span class="year">2026.06 - 2026.07</span></div>
-        <div class="pbody">
-          <h3>基于 T-MATS 的涡喷发动机建模与转速闭环控制仿真</h3>
-          <ul>
-            <li>NASA 开源工具箱 T-MATS，MATLAB/Simulink 部件级仿真（进气道、压气机、燃烧室、涡轮、喷管、转子动力学）。</li>
-            <li>转速闭环 PI 控制，燃油流量精确调节，<b>阶跃稳态误差 &lt; 0.5%</b>。</li>
-            <li>超温 / 超速保护逻辑 + 扫频系统辨识获取简化传递函数。</li>
-          </ul>
-          <div class="stack"><span>MATLAB/Simulink</span><span>T-MATS</span><span>PID Control</span></div>
-        </div>
-      </div>
+    /* ================= 全屏横向翻页 + 导航同步 ================= */
+    var currentSlide = 0;
+    var totalSlides = 6;
+    var slider = document.getElementById('slider');
+    var prevBtn = document.getElementById('prevBtn');
+    var nextBtn = document.getElementById('nextBtn');
+    var navLinks = document.querySelectorAll('.nav-link-item');
+    var sections = document.querySelectorAll('section');
 
-      <div class="card proj-card reveal">
-        <div class="pimg"><img src="https://aka.doubaocdn.com/s/VBmS2sF6VC" alt="空域扇区划分" /><span class="tag">图神经网络 · 空域规划</span><span class="year">2025.05 - 2025.08</span></div>
-        <div class="pbody">
-          <h3>基于 GCN 的空域扇区动态划分与智能配置</h3>
-          <ul>
-            <li>56 网格节点融合流量密度、平均高度、航迹复杂度，构建空域交互图谱。</li>
-            <li>对称归一化 GCN 编码器 + 高斯核矩阵，谱聚类与图平滑协同，动态划分为 4 个均衡扇区。</li>
-            <li>相比 Voronoi / K-means，<b>协调移交次数降低约 32%</b>，推理时间缩短至 1/10 以下。</li>
-          </ul>
-          <div class="stack"><span>Python</span><span>PyTorch</span><span>GCN</span></div>
-        </div>
-      </div>
-
-      <div class="card proj-card reveal">
-        <div class="pimg"><img src="https://aka.doubaocdn.com/s/iUUcWBE34O" alt="SAR舰船检测" /><span class="tag">目标检测 · 轻量化部署</span><span class="year">2026.03 - 2026.05</span></div>
-        <div class="pbody">
-          <h3>基于深度学习的 SAR 图像舰船目标检测算法研究</h3>
-          <ul>
-            <li>OpenSARship 数据集 + 自适应滤波去相干斑噪声；YOLOv8 基线对比 SE/CBAM/CA，选用 CA 提升近岸微小目标提取。</li>
-            <li>Focal Loss 变体缓解正负样本不平衡（约 1:200）。</li>
-            <li>FP16 + TensorRT 部署，Jetson Xavier NX <b>延迟 &lt;30ms</b>；mAP@0.5:0.95 从 78.3% 提升至 <b>85.2%</b>。</li>
-          </ul>
-          <div class="stack"><span>Python</span><span>PyTorch</span><span>YOLO</span><span>TensorRT</span><span>OpenCV</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== SKILLS & HOBBIES ===================== -->
-<section id="skill" style="background:#fff">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="kicker">Skills &amp; Hobbies</span>
-      <span class="en">SKILLS &amp; HOBBIES</span>
-      <h2>技能爱好</h2>
-      <p>点击「抽卡」随机抽取我的技能与爱好，看看能抽到什么。</p>
-    </div>
-
-    <div class="sk-wrap">
-      <div class="card sk-card reveal">
-        <h3><span class="ic">⚙️</span> 专业能力</h3>
-        <div class="tags">
-          <span>Python</span><span>MATLAB</span><span>机器学习</span><span>深度学习</span><span>Transformer</span><span>Agent 开发</span><span>LoRA / AdaLoRA 微调</span><span>RAG 检索增强</span><span>目标检测</span><span>轻量化推理</span><span>模型部署</span>
-        </div>
-      </div>
-      <div class="card sk-card reveal">
-        <h3><span class="ic">🌟</span> 个人能力</h3>
-        <ul>
-          <li><span class="k">学习抗压</span><span>限定时间内组织解决工程问题（如数学建模）</span></li>
-          <li><span class="k">沟通协调</span><span>多次组织大型校企项目对接、企业招聘活动与学术沙龙</span></li>
-          <li><span class="k">独立解决</span><span>主导负责多项科研项目与竞赛项目</span></li>
-          <li><span class="k">宣传撰稿</span><span>参与国资委国企宣传参访并撰稿剪辑，新闻稿发布于西安交大新闻网</span></li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- 抽卡互动 -->
-    <div class="card gacha reveal" style="margin-top:24px;padding:34px">
-      <h3 style="font-size:18px;font-weight:800;color:var(--deep);margin-bottom:6px;display:flex;align-items:center;gap:10px;justify-content:center"><span class="ic" style="width:38px;height:38px;border-radius:12px;background:var(--mint-light);color:var(--green);display:inline-flex;align-items:center;justify-content:center">🎴</span> 技能卡池 · 每日三抽</h3>
-      <p style="color:var(--gray);font-size:13.5px;margin-bottom:22px">SSR / SR / R / N 四档稀有度，点击抽取</p>
-      <div class="deck" id="deck"></div>
-      <div class="result" id="result"></div>
-      <button class="btn draw" id="drawBtn" onclick="drawCard()">✨ 抽一张</button>
-      <div class="pool" id="pool"></div>
-    </div>
-
-    <!-- 爱好照片墙 -->
-    <div class="hobby-gal">
-      <figure class="reveal"><img src="https://aka.doubaocdn.com/s/qWVm27Q1rh" alt="赏花" /><figcaption>🌸 春日赏花</figcaption></figure>
-      <figure class="reveal"><img src="https://aka.doubaocdn.com/s/uVDXkKxFZI" alt="古建打卡" /><figcaption>🏛️ 古建打卡</figcaption></figure>
-      <figure class="reveal"><img src="https://aka.doubaocdn.com/s/1DypMLYnyJ" alt="城市漫步" /><figcaption>🌃 城市漫步</figcaption></figure>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== CONTACT ===================== -->
-<section id="contact">
-  <div class="wrap">
-    <div class="contact reveal">
-      <h2 id="contactTitle">期待与你交流</h2>
-      <p id="contactText">无论是对大模型智能体、智能控制算法，还是对校企合作、学术实践感兴趣，都欢迎联系我。</p>
-      <div class="links">
-        <a href="tel:19826026875">📞 198 2602 6875</a>
-        <a href="mailto:3345750865@qq.com">✉️ 3345750865@qq.com</a>
-        <a href="https://github.com/runze12345" target="_blank" rel="noopener">🐙 GitHub</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer>
-  © 2026 <b>彭润泽</b> · 西安交通大学 · 控制科学与工程 · 用心构建每一个智能的可能
-</footer>
-
-<!-- 背景音乐 -->
-<audio id="bgm" loop preload="auto">
-  <source src="https://aka.doubaocdn.com/s/9KCj70nz7V" type="audio/wav" />
-</audio>
-<button class="music-btn" id="musicBtn" onclick="toggleMusic()" title="背景音乐">🎵</button>
-
-<script>
-  /* ========== 文字逐字弹出 ========== */
-  function popText(el, delay){
-    var text = el.textContent.trim();
-    el.textContent = '';
-    var textNode = text.split('');
-    textNode.forEach(function(ch,i){
-      var c = document.createElement('span');
-      c.className = 'c';
-      c.innerHTML = (ch === ' ') ? '&nbsp;' : ch;
-      c.style.animationDelay = (delay + i * 0.05) + 's';
-      el.appendChild(c);
-    });
-  }
-  window.addEventListener('load', function(){
-    popText(document.getElementById('heroName'), 0.1);
-    popText(document.getElementById('heroEn'), 0.35);
-    popText(document.getElementById('heroMotto'), 0.55);
-  });
-
-  /* ========== 滚动渐显 ========== */
-  if('IntersectionObserver' in window){
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){
-        if(e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target); }
-        else { e.target.classList.add('pre'); }
-      });
-    },{threshold:.12});
-    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
-  }
-
-  /* 尾页文字进入视口后逐字弹出 */
-  var cTitle = document.getElementById('contactTitle');
-  var cText = document.getElementById('contactText');
-  var tDone = false;
-  var io2 = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if(e.isIntersecting && !tDone){
-        tDone = true;
-        popText(cTitle, 0);
-        popText(cText, 0.4);
-        io2.disconnect();
-      }
-    });
-  },{threshold:.5});
-  io2.observe(document.querySelector('.contact'));
-
-  /* ========== 3D 卡通形象拖拽旋转 ========== */
-  var cube = document.getElementById('cube');
-  var stage = document.getElementById('stage');
-  var rx = -8, ry = -14, curRX = rx, curRY = ry, dragging = false, startX, startY, idle;
-  function applyRotate(){ cube.style.transform = 'rotateX(' + rx + 'deg) rotateY(' + ry + 'deg)'; }
-  function autoSpin(){ ry += 0.35; applyRotate(); }
-  idle = setInterval(autoSpin, 50);
-  stage.addEventListener('mousedown', function(e){ dragging = true; startX = e.clientX; startY = e.clientY; curRX = rx; curRY = ry; clearInterval(idle); cube.style.transition='none'; e.preventDefault(); });
-  window.addEventListener('mousemove', function(e){
-    if(!dragging) return;
-    ry = curRY + (e.clientX - startX) * 0.5;
-    rx = Math.max(-45, Math.min(45, curRX - (e.clientY - startY) * 0.5));
-    applyRotate();
-  });
-  window.addEventListener('mouseup', function(){ if(dragging){ dragging = false; cube.style.transition='transform .5s ease'; idle = setInterval(autoSpin, 50); } });
-  stage.addEventListener('touchstart', function(e){ dragging = true; startX = e.touches[0].clientX; startY = e.touches[0].clientY; curRX = rx; curRY = ry; clearInterval(idle); }, {passive:true});
-  window.addEventListener('touchmove', function(e){ if(!dragging) return; ry = curRY + (e.touches[0].clientX - startX) * 0.5; rx = Math.max(-45, Math.min(45, curRX - (e.touches[0].clientY - startY) * 0.5)); applyRotate(); }, {passive:true});
-  window.addEventListener('touchend', function(){ if(dragging){ dragging = false; idle = setInterval(autoSpin, 50); } });
-
-  /* ========== 技能爱好抽卡 ========== */
-  var DECK = [
-    {nm:'Python', ic:'🐍', ty:'技能', rar:'r'},
-    {nm:'MATLAB', ic:'📐', ty:'技能', rar:'r'},
-    {nm:'深度学习', ic:'🧠', ty:'技能', rar:'sr'},
-    {nm:'Transformer', ic:'🔁', ty:'技能', rar:'sr'},
-    {nm:'LoRA 微调', ic:'🎛️', ty:'技能', rar:'sr'},
-    {nm:'RAG 检索', ic:'🔍', ty:'技能', rar:'sr'},
-    {nm:'Agent 开发', ic:'🤖', ty:'技能', rar:'ssr'},
-    {nm:'GCN 图网络', ic:'🕸️', ty:'技能', rar:'ssr'},
-    {nm:'目标检测', ic:'🎯', ty:'技能', rar:'r'},
-    {nm:'TensorRT', ic:'⚡', ty:'技能', rar:'r'},
-    {nm:'摄影', ic:'📷', ty:'爱好', rar:'r'},
-    {nm:'旅行', ic:'🧳', ty:'爱好', rar:'sr'},
-    {nm:'科技探索', ic:'🛰️', ty:'爱好', rar:'ssr'},
-    {nm:'城市漫步', ic:'🚶', ty:'爱好', rar:'r'},
-    {nm:'赏花', ic:'🌸', ty:'爱好', rar:'n'},
-    {nm:'阅读', ic:'📚', ty:'爱好', rar:'n'}
-  ];
-  var RAR = {ssr:{t:'SSR', n:'0.5%'}, sr:{t:'SR', n:'3%'}, r:{t:'R', n:'15%'}, n:{t:'N', n:'81.5%'}};
-  var pool = [];
-  var remaining = 3;
-
-  /* 背面卡牌 */
-  var deckEl = document.getElementById('deck');
-  for(var i=0;i<8;i++){
-    var cb = document.createElement('div');
-    cb.className = 'cardback';
-    cb.style.animationDelay = (i*0.06)+'s';
-    cb.innerHTML = '<div class="q">?</div>';
-    deckEl.appendChild(cb);
-  }
-  var resultEl = document.getElementById('result');
-  var poolEl = document.getElementById('pool');
-  var drawBtn = document.getElementById('drawBtn');
-
-  function rollRarity(){
-    var r = Math.random();
-    if(r < 0.005) return 'ssr';
-    if(r < 0.035) return 'sr';
-    if(r < 0.185) return 'r';
-    return 'n';
-  }
-  function drawCard(){
-    if(remaining <= 0){ drawBtn.textContent = '今日已抽完，明天再来'; drawBtn.disabled = true; return; }
-    remaining--;
-    drawBtn.disabled = true;
-    var rarity = rollRarity();
-    var cands = DECK.filter(function(d){ return d.rar === rarity; });
-    var card = cands[Math.floor(Math.random() * cands.length)];
-    /* 抽卡动画 */
-    resultEl.innerHTML = '';
-    var rc = document.createElement('div');
-    rc.className = 'rcard r-' + rarity;
-    rc.innerHTML = '<div class="ic">' + card.ic + '</div><div class="nm">' + card.nm + '</div><div class="ty">' + card.ty + ' · ' + RAR[rarity].t + '</div><div class="rar">' + RAR[rarity].t + ' · 概率 ' + RAR[rarity].n + '</div>';
-    resultEl.appendChild(rc);
-    setTimeout(function(){ rc.classList.add('flip'); }, 30);
-    /* 收集 */
-    pool.push(card);
-    var g = document.createElement('span');
-    g.className = 'got' + (rarity==='ssr' ? ' ssr' : '');
-    g.textContent = card.ic + ' ' + card.nm + ' · ' + RAR[rarity].t;
-    poolEl.appendChild(g);
-    setTimeout(function(){ drawBtn.disabled = false; drawBtn.textContent = '✨ 再抽一张（剩 ' + remaining + ' 次）'; }, 900);
-  }
-  drawBtn.textContent = '✨ 抽一张（剩 3 次）';
-
-  /* ========== 导航滚动 ========== */
-  var nav = document.querySelector('nav');
-  window.addEventListener('scroll', function(){
-    nav.style.boxShadow = window.scrollY > 40 ? '0 6px 24px rgba(46,158,99,.10)' : 'none';
-  });
-
-  /* ========== 背景音乐 ========== */
-  var bgm = document.getElementById('bgm');
-  var musicBtn = document.getElementById('musicBtn');
-  var musicOn = false;
-  function toggleMusic(){
-    if(musicOn){
-      bgm.pause();
-      musicBtn.textContent = '🎵';
-      musicBtn.classList.remove('playing');
-      musicOn = false;
-    }else{
-      bgm.play().then(function(){
-        musicBtn.textContent = '⏸';
-        musicBtn.classList.add('playing');
-        musicOn = true;
-      }).catch(function(){
-        musicBtn.textContent = '🎵';
+    function loadSectionImages(index){
+      if(!sections[index]) return;
+      sections[index].querySelectorAll('img').forEach(function(img){
+        if(img.loading === 'lazy') img.loading = 'eager';
       });
     }
-  }
-  /* 尝试自动播放（被浏览器拦截时保持按钮态） */
-  bgm.play().then(function(){
-    musicBtn.textContent = '⏸';
-    musicBtn.classList.add('playing');
-    musicOn = true;
-  }).catch(function(){});
-</script>
+    function updateSlide(){
+      slider.style.transform = 'translateX(-' + (currentSlide * BASE_WIDTH) + 'px)';
+      prevBtn.classList.toggle('disabled', currentSlide === 0);
+      nextBtn.classList.toggle('disabled', currentSlide === totalSlides - 1);
+      navLinks.forEach(function(l){ l.classList.remove('active'); });
+      if(navLinks[currentSlide]) navLinks[currentSlide].classList.add('active');
+      loadSectionImages(currentSlide);
+      if(currentSlide + 1 < totalSlides) loadSectionImages(currentSlide + 1);
+      if(currentSlide - 1 >= 0) loadSectionImages(currentSlide - 1);
+    }
+    function goToSlide(index){ currentSlide = index; updateSlide(); }
+    function prevSlide(){ if(currentSlide > 0){ currentSlide--; updateSlide(); } }
+    function nextSlide(){ if(currentSlide < totalSlides - 1){ currentSlide++; updateSlide(); } }
+    document.addEventListener('DOMContentLoaded', function(){ loadSectionImages(0); loadSectionImages(1); });
+
+    /* 键盘方向键 */
+    window.addEventListener('keydown', function(e){
+      if(e.key === 'ArrowRight'){ nextSlide(); }
+      else if(e.key === 'ArrowLeft'){ prevSlide(); }
+    });
+
+    /* 触屏左右滑动 */
+    var touchStartX = 0, touchStartY = 0;
+    document.addEventListener('touchstart', function(e){
+      if(e.touches.length > 1) return;
+      touchStartX = e.touches[0].clientX;
+      touchStartY = e.touches[0].clientY;
+    }, {passive:true});
+    document.addEventListener('touchend', function(e){
+      if(e.touches.length > 0) return;
+      var t = e.target;
+      if(t && t.closest && (t.closest('.scroll-content-work-grid') || t.closest('.award-sub-list'))){
+        if(Math.abs(e.changedTouches[0].clientY - touchStartY) > 30) return;
+      }
+      var dx = e.changedTouches[0].clientX - touchStartX;
+      var dy = e.changedTouches[0].clientY - touchStartY;
+      if(Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy)){
+        if(dx < 0) nextSlide(); else prevSlide();
+      }
+    }, {passive:true});
+
+    /* ================= 关于我：打字效果 ================= */
+    var helloText = "Hello";
+    var helloElement = document.getElementById('helloTyping');
+    var helloIdx = 0, isDeleting = false;
+    function typeHello(){
+      if(!helloElement) return;
+      if(isDeleting){
+        helloElement.textContent = helloText.substring(0, helloIdx--);
+        if(helloIdx < 0){ isDeleting = false; setTimeout(typeHello, 500); return; }
+        setTimeout(typeHello, 120);
+      } else {
+        helloElement.textContent = helloText.substring(0, helloIdx++);
+        if(helloIdx > helloText.length){ isDeleting = true; setTimeout(typeHello, 1800); return; }
+        setTimeout(typeHello, 200);
+      }
+    }
+    typeHello();
+
+    /* 人像点击暂停浮动动画 5s */
+    var photoWrapper = document.getElementById('photoWrapper');
+    var photoPauseTimer = null;
+    function pausePhotoAnimation(){
+      if(!photoWrapper) return;
+      photoWrapper.classList.add('paused');
+      if(photoPauseTimer) clearTimeout(photoPauseTimer);
+      photoPauseTimer = setTimeout(function(){ photoWrapper.classList.remove('paused'); }, 5000);
+    }
+
+    /* ================= 联系我：打字循环 ================= */
+    var contactLine1 = "心之所向，代码为桨";
+    var contactLine2 = "下一段旅程，期待与你同行";
+    var contactFullText = contactLine1 + "\n" + contactLine2;
+    var contactTitleElem = document.getElementById('contactTitle');
+    var contactIdx = 0, contactTimer = null, isContactPaused = false, contactResumeTimer = null;
+    var charSpeed = Math.floor(4500 / contactFullText.length);
+    function renderContactText(text){ contactTitleElem.innerHTML = text.replace('\n', '<br>'); }
+    function typeContact(){
+      if(isContactPaused) return;
+      if(contactIdx <= contactFullText.length){
+        renderContactText(contactFullText.substring(0, contactIdx));
+        contactIdx++;
+        contactTimer = setTimeout(typeContact, charSpeed);
+      } else {
+        contactTimer = setTimeout(function(){ if(isContactPaused) return; contactIdx = 0; typeContact(); }, 2000);
+      }
+    }
+    function handleContactClick(){
+      isContactPaused = true;
+      if(contactTimer) clearTimeout(contactTimer);
+      if(contactResumeTimer) clearTimeout(contactResumeTimer);
+      renderContactText(contactFullText);
+      contactResumeTimer = setTimeout(function(){ isContactPaused = false; contactIdx = 0; typeContact(); }, 5000);
+    }
+    typeContact();
+
+    /* ================= 塔罗抽卡 ================= */
+    var skillsItems = ['Python','深度学习','Agent 开发','LoRA 微调','RAG 检索','GCN 图网络','目标检测','TensorRT'];
+    var personalityItems = ['学习抗压','沟通协调','独立解决','宣传撰稿','强执行力','终身学习','多线程协调','工程落地'];
+    function initDeck(deckId, items){
+      var container = document.getElementById(deckId);
+      container.innerHTML = '';
+      items.forEach(function(item, idx){
+        var card = document.createElement('div');
+        card.className = 'tarot-card';
+        card.innerHTML = '<div class="tarot-card-symbol">✦</div><span class="tarot-card-text">' + item + '</span>';
+        card.style.transform = 'translate(' + (idx * 5 - 20) + 'px, ' + (idx * 3 - 10) + 'px) rotate(' + (idx * 3 - 5) + 'deg)';
+        card.style.zIndex = items.length - idx;
+        container.appendChild(card);
+      });
+    }
+    initDeck('skillsDeck', skillsItems);
+    initDeck('personalityDeck', personalityItems);
+    function drawCard(type){
+      var deckId = type === 'personality' ? 'personalityDeck' : 'skillsDeck';
+      var container = document.getElementById(deckId);
+      var cards = container.querySelectorAll('.tarot-card');
+      if(cards.length === 0) return;
+      var topCard = cards[0];
+      topCard.style.transform = 'translateY(-140px) scale(1.08) rotate(0deg)';
+      topCard.style.zIndex = 99;
+      setTimeout(function(){
+        container.appendChild(topCard);
+        var newCards = container.querySelectorAll('.tarot-card');
+        newCards.forEach(function(c, idx){
+          c.style.transform = 'translate(' + (idx * 5 - 20) + 'px, ' + (idx * 3 - 10) + 'px) rotate(' + (idx * 3 - 5) + 'deg)';
+          c.style.zIndex = newCards.length - idx;
+        });
+      }, 450);
+    }
+
+    /* ================= 卡片翻转：复制 / 下载简历 ================= */
+    function flipAndCopy(card, text){
+      card.classList.toggle('flipped');
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(text).catch(function(){});
+      }
+    }
+    function downloadResume(card){
+      card.classList.toggle('flipped');
+      var a = document.createElement('a');
+      a.href = 'https://aka.doubaocdn.com/s/AeiHzsT7CH';
+      a.download = '彭润泽-个人简历.pdf';
+      a.click();
+    }
+  </script>
 </body>
 </html>
