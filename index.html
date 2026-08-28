@@ -164,6 +164,7 @@
   .exp .main{padding:28px 30px}
   .exp .co{display:flex;align-items:center;gap:16px;margin-bottom:6px}
   .exp .co .logo{width:52px;height:52px;border-radius:15px;display:flex;align-items:center;justify-content:center;flex:0 0 auto;box-shadow:0 6px 16px rgba(0,0,0,.12)}
+  .exp .co .logo img{width:100%;height:100%;object-fit:contain;padding:7px;border-radius:12px}
   .exp .co h3{font-size:19px;font-weight:800;color:var(--deep)}
   .exp .co .role{font-size:14px;color:var(--green);font-weight:700}
   .exp .co .org{font-size:12.5px;color:var(--gray)}
@@ -254,6 +255,34 @@
   footer{padding:34px 5vw;text-align:center;color:#93a99b;font-size:13px}
   footer b{color:var(--green)}
 
+  /* ---------- Quick navigation (第二页) ---------- */
+  .quick{
+    min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:0;
+    background:linear-gradient(165deg,#e8f5ec 0%,#f4faf5 60%,#e2f3e9 100%);
+  }
+  .quick-inner{position:relative;z-index:2;width:100%;max-width:1180px;margin:0 auto;padding:120px 5vw 80px;display:grid;grid-template-columns:.95fr 1.05fr;gap:60px;align-items:center}
+  .quick .qk{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:700;letter-spacing:3px;color:var(--green);text-transform:uppercase}
+  .quick .qk::before{content:"";width:34px;height:2px;background:var(--green);border-radius:2px}
+  .quick h2{font-family:"Noto Serif SC",serif;font-size:clamp(30px,4.4vw,48px);font-weight:900;color:var(--deep);margin:16px 0 14px;letter-spacing:1px}
+  .quick .lead{color:var(--gray);font-size:15px;max-width:30em;margin-bottom:34px}
+  .quick-links{display:flex;flex-direction:column;gap:13px}
+  .quick-links a{display:flex;align-items:center;gap:16px;background:rgba(255,255,255,.75);border:1px solid var(--line);border-radius:16px;padding:14px 20px;font-size:16px;font-weight:700;color:var(--deep);transition:.25s;backdrop-filter:blur(6px)}
+  .quick-links a:hover{background:#fff;transform:translateX(8px);box-shadow:var(--shadow);color:var(--green)}
+  .quick-links a .no{flex:0 0 auto;width:34px;height:34px;border-radius:10px;background:var(--mint-light);color:var(--green);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800}
+  .quick-links a .arr{margin-left:auto;color:var(--mint);transition:.25s;font-weight:700}
+  .quick-links a:hover .arr{color:var(--green);transform:translateX(4px)}
+  .quick-photo{position:relative}
+  .quick-photo .frame{position:relative;border-radius:26px;overflow:hidden;box-shadow:var(--shadow-lg);transform:rotate(-1.5deg)}
+  .quick-photo img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/5;display:block}
+  .quick-photo .cap{position:absolute;left:16px;bottom:16px;background:rgba(23,90,60,.74);color:#fff;font-size:13px;font-weight:700;padding:7px 14px;border-radius:999px;backdrop-filter:blur(4px)}
+  .quick-photo::before{content:"";position:absolute;inset:-14px;border:1.5px dashed rgba(46,158,99,.35);border-radius:32px;z-index:-1;transform:rotate(2deg)}
+
+  /* ---------- Music button ---------- */
+  .music-btn{position:fixed;right:26px;bottom:26px;z-index:200;width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--green),var(--green-2));color:#fff;border:none;cursor:pointer;box-shadow:0 10px 26px rgba(46,158,99,.4);display:flex;align-items:center;justify-content:center;font-size:23px;transition:.25s}
+  .music-btn:hover{transform:scale(1.08)}
+  .music-btn.playing{animation:pulse 1.7s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(46,158,99,.45)}70%{box-shadow:0 0 0 15px rgba(46,158,99,0)}100%{box-shadow:0 0 0 0 rgba(46,158,99,0)}}
+
   /* ---------- responsive ---------- */
   @media(max-width:960px){
     nav ul{display:none}
@@ -267,6 +296,11 @@
     .hobby-gal{grid-template-columns:repeat(3,1fr)}
     section{padding:72px 5vw}
     .avatar3d{order:-1}
+    .quick-inner{grid-template-columns:1fr;text-align:center;padding-top:120px}
+    .quick .qk{justify-content:center}
+    .quick .lead{margin:0 auto 34px}
+    .quick-links a{justify-content:flex-start;text-align:left}
+    .quick-photo{max-width:380px;margin:0 auto}
   }
   @media(max-width:520px){.hobby-gal{grid-template-columns:1fr}}
 </style>
@@ -276,6 +310,7 @@
 <nav>
   <div class="brand">彭润泽 <b>·</b> 主页</div>
   <ul>
+    <li><a href="#quick">快速导航</a></li>
     <li><a href="#about">关于我</a></li>
     <li><a href="#edu">教育背景</a></li>
     <li><a href="#honor">校园成就</a></li>
@@ -327,6 +362,30 @@
   </div>
   <div class="scroll-hint"><div class="mouse"></div>向下滚动</div>
 </header>
+
+<!-- ===================== QUICK NAVIGATION (第二页) ===================== -->
+<section class="quick" id="quick">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="quick-inner">
+    <div class="reveal">
+      <span class="qk">Quick Navigation</span>
+      <h2>快速导览</h2>
+      <p class="lead">点击下方快捷入口，一键直达我的各个板块——从校园经历到大厂实习，从科研项目到技能爱好，尽在掌握。</p>
+      <div class="quick-links">
+        <a href="#about"><span class="no">01</span> 关于我<span class="arr">→</span></a>
+        <a href="#edu"><span class="no">02</span> 教育背景<span class="arr">→</span></a>
+        <a href="#honor"><span class="no">03</span> 校园成就<span class="arr">→</span></a>
+        <a href="#exp"><span class="no">04</span> 实习经历<span class="arr">→</span></a>
+        <a href="#proj"><span class="no">05</span> 项目经历<span class="arr">→</span></a>
+        <a href="#skill"><span class="no">06</span> 技能爱好<span class="arr">→</span></a>
+        <a href="#contact"><span class="no">07</span> 联系我<span class="arr">→</span></a>
+      </div>
+    </div>
+    <div class="quick-photo reveal">
+      <div class="frame"><img src="https://aka.doubaocdn.com/s/038cYpFuts" alt="彭润泽·科大讯飞开放平台" /><span class="cap">📷 科大讯飞 · 讯飞开放平台</span></div>
+    </div>
+  </div>
+</section>
 
 <!-- ===================== ABOUT ===================== -->
 <section id="about">
@@ -452,7 +511,7 @@
       </div>
       <div class="main">
         <div class="co">
-          <div class="logo" style="background:linear-gradient(135deg,#ff7b00,#ff9a3d)"><svg viewBox="0 0 24 24" width="28" height="28" fill="none"><text x="12" y="17" text-anchor="middle" font-size="11" font-weight="800" fill="#fff" font-family="sans-serif">阿</text></svg></div>
+          <div class="logo" style="background:#fff;border:1px solid #eee"><img src="https://aka.doubaocdn.com/s/ODcXoq0YkW" alt="阿里巴巴logo" /></div>
           <div>
             <h3>阿里巴巴 · 千问事业部</h3>
             <div class="role">大模型应用开发工程师</div>
@@ -473,7 +532,7 @@
       <div class="side"><img src="https://aka.doubaocdn.com/s/tQGfzvt1g2" alt="科大讯飞" /></div>
       <div class="main">
         <div class="co">
-          <div class="logo" style="background:linear-gradient(135deg,#1f7ad9,#2f6bff)"><svg viewBox="0 0 24 24" width="28" height="28" fill="none"><text x="12" y="17" text-anchor="middle" font-size="10" font-weight="800" fill="#fff" font-family="sans-serif">讯飞</text></svg></div>
+          <div class="logo" style="background:#fff;border:1px solid #eee"><img src="https://aka.doubaocdn.com/s/kaNga4i1US" alt="科大讯飞logo" /></div>
           <div>
             <h3>科大讯飞</h3>
             <div class="role">AI 算法实习生</div>
@@ -496,7 +555,7 @@
       </div>
       <div class="main">
         <div class="co">
-          <div class="logo" style="background:linear-gradient(135deg,#0e5fb0,#0a7fe0)"><svg viewBox="0 0 24 24" width="28" height="28" fill="none"><text x="12" y="17" text-anchor="middle" font-size="10" font-weight="800" fill="#fff" font-family="sans-serif">中兴</text></svg></div>
+          <div class="logo" style="background:#fff;border:1px solid #eee"><img src="https://aka.doubaocdn.com/s/ip0P8XwIOV" alt="中兴通讯logo" /></div>
           <div>
             <h3>中兴通讯 · 西安研究所</h3>
             <div class="role">射频电路设计实习生</div>
@@ -644,6 +703,12 @@
   © 2026 <b>彭润泽</b> · 西安交通大学 · 控制科学与工程 · 用心构建每一个智能的可能
 </footer>
 
+<!-- 背景音乐 -->
+<audio id="bgm" loop preload="auto">
+  <source src="https://aka.doubaocdn.com/s/9KCj70nz7V" type="audio/wav" />
+</audio>
+<button class="music-btn" id="musicBtn" onclick="toggleMusic()" title="背景音乐">🎵</button>
+
 <script>
   /* ========== 文字逐字弹出 ========== */
   function popText(el, delay){
@@ -782,6 +847,33 @@
   window.addEventListener('scroll', function(){
     nav.style.boxShadow = window.scrollY > 40 ? '0 6px 24px rgba(46,158,99,.10)' : 'none';
   });
+
+  /* ========== 背景音乐 ========== */
+  var bgm = document.getElementById('bgm');
+  var musicBtn = document.getElementById('musicBtn');
+  var musicOn = false;
+  function toggleMusic(){
+    if(musicOn){
+      bgm.pause();
+      musicBtn.textContent = '🎵';
+      musicBtn.classList.remove('playing');
+      musicOn = false;
+    }else{
+      bgm.play().then(function(){
+        musicBtn.textContent = '⏸';
+        musicBtn.classList.add('playing');
+        musicOn = true;
+      }).catch(function(){
+        musicBtn.textContent = '🎵';
+      });
+    }
+  }
+  /* 尝试自动播放（被浏览器拦截时保持按钮态） */
+  bgm.play().then(function(){
+    musicBtn.textContent = '⏸';
+    musicBtn.classList.add('playing');
+    musicOn = true;
+  }).catch(function(){});
 </script>
 </body>
 </html>
