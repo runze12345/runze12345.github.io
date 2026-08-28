@@ -150,7 +150,7 @@
     .photo-crop{position:absolute;inset:0;z-index:2;border-radius:46px;overflow:hidden;border:5px solid rgba(255,255,255,0.92);box-shadow:0 22px 48px rgba(45,90,67,0.28);background:#ddece3}
     .who-img{width:100%;height:100%;object-fit:cover;object-position:center 6%;transform:scale(1.5);transform-origin:50% 12%;display:block}
 
-    /* ================= 模块2 教育背景（时间线 + 走动3D数字人） ================= */
+    /* ================= 模块2 教育背景（时间线 + 走动动画小人） ================= */
     .edu-stage{position:relative;width:100%;max-width:1560px;flex:1;min-height:0;display:flex;flex-direction:column;justify-content:flex-start}
     .edu-timeline{position:relative;z-index:2;display:flex;flex-direction:column;gap:32px;max-width:1500px;width:100%;margin:0 auto}
     .edu-timeline::before{content:"";position:absolute;left:109px;top:40px;bottom:40px;width:4px;background:linear-gradient(180deg,var(--accent-color) 0%,rgba(45,90,67,0.12) 100%);border-radius:4px}
@@ -168,32 +168,43 @@
     .edu-node-tags{display:flex;gap:10px;flex-wrap:wrap}
     .edu-node-tags span{font-size:19.5px;font-weight:600;color:var(--accent-color);background:linear-gradient(135deg, rgba(45,90,67,0.12), rgba(45,90,67,0.06));border:1px solid rgba(45,90,67,0.16);padding:5px 16px;border-radius:18px}
     .edu-node-badge{position:absolute;top:-15px;right:32px;font-size:20.8px;font-weight:700;color:#fff;background:linear-gradient(135deg,#2d5a43,#1e3f2e);padding:6px 20px;border-radius:22px;box-shadow:0 8px 18px rgba(45,90,67,0.32)}
-    .edu-walker{position:absolute;left:0;right:0;bottom:0;height:340px;z-index:1;pointer-events:none;overflow:visible}
-    .edu-walker .ground-line{position:absolute;left:0;right:0;bottom:0;height:104px;background:linear-gradient(180deg, rgba(198,228,212,0) 0%, rgba(186,222,202,0.5) 100%)}
-    /* 3D数字人：6面精灵图(前/右/后/左)立体旋转 + 水平走动 */
-    .walker-char{
-      position:absolute;left:0;bottom:16px;width:150px;height:300px;
-      background:url('https://aka.doubaocdn.com/s/aMwrnA92f4') no-repeat;
-      background-size:900px 300px;background-position:-150px 0;
-      mix-blend-mode:multiply;
-      animation:walkX 26s linear infinite alternate;
-      will-change:left,transform;pointer-events:none;
+    /* ================= 教育背景：底部走路动画小人（纯CSS逐帧动画） ================= */
+    .edu-walker{position:absolute;left:0;right:0;bottom:0;height:260px;z-index:1;pointer-events:none;overflow:visible}
+    .edu-walker .ground-line{position:absolute;left:0;right:0;bottom:0;height:80px;background:linear-gradient(180deg, rgba(198,228,212,0) 0%, rgba(186,222,202,0.55) 100%)}
+    /* 外层：水平移动 + 到边缘转身 */
+    .walker-mover{position:absolute;left:2%;bottom:18px;width:110px;height:200px;animation:walkerMove 22s linear infinite}
+    @keyframes walkerMove{
+      0%{left:2%;transform:scaleX(1)}
+      45%{left:calc(98% - 110px);transform:scaleX(1)}
+      50%{left:calc(98% - 110px);transform:scaleX(-1)}
+      95%{left:2%;transform:scaleX(-1)}
+      100%{left:2%;transform:scaleX(1)}
     }
-    .walker-shadow{position:absolute;left:0;bottom:10px;width:140px;height:24px;border-radius:50%;background:radial-gradient(ellipse at center, rgba(45,90,67,0.3) 0%, transparent 70%);animation:walkXshadow 26s linear infinite alternate;pointer-events:none}
-    @keyframes walkX{
-      0%{left:1%;transform:translateY(0) rotate(-1deg)}
-      16%{transform:translateY(-14px) rotate(1.4deg)}
-      33%{transform:translateY(0) rotate(-1deg)}
-      50%{transform:translateY(-14px) rotate(1.4deg)}
-      66%{transform:translateY(0) rotate(-1deg)}
-      83%{transform:translateY(-14px) rotate(1.4deg)}
-      100%{left:calc(100% - 200px);transform:translateY(0) rotate(-1deg)}
-    }
-    @keyframes walkXshadow{
-      0%{left:1%;transform:translateX(5px)}
-      50%{transform:translateX(5px) scale(0.94)}
-      100%{left:calc(100% - 200px);transform:translateX(5px)}
-    }
+    /* 小人整体：走路时身体上下起伏 */
+    .walker-person{position:relative;width:100%;height:100%;animation:walkerBob 0.55s ease-in-out infinite alternate}
+    @keyframes walkerBob{0%{transform:translateY(0)}100%{transform:translateY(-7px)}}
+    /* 影子：随脚步缩放 */
+    .walker-person .walker-shadow{position:absolute;left:50%;bottom:-4px;width:84px;height:14px;margin-left:-42px;border-radius:50%;background:radial-gradient(ellipse at center, rgba(45,90,67,0.38) 0%, transparent 70%);animation:shadowPulse 0.55s ease-in-out infinite alternate}
+    @keyframes shadowPulse{0%{transform:scale(1);opacity:0.75}100%{transform:scale(0.82);opacity:0.5}}
+    /* 头 */
+    .walker-head{position:absolute;left:50%;top:0;width:46px;height:46px;margin-left:-23px;border-radius:50%;background:linear-gradient(135deg,#f5d5b8,#e6c09a);border:2px solid rgba(45,90,67,0.12);box-shadow:0 2px 6px rgba(0,0,0,0.1);z-index:3}
+    .walker-head::before{content:"";position:absolute;left:50%;top:30%;width:24px;height:10px;margin-left:-12px;border-radius:5px;background:rgba(45,90,67,0.18)}
+    .walker-head::after{content:"";position:absolute;left:50%;top:55%;width:14px;height:5px;margin-left:-7px;border-radius:3px;background:rgba(45,90,67,0.22)}
+    /* 身体 */
+    .walker-body{position:absolute;left:50%;top:44px;width:58px;height:72px;margin-left:-29px;border-radius:16px 16px 10px 10px;background:linear-gradient(135deg,#3d7a56,#2d5a43);box-shadow:0 4px 10px rgba(45,90,67,0.2);z-index:2}
+    .walker-body::after{content:"";position:absolute;left:50%;top:12px;width:30px;height:4px;margin-left:-15px;border-radius:2px;background:rgba(255,255,255,0.25)}
+    /* 手臂 */
+    .walker-arm{position:absolute;top:50px;width:14px;height:58px;border-radius:7px;background:linear-gradient(180deg,#3d7a56,#2a5240);transform-origin:top center;z-index:1}
+    .walker-arm.left{left:17px;animation:armL 0.55s ease-in-out infinite alternate}
+    .walker-arm.right{right:17px;animation:armR 0.55s ease-in-out infinite alternate}
+    @keyframes armL{0%{transform:rotate(32deg)}100%{transform:rotate(-32deg)}}
+    @keyframes armR{0%{transform:rotate(-32deg)}100%{transform:rotate(32deg)}}
+    /* 腿 */
+    .walker-leg{position:absolute;top:112px;width:17px;height:74px;border-radius:8px;background:linear-gradient(180deg,#2a4a38,#1c3326);transform-origin:top center;z-index:1}
+    .walker-leg.left{left:31px;animation:legL 0.55s ease-in-out infinite alternate}
+    .walker-leg.right{right:31px;animation:legR 0.55s ease-in-out infinite alternate}
+    @keyframes legL{0%{transform:rotate(-28deg)}100%{transform:rotate(28deg)}}
+    @keyframes legR{0%{transform:rotate(28deg)}100%{transform:rotate(-28deg)}}
 
     /* ================= 模块3 校园成就 ================= */
     .campus-grid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:24px;max-width:1620px;width:100%}
@@ -321,8 +332,8 @@
       .bg-mesh{filter:none}
       .gradient-card{animation:none}
       .photo-wrapper{animation-duration:7s}
-      .walker-char{animation-duration:32s}
-      .walker-shadow{animation-duration:32s}
+      .walker-mover{animation-duration:28s}
+      .walker-person,.walker-person .walker-shadow,.walker-arm,.walker-leg{animation-duration:0.7s}
       header{padding:0 22px}
       nav{gap:3px}
       .nav-link-item{font-size:17px;padding:7px 12px}
@@ -400,8 +411,17 @@
         <div class="edu-stage">
           <div class="edu-walker">
             <div class="ground-line"></div>
-            <div class="walker-shadow"></div>
-            <div class="walker-char"></div>
+            <div class="walker-mover">
+              <div class="walker-person">
+                <div class="walker-head"></div>
+                <div class="walker-body"></div>
+                <div class="walker-arm left"></div>
+                <div class="walker-arm right"></div>
+                <div class="walker-leg left"></div>
+                <div class="walker-leg right"></div>
+                <div class="walker-shadow"></div>
+              </div>
+            </div>
           </div>
           <div class="edu-timeline">
             <div class="edu-node glass-card">
@@ -840,16 +860,7 @@
       photoPauseTimer = setTimeout(function(){ photoWrapper.classList.remove('paused'); }, 5000);
     }
 
-    /* ================= 3D数字人：立体旋转（前→右→后→左循环） ================= */
-    var walkerEl = document.querySelector('.walker-char');
-    if(walkerEl){
-      var walkerFrames = [1, 3, 4, 0]; /* 精灵帧索引：0左 1前 2前 3右 4后 5前 */
-      var walkerFrameIdx = 0;
-      setInterval(function(){
-        walkerFrameIdx = (walkerFrameIdx + 1) % walkerFrames.length;
-        walkerEl.style.backgroundPosition = (-(walkerFrames[walkerFrameIdx] * 150)) + 'px 0';
-      }, 900);
-    }
+    /* ================= 教育背景走路小人：纯CSS动画，无需JS ================= */
 
     /* ================= 联系我：打字循环 ================= */
     var contactLine1 = "心之所向，代码为桨";
