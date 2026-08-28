@@ -72,11 +72,11 @@
     .photo-wrapper{position:relative;width:620px;height:780px;display:flex;justify-content:center;align-items:center;transform-style:preserve-3d;transition:transform .3s ease-out;cursor:pointer;animation:portraitFloat 5s ease-in-out infinite}
     @keyframes portraitFloat{0%{transform:translateY(0) rotateX(0) rotateY(0) rotateZ(0) scale(1)}25%{transform:translateY(-22px) rotateX(6deg) rotateY(-6deg) rotateZ(-1.5deg) scale(1.025)}50%{transform:translateY(0) rotateX(0) rotateY(0) rotateZ(0) scale(1)}75%{transform:translateY(22px) rotateX(-6deg) rotateY(6deg) rotateZ(1.5deg) scale(0.975)}100%{transform:translateY(0) rotateX(0) rotateY(0) rotateZ(0) scale(1)}}
     .photo-wrapper.paused{animation-play-state:paused !important}
-    .photo-blob-bg{position:absolute;top:40px;left:30px;width:540px;height:700px;background:linear-gradient(150deg,#d8ecdd 0%,#b8dcc6 50%,#a5d0b5 100%);border-radius:58% 42% 55% 45% / 48% 55% 45% 52%;z-index:1;box-shadow:0 25px 55px rgba(45,90,67,0.22),inset 0 2px 20px rgba(255,255,255,0.4);transform:rotate(-5deg) translateZ(0)}
+    .photo-blob-bg{position:absolute;top:38px;left:26px;width:550px;height:710px;background:linear-gradient(150deg,#e0f0e5 0%,#c2e0cd 55%,#aed6bf 100%);border-radius:56% 44% 52% 48% / 46% 52% 48% 54%;z-index:1;box-shadow:0 25px 55px rgba(45,90,67,0.20),inset 0 2px 22px rgba(255,255,255,0.45);transform:rotate(-4deg) translateZ(0)}
     .photo-blob-bg::after{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(circle at 30% 20%,rgba(255,255,255,0.35),transparent 50%);pointer-events:none}
-    .photo-cutout{position:relative;z-index:2;width:530px;height:740px;border-radius:52% 48% 46% 54% / 42% 48% 52% 58%;overflow:hidden;box-shadow:0 35px 65px rgba(45,90,67,0.32),0 10px 25px rgba(0,0,0,0.12);transform:rotate(3deg) translate(12px,-14px) translateZ(30px)}
-    .photo-cutout::after{content:"";position:absolute;inset:0;z-index:3;background:linear-gradient(160deg,rgba(255,255,255,0.18) 0%,transparent 35%,transparent 65%,rgba(45,90,67,0.06) 100%);pointer-events:none;border-radius:inherit}
-    .who-img{width:100%;height:100%;object-fit:cover;object-position:center 12%;display:block;filter:contrast(1.06) saturate(1.1) brightness(1.02)}
+    .photo-cutout{position:relative;z-index:2;width:536px;height:748px;border-radius:34px;overflow:hidden;box-shadow:0 30px 60px rgba(45,90,67,0.26),0 12px 26px rgba(0,0,0,0.10);transform:rotate(2deg) translate(12px,-12px) translateZ(30px)}
+    .photo-cutout::after{content:"";position:absolute;inset:0;z-index:3;background:linear-gradient(160deg,rgba(255,255,255,0.14) 0%,transparent 38%,transparent 64%,rgba(45,90,67,0.05) 100%);pointer-events:none;border-radius:inherit}
+    .who-img{width:100%;height:100%;object-fit:cover;object-position:center 18%;display:block;filter:contrast(1.04) saturate(1.06)}
     .runze-tag{position:absolute;top:-5px;left:-10px;font-family:'Caveat','Segoe Script','Bradley Hand',cursive;font-size:88px;font-weight:700;color:var(--accent-color);transform:rotate(-18deg) translateZ(40px);z-index:10;text-shadow:2px 4px 12px rgba(45,90,67,0.18);pointer-events:none;white-space:nowrap;letter-spacing:2px}
     .edu-new-layout{position:relative;width:100%;max-width:1600px;flex:1;min-height:0;display:flex;justify-content:space-between;align-items:center;gap:24px;perspective:1200px}
     .edu-side-card{position:relative;flex:1;max-width:470px;height:580px;background:linear-gradient(145deg,rgba(255,255,255,0.96),rgba(220,242,228,0.9));border:2px solid rgba(255,255,255,0.98);border-radius:30px;box-shadow:0 20px 50px rgba(45,90,67,0.18),inset 0 1px 0 rgba(255,255,255,0.9);overflow:hidden;transition:all .4s cubic-bezier(.25,1,.5,1);display:flex;flex-direction:column}
@@ -276,7 +276,7 @@
             <div class="photo-wrapper" id="photoWrapper" onclick="pausePhotoAnimation()">
               <div class="runze-tag">Runze</div>
               <div class="photo-blob-bg"></div>
-              <div class="photo-cutout"><img src="https://aka.doubaocdn.com/s/tNMyFbMDLq" alt="彭润泽" class="who-img" decoding="async" /></div>
+              <div class="photo-cutout"><img src="https://aka.doubaocdn.com/s/6kWmJF1VCv" alt="彭润泽" class="who-img" decoding="async" /></div>
             </div>
           </div>
         </div>
@@ -306,7 +306,7 @@
           </div>
           <div class="edu-center-person">
             <div class="edu-center-shadow"></div>
-            <img src="https://aka.doubaocdn.com/s/IBPOiGcwY7" alt="动漫立体人像" decoding="async" />
+            <img src="https://aka.doubaocdn.com/s/H6AsyLnPtC" alt="彭润泽3D立体人像" decoding="async" />
           </div>
           <div class="edu-side-card">
             <div class="edu-card-building">
