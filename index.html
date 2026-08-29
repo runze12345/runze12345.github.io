@@ -59,6 +59,7 @@
     .who-container{display:flex;gap:50px;align-items:center;max-width:1620px;width:100%;height:100%}
     .who-left{flex:1.1;margin-left:20px;position:relative;z-index:20}
     .who-title{font-size:94.9px;font-weight:700;line-height:1.25;margin-bottom:45px}
+    #helloTyping{font-family:'Pacifico','Dancing Script',cursive;font-size:88px;font-weight:400;color:var(--accent-color);letter-spacing:1px;display:inline-block;line-height:1.1}
     .who-title .c-name{background:linear-gradient(120deg,var(--accent-color),#3f8060);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
     .who-subtitle-box{margin-bottom:36px}
     .who-subtitle-cn{font-size:40.3px;color:var(--accent-color);font-weight:600}
@@ -91,22 +92,23 @@
     .edu-card-badge{position:absolute;top:14px;left:14px;width:62px;height:62px;border-radius:50%;background:rgba(255,255,255,0.96);box-shadow:0 4px 14px rgba(0,0,0,0.18);display:flex;align-items:center;justify-content:center;z-index:5;overflow:hidden;border:2px solid rgba(255,255,255,0.9)}
     .edu-card-badge img{width:100%;height:100%;object-fit:contain}
     .edu-card-degree-tag{position:absolute;top:18px;right:14px;background:linear-gradient(135deg,#2d5a43,#1e3f2e);color:#fff;padding:7px 20px;border-radius:18px;font-size:18px;font-weight:700;z-index:5;box-shadow:0 4px 14px rgba(45,90,67,0.35);letter-spacing:1px}
-    .edu-card-body{padding:20px 28px 24px;flex:1;display:flex;flex-direction:column;position:relative;z-index:3}
-    .edu-card-school{font-size:29px;font-weight:700;color:var(--text-main);margin-bottom:4px}
-    .edu-card-dept{font-size:18px;color:var(--text-sub);margin-bottom:8px;font-weight:600}
-    .edu-card-major{font-size:24px;color:var(--accent-color);font-weight:700;margin-bottom:7px}
-    .edu-card-date{font-size:17px;color:var(--accent-color);font-weight:700;margin-bottom:14px;background:rgba(45,90,67,0.08);padding:5px 16px;border-radius:12px;display:inline-block;align-self:flex-start}
-    .edu-card-desc{font-size:18px;color:var(--text-sub);line-height:1.65;margin-bottom:12px}
+    .edu-card-body{padding:20px 28px 24px;flex:1;display:flex;flex-direction:column;position:relative;z-index:3;overflow-y:auto}
+    .edu-card-school{font-size:32px;font-weight:700;color:var(--text-main);margin-bottom:4px}
+    .edu-card-dept{font-size:20px;color:var(--text-sub);margin-bottom:8px;font-weight:600}
+    .edu-card-major{font-size:25px;color:var(--accent-color);font-weight:700;margin-bottom:7px;line-height:1.35}
+    .edu-card-date{font-size:18px;color:var(--accent-color);font-weight:700;margin-bottom:12px;background:rgba(45,90,67,0.08);padding:5px 16px;border-radius:12px;display:inline-block;align-self:flex-start}
+    .edu-card-meta{font-size:17.5px;color:var(--text-sub);margin-bottom:10px;line-height:1.55}
+    .edu-card-meta b{color:var(--accent-color);font-weight:700}
+    .edu-card-courses{margin-bottom:12px}
+    .edu-card-courses .label{font-size:16.5px;font-weight:700;color:var(--accent-color);margin-bottom:7px;display:block}
+    .edu-card-courses .course-tags{display:flex;flex-wrap:wrap;gap:7px}
+    .edu-card-courses .course-tags span{font-size:15px;background:rgba(45,90,67,0.06);border:1px solid rgba(45,90,67,0.1);padding:4px 11px;border-radius:10px;color:var(--text-sub);font-weight:500}
+    .edu-card-desc{font-size:19px;color:var(--text-sub);line-height:1.65;margin-bottom:12px}
     .edu-card-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto}
-    .edu-card-tags span{font-size:15.5px;font-weight:600;color:var(--accent-color);background:rgba(45,90,67,0.1);border:1px solid rgba(45,90,67,0.14);padding:5px 14px;border-radius:14px}
+    .edu-card-tags span{font-size:17px;font-weight:600;color:var(--accent-color);background:rgba(45,90,67,0.1);border:1px solid rgba(45,90,67,0.14);padding:5px 14px;border-radius:14px}
     .edu-center-person{position:relative;flex-shrink:0;display:flex;justify-content:center;align-items:center;z-index:5;padding:0 10px;animation:eduCenterFloat 6s ease-in-out infinite;border-radius:28px;overflow:hidden;box-shadow:0 20px 50px rgba(45,90,67,0.25),0 0 0 3px rgba(255,255,255,0.6),inset 0 0 0 1px rgba(255,255,255,0.3);height:100%;min-height:0}
     @keyframes eduCenterFloat{0%{transform:translateY(0) scale(1)}50%{transform:translateY(-16px) scale(1.02)}100%{transform:translateY(0) scale(1)}}
     .edu-center-person img{max-height:780px;height:auto;max-width:100%;width:auto;object-fit:contain;object-position:center;display:block;pointer-events:none}
-    .edu-center-shadow{position:absolute;bottom:-5px;left:50%;width:280px;height:42px;margin-left:-140px;background:radial-gradient(ellipse at center,rgba(45,90,67,0.4) 0%,transparent 70%);z-index:1;animation:eduCenterShadow 5s ease-in-out infinite}
-    @keyframes eduCenterShadow{0%,100%{transform:scale(1);opacity:0.6}50%{transform:scale(0.8);opacity:0.35}}
-    .edu-center-ring{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:520px;height:520px;border:2px dashed rgba(45,90,67,0.1);border-radius:50%;animation:ringRotate 25s linear infinite;z-index:0}
-    .edu-center-ring.r2{width:640px;height:640px;border-color:rgba(45,90,67,0.06);animation-duration:35s;animation-direction:reverse}
-    @keyframes ringRotate{0%{transform:translate(-50%,-50%) rotate(0deg)}100%{transform:translate(-50%,-50%) rotate(360deg)}}
     .campus-grid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:24px;max-width:1620px;width:100%}
     .paper-item-card{padding:26px 32px;display:flex;flex-direction:column;justify-content:space-between;min-height:220px}
     .paper-header-row{display:flex;align-items:center;gap:13px;margin-bottom:12px;flex-wrap:wrap}
@@ -137,9 +139,9 @@
     .intern-container{display:flex;gap:28px;max-width:1560px;width:100%}
     .intern-card{flex:1;overflow:hidden;display:flex;flex-direction:column}
     .intern-banner{height:188px;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
-    .intern-banner .logo-img{height:130px;width:auto;max-width:88%;object-fit:contain;filter:drop-shadow(0 6px 14px rgba(45,90,67,0.2));position:relative;z-index:2;transition:transform .5s ease}
-    .intern-banner.b-alibaba .logo-img{height:165px;max-width:92%}
-    .intern-banner.b-zte .logo-img{height:160px;max-width:92%}
+    .intern-banner .logo-img{height:140px;width:auto;max-width:90%;object-fit:contain;filter:drop-shadow(0 6px 14px rgba(45,90,67,0.2));position:relative;z-index:2;transition:transform .5s ease}
+    .intern-banner.b-alibaba .logo-img{height:180px;max-width:94%}
+    .intern-banner.b-zte .logo-img{height:175px;max-width:94%}
     .intern-card:hover .logo-img{transform:scale(1.08)}
     .intern-banner::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 30%, rgba(255,255,255,0.55), transparent 65%);pointer-events:none}
     .intern-banner.b-alibaba{background:linear-gradient(135deg,#eaf3ed,#cfe2d7)}
@@ -241,7 +243,6 @@
       .gradient-card{animation:none}
       .photo-wrapper{animation-duration:8s}
       .edu-center-person{animation-duration:7s}
-      .edu-center-ring{animation-duration:25s}
       .edu-new-layout{height:560px}
       .edu-side-card{height:100%}
       .contact-blob{animation-duration:12s}
@@ -317,9 +318,14 @@
             </div>
             <div class="edu-card-body">
               <div class="edu-card-school">西安交通大学</div>
-              <div class="edu-card-dept">电信学部自动化学院</div>
-              <div class="edu-card-major">自动化 · 工学学士</div>
+              <div class="edu-card-dept">电信学部自动化学院 · 985 / 211 / 双一流 / C9</div>
+              <div class="edu-card-major">自动化 · 工学学士（国家级一流本科专业）</div>
               <div class="edu-card-date">2020.09 — 2024.06</div>
+              <div class="edu-card-meta"><b>学科评级：</b>控制科学与工程 学科评估 A-</div>
+              <div class="edu-card-courses">
+                <span class="label">主修课程</span>
+                <div class="course-tags"><span>自动控制原理</span><span>现代控制理论</span><span>信号与系统</span><span>数字信号处理</span><span>机器学习</span><span>模式识别</span><span>计算机视觉</span><span>嵌入式系统</span></div>
+              </div>
               <div class="edu-card-desc">系统学习控制理论、信号处理与机器学习基础，打下扎实的工程与算法功底</div>
               <div class="edu-card-tags"><span>控制理论</span><span>信号处理</span><span>机器学习</span></div>
             </div>
@@ -335,9 +341,14 @@
             </div>
             <div class="edu-card-body">
               <div class="edu-card-school">西安交通大学</div>
-              <div class="edu-card-dept">电信学部自动化学院</div>
-              <div class="edu-card-major">控制科学与工程 · 工学硕士</div>
+              <div class="edu-card-dept">电信学部自动化学院 · 985 / 211 / 双一流 / C9</div>
+              <div class="edu-card-major">控制科学与工程 · 工学硕士（学科评估 A-）</div>
               <div class="edu-card-date">2024.09 — 2027.06（在读）</div>
+              <div class="edu-card-meta"><b>研究方向：</b>智能控制算法 · 大模型应用与 Agent 开发</div>
+              <div class="edu-card-courses">
+                <span class="label">主修课程</span>
+                <div class="course-tags"><span>高级人工智能</span><span>深度学习</span><span>最优化理论</span><span>随机过程</span><span>图神经网络</span><span>强化学习</span><span>模式识别</span></div>
+              </div>
               <div class="edu-card-desc">聚焦大模型应用与智能算法，从数据建模到工程落地全链路贯通</div>
               <div class="edu-card-tags"><span>智能控制算法</span><span>大模型智能体</span><span>Agent 开发</span></div>
             </div>
